@@ -10,7 +10,7 @@ const links = [{
   }
 ]
 
-export default function Home() {
+const Navbar = () => {
   return (
     <header>
       <nav>
@@ -29,3 +29,5 @@ export default function Home() {
     </header>
   )
 }
+
+export default Navbar;
