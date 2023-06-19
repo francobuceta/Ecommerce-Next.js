@@ -1,12 +1,16 @@
 import Link from "next/link";
 
 const links = [{
-    label: "Home",
+    label: "Inicio",
     route: "/"
   },
   {
-    label: "Register",
-    route: "/register"
+    label: "Registrarse",
+    route: "/auth/register"
+  },
+  {
+    label: "Ingresar",
+    route: "/auth/login"
   }
 ]
 
