@@ -1,9 +1,5 @@
 const Auth = ({ children }) => {
-    return (
-        <>
-            {children}
-        </>
-    )
-}
+  return <>{children}</>;
+};
 
 export default Auth;
