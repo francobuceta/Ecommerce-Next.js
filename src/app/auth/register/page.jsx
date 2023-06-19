@@ -1,20 +1,24 @@
+import Link from "next/link";
+
 const Register = () => {
   return (
     <div class="container" id="container">
-      <div class="overlay-container">
-        <div class="overlay">
+      <div class="overlay-container-register">
+        <div class="overlay-register">
           <div class="overlay-panel overlay-left">
             <h1>Welcome Back!</h1>
             <p>
               To keep connected with us please login with your personal info
             </p>
-            <button class="ghost" id="signIn">
-              Sign In
-            </button>
+            <Link href="/auth/login">
+              <button class="ghost" id="signIn">
+                Sign In
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div class="form-container sign-up-container">
+      <div class="form-container-register sign-up-container">
         <form action="#">
           <h1>Create Account</h1>
           <div class="social-container">

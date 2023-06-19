@@ -49,7 +49,18 @@ a {
   min-height: 480px;
 }
 
-.form-container form {
+.form-container-login form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-container-register form {
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -75,7 +86,15 @@ a {
   width: 40px;
 }
 
-.form-container input {
+.form-container-login input {
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.form-container-register input {
   background: #eee;
   border: none;
   padding: 12px 15px;
@@ -109,7 +128,14 @@ button.ghost {
   border-color: #fff;
 }
 
-.form-container {
+.form-container-login {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.form-container-register {
   position: absolute;
   top: 0;
   height: 100%;
@@ -122,11 +148,11 @@ button.ghost {
 }
 
 .sign-up-container {
-  left: 0;
+  left: 50%;
   width: 50%;
 }
 
-.overlay-container {
+.overlay-container-login {
   position: absolute;
   top: 0;
   left: 50%;
@@ -137,12 +163,35 @@ button.ghost {
   z-index: 100;
 }
 
-.overlay {
+.overlay-container-register {
+  position: absolute;
+  top: 0;
+  /* left: 50%; */
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay-login {
   background: #ff416c;
   background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
   color: #fff;
   position: relative;
   left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-register {
+  background: #ff416c;
+  background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+  color: #fff;
+  position: relative;
+  /* left: -100%; */
   height: 100%;
   width: 200%;
   transform: translateY(0);

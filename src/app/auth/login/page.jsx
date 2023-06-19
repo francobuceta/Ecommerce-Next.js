@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <>
       <div class="container" id="container">
-        <div class="form-container sign-in-container">
+        <div class="form-container-login sign-in-container">
           <form action="#">
             <h1>Sign in</h1>
             <div class="social-container">
@@ -25,8 +25,8 @@ const Login = () => {
             <button>Sign In</button>
           </form>
         </div>
-        <div class="overlay-container">
-          <div class="overlay">
+        <div class="overlay-container-login">
+          <div class="overlay-login">
             <div class="overlay-panel overlay-right">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start journey with us</p>
