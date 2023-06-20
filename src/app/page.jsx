@@ -8,7 +8,7 @@ const links = [
   {
     label: "Acceso",
     route: "/auth",
-  }
+  },
 ];
 
 const Navbar = () => {

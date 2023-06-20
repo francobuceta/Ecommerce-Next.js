@@ -10,7 +10,7 @@ body {
 .container {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
   width: 768px;
@@ -39,7 +39,7 @@ button {
 }
 
 button:active {
-  transform: scale(.95);
+  transform: scale(0.95);
 }
 
 button:focus {
@@ -55,7 +55,7 @@ button.ghost {
   position: absolute;
   top: 0;
   height: 100%;
-  transition: all .6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .sign-in-container {
@@ -78,7 +78,7 @@ button.ghost {
   width: 50%;
   height: 100%;
   overflow: hidden;
-  transition: transform .6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
   z-index: 100;
 }
 
@@ -91,7 +91,7 @@ button.ghost {
   height: 100%;
   width: 200%;
   transform: translateY(0);
-  transition: transform .6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
 .overlay-panel {
@@ -106,7 +106,7 @@ button.ghost {
   width: 50%;
   text-align: center;
   transform: translateY(0);
-  transition: transform .6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
 .overlay-right {

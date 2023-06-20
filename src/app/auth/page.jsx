@@ -16,7 +16,10 @@ const Auth = () => {
         id="container"
       >
         <div className="form-container sign-up-container">
-          <form action="#" className="bg-white flex flex-col px-12 h-full justify-center items-center text-center">
+          <form
+            action="#"
+            className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
+          >
             <h1 className="font-bold">Create Account</h1>
             <SocialIcons />
             <span className="text-xs">or use your email for registration</span>
@@ -27,7 +30,10 @@ const Auth = () => {
           </form>
         </div>
         <div className="form-container sign-in-container">
-          <form action="#" className="bg-white flex flex-col px-12 h-full justify-center items-center text-center">
+          <form
+            action="#"
+            className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
+          >
             <h1 className="font-bold">Sign in</h1>
             <SocialIcons />
             <span className="text-xs">or use your account</span>
@@ -50,7 +56,9 @@ const Auth = () => {
             </div>
             <div className="overlay-panel overlay-right">
               <h1 className="font-bold">Hello, Friend!</h1>
-              <p className="text-sm my-5">Enter your personal details and start journey with us</p>
+              <p className="text-sm my-5">
+                Enter your personal details and start journey with us
+              </p>
               <button className="ghost" id="signUp" onClick={handleClick}>
                 Sign Up
               </button>
