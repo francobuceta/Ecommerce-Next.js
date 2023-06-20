@@ -6,13 +6,9 @@ const links = [
     route: "/",
   },
   {
-    label: "Registrarse",
-    route: "/auth/register",
-  },
-  {
-    label: "Ingresar",
-    route: "/auth/login",
-  },
+    label: "Acceso",
+    route: "/auth",
+  }
 ];
 
 const Navbar = () => {
