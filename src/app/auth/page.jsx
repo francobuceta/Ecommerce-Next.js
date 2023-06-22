@@ -10,7 +10,7 @@ const Auth = () => {
   };
 
   return (
-    <section className="font-sans flex justify-center mt-16 height-[100vh]">
+    <section className="flex justify-center mt-16 height-[100vh]">
       <div
         className={`container ${isClicked ? "right-panel-active" : ""}`}
         id="container"
