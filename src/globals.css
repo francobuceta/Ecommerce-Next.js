@@ -18,7 +18,20 @@ body {
   min-height: 480px;
 }
 
-.form-container input {
+.container-mobile {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  height: 800px;
+  margin: 0 30px;
+}
+
+.form-container input, 
+.form-container-mobile input {
   background: #eee;
   padding: 12px 15px;
   margin: 8px 0;
@@ -58,9 +71,23 @@ button.ghost {
   transition: all 0.6s ease-in-out;
 }
 
+.form-container-mobile {
+  position: absolute;
+  top: 0;
+  height: 50%;
+  transition: all 0.6s ease-in-out;
+}
+
 .sign-in-container {
   left: 0;
   width: 50%;
+  z-index: 2;
+}
+
+.sign-in-container-mobile {
+  left: 0;
+  width: 100%;
+  height: 50%;
   z-index: 2;
 }
 
@@ -71,12 +98,31 @@ button.ghost {
   opacity: 0;
 }
 
+.sign-up-container-mobile {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  opacity: 0;
+}
+
 .overlay-container {
   position: absolute;
   top: 0;
   left: 50%;
   width: 50%;
   height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay-container-mobile {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
   z-index: 100;
@@ -119,13 +165,14 @@ button.ghost {
 }
 
 /* Move signin to right */
-.container.right-panel-active .sign-in-container {
+.container.right-panel-active .sign-in-container,
+.container-mobile.right-panel-active .sign-in-container-mobile {
   transform: translateY(100%);
 }
 
 /* Move overlay to left */
 .container.right-panel-active .overlay-container {
-  transform: translateX(-100%);
+  transform: translateX(-100%); 
 }
 
 /* Bring signup over signin */
@@ -135,17 +182,25 @@ button.ghost {
   z-index: 5;
 }
 
+.container-mobile.right-panel-active .sign-up-container-mobile {
+  opacity: 1;
+  z-index: 5;
+}
+
 /* Move overlay back to right */
-.container.right-panel-active .overlay {
+.container.right-panel-active .overlay,
+.container-mobile.right-panel-active .overlay {
   transform: translateX(50%);
 }
 
 /* Bring back the text to center */
-.container.right-panel-active .overlay-left {
+.container.right-panel-active .overlay-left,
+.container-mobile.right-panel-active .overlay-left {
   transform: translateY(0);
 }
 
 /* Same effect for right */
-.container.right-panel-active .overlay-right {
+.container.right-panel-active .overlay-right,
+.container-mobile.right-panel-active .overlay-right {
   transform: translateY(20%);
 }
