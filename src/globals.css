@@ -30,7 +30,7 @@ body {
   margin: 0 30px;
 }
 
-.form-container input, 
+.form-container input,
 .form-container-mobile input {
   background: #eee;
   padding: 12px 15px;
@@ -172,7 +172,7 @@ button.ghost {
 
 /* Move overlay to left */
 .container.right-panel-active .overlay-container {
-  transform: translateX(-100%); 
+  transform: translateX(-100%);
 }
 
 /* Bring signup over signin */

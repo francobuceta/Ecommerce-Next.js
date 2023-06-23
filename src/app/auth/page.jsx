@@ -14,10 +14,18 @@ const Auth = () => {
   return (
     <section className="flex justify-center mt-16 mb-16 sm:mb-0 height-[100vh]">
       <div
-        className={`${isMobile ? "container" : "container-mobile" } ${isClicked ? "right-panel-active" : ""}`}
+        className={`${isMobile ? "container" : "container-mobile"} ${
+          isClicked ? "right-panel-active" : ""
+        }`}
         id="container"
       >
-        <div className={`${isMobile ? "form-container sign-up-container" : "form-container-mobile sign-up-container-mobile"}`}>
+        <div
+          className={`${
+            isMobile
+              ? "form-container sign-up-container"
+              : "form-container-mobile sign-up-container-mobile"
+          }`}
+        >
           <form
             action="#"
             className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
@@ -31,7 +39,13 @@ const Auth = () => {
             <button>Sign Up</button>
           </form>
         </div>
-        <div className={`${isMobile ? "form-container sign-in-container" : "form-container-mobile sign-in-container-mobile"}`}>
+        <div
+          className={`${
+            isMobile
+              ? "form-container sign-in-container"
+              : "form-container-mobile sign-in-container-mobile"
+          }`}
+        >
           <form
             action="#"
             className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
@@ -45,7 +59,11 @@ const Auth = () => {
             <button>Sign In</button>
           </form>
         </div>
-        <div className={`${isMobile ? "overlay-container" : "overlay-container-mobile"}`}>
+        <div
+          className={`${
+            isMobile ? "overlay-container" : "overlay-container-mobile"
+          }`}
+        >
           <div className="overlay">
             <div className="overlay-panel overlay-left">
               <h1 className="font-bold">Welcome Back!</h1>
