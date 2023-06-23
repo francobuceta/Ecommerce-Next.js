@@ -1,21 +1,23 @@
 "use client";
-import SocialIcons from "@/components/auth/SocialIcons";
 import { useState } from "react";
+import SocialIcons from "@/components/auth/SocialIcons";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Auth = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const isMobile = useMediaQuery("(min-width: 640px)");
 
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
 
   return (
-    <section className="flex justify-center mt-16 height-[100vh]">
+    <section className="flex justify-center mt-16 mb-16 sm:mb-0 height-[100vh]">
       <div
-        className={`container ${isClicked ? "right-panel-active" : ""}`}
+        className={`${isMobile ? "container" : "container-mobile" } ${isClicked ? "right-panel-active" : ""}`}
         id="container"
       >
-        <div className="form-container sign-up-container">
+        <div className={`${isMobile ? "form-container sign-up-container" : "form-container-mobile sign-up-container-mobile"}`}>
           <form
             action="#"
             className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
@@ -29,7 +31,7 @@ const Auth = () => {
             <button>Sign Up</button>
           </form>
         </div>
-        <div className="form-container sign-in-container">
+        <div className={`${isMobile ? "form-container sign-in-container" : "form-container-mobile sign-in-container-mobile"}`}>
           <form
             action="#"
             className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
@@ -43,7 +45,7 @@ const Auth = () => {
             <button>Sign In</button>
           </form>
         </div>
-        <div className="overlay-container">
+        <div className={`${isMobile ? "overlay-container" : "overlay-container-mobile"}`}>
           <div className="overlay">
             <div className="overlay-panel overlay-left">
               <h1 className="font-bold">Welcome Back!</h1>

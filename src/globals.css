@@ -27,9 +27,11 @@ body {
   width: 768px;
   max-width: 100%;
   height: 800px;
+  margin: 0 30px;
 }
 
-.form-container input {
+.form-container input, 
+.form-container-mobile input {
   background: #eee;
   padding: 12px 15px;
   margin: 8px 0;
@@ -163,7 +165,8 @@ button.ghost {
 }
 
 /* Move signin to right */
-.container.right-panel-active .sign-in-container {
+.container.right-panel-active .sign-in-container,
+.container-mobile.right-panel-active .sign-in-container-mobile {
   transform: translateY(100%);
 }
 
@@ -179,22 +182,25 @@ button.ghost {
   z-index: 5;
 }
 
-.container.right-panel-active .sign-up-container-mobile {
+.container-mobile.right-panel-active .sign-up-container-mobile {
   opacity: 1;
   z-index: 5;
 }
 
 /* Move overlay back to right */
-.container.right-panel-active .overlay {
+.container.right-panel-active .overlay,
+.container-mobile.right-panel-active .overlay {
   transform: translateX(50%);
 }
 
 /* Bring back the text to center */
-.container.right-panel-active .overlay-left {
+.container.right-panel-active .overlay-left,
+.container-mobile.right-panel-active .overlay-left {
   transform: translateY(0);
 }
 
 /* Same effect for right */
-.container.right-panel-active .overlay-right {
+.container.right-panel-active .overlay-right,
+.container-mobile.right-panel-active .overlay-right {
   transform: translateY(20%);
 }
