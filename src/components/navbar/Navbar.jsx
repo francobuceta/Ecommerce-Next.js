@@ -1,20 +1,11 @@
+import Logo from "./Logo";
 import Link from "next/link";
-import Image from "next/image";
 import { VscAccount } from "react-icons/vsc";
 
 const Navbar = () => {
     return (
-        <header className="navbar bg-[#656565] px-10">
-            <div className="flex-1">
-                <Link href="/">
-                    <Image
-                        src="/img/logo-desktop2.png"
-                        width={250}
-                        height={109}
-                        alt="Picture of the author"
-                    />
-                </Link>
-            </div>
+        <header className="navbar bg-[#656565] px-10 py-2">
+            <Logo />
             <div className="flex items-center gap-2">
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -51,7 +42,7 @@ const Navbar = () => {
                 </div>
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0}>
-                        <VscAccount fontSize={25} color="white"/>
+                        <VscAccount fontSize={25} color="white" />
                     </label>
                     <ul
                         tabIndex={0}
