@@ -1,5 +1,9 @@
+import Categories from "@/components/home/categories/Categories";
+
 const Home = () => {
-  return null;
+  return (
+    <Categories />
+  );
 };
 
 export default Home;
