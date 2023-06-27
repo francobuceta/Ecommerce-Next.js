@@ -9,14 +9,20 @@ module.exports = {
     fontFamily: {
       sans: "Montserrat, sans-serif",
     },
-    colors: {
+    extend: {
       primary: "#C0FF6B",
       secondary: "#656565",
-      gray: "D5D5D5",
+      gray: "#D5D5D5",
       black: "#000000",
+      lightblack: "#292929",
       white: "#ffffff",
       transparent: "transparent"
-    },
+    }
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    base: false,
+    styled: false,
+    utils: true
+  }
 };
