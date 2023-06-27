@@ -10,15 +10,16 @@ const Logo = () => {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    alt="Picture of the author"
+                    alt="Logo Cyber Cube Desktop"
                     className="w-[250px] h-auto hidden sm:block"
                 />
                 <Image
                     src="/img/logo-mobile.png"
                     width={250}
                     height={109}
-                    alt="Picture of the author"
-                    className="block sm:hidden"
+                    sizes="100vw"
+                    alt="Logo Cyber Cube Mobile"
+                    className="w-[90px] h-[90px] block sm:hidden"
                 />
             </Link>
         </div>
