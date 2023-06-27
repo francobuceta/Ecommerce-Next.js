@@ -36,7 +36,9 @@ const Auth = () => {
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <button className="rounded-[20px] bg-primary text-xs font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+              SIGN UP
+            </button>
           </form>
         </div>
         <div
@@ -56,7 +58,9 @@ const Auth = () => {
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button className="rounded-[20px] bg-primary text-xs font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+              SIGN IN
+            </button>
           </form>
         </div>
         <div
@@ -70,8 +74,9 @@ const Auth = () => {
               <p className="text-sm my-5">
                 To keep connected with us please login with your personal info
               </p>
-              <button className="ghost" id="signIn" onClick={handleClick}>
-                Sign In
+              <button className="rounded-[20px] border border-solid border-white bg-transparent text-xs font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]" 
+                id="signIn" onClick={handleClick}>
+                SIGN IN
               </button>
             </div>
             <div className="overlay-panel overlay-right">
@@ -79,8 +84,9 @@ const Auth = () => {
               <p className="text-sm my-5">
                 Enter your personal details and start journey with us
               </p>
-              <button className="ghost" id="signUp" onClick={handleClick}>
-                Sign Up
+              <button className="rounded-[20px] border border-solid border-white bg-transparent text-xs font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]" 
+                id="signUp" onClick={handleClick}>
+                SIGN UP
               </button>
             </div>
           </div>
