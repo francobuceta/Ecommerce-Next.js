@@ -21,6 +21,7 @@
     "tailwindcss": "3.3.2"
   },
   "devDependencies": {
+    "daisyui": "^3.1.6",
     "prettier": "^2.8.8"
   }
 }
