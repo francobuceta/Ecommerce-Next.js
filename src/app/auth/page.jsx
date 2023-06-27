@@ -12,7 +12,7 @@ const Auth = () => {
   };
 
   return (
-    <section className="flex justify-center mt-16 mb-16 sm:mb-0 height-[100vh]">
+    <section className="flex justify-center mt-16 mb-16 height-[100vh]">
       <div
         className={`${isMobile ? "container" : "container-mobile"} ${
           isClicked ? "right-panel-active" : ""
