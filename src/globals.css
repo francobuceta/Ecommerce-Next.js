@@ -99,7 +99,7 @@
 }
 
 .overlay {
-  background: linear-gradient(to right, #77b427, #C0FF6B) no-repeat 0 0 / cover;
+  background: linear-gradient(to right, #77b427, #c0ff6b) no-repeat 0 0 / cover;
   color: #292929;
   position: relative;
   left: -100%;

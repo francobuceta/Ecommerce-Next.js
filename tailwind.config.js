@@ -16,13 +16,13 @@ module.exports = {
       black: "#000000",
       lightblack: "#292929",
       white: "#ffffff",
-      transparent: "transparent"
-    }
+      transparent: "transparent",
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
     base: false,
     styled: false,
-    utils: true
-  }
+    utils: true,
+  },
 };
