@@ -1,7 +1,13 @@
-import Categories from "@/components/home/categories/Categories";
+import Hero from "@/components/home/Hero";
+import Categories from "@/components/home/Categories";
 
 const Home = () => {
-  return <Categories />;
+  return (
+    <>
+      <Hero />
+      <Categories />
+    </>
+  );
 };
 
 export default Home;
