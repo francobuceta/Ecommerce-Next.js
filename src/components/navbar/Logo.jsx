@@ -6,7 +6,7 @@ const Logo = () => {
     <div className="flex-1">
       <Link href="/">
         <Image
-          src="/img/logo-desktop.png"
+          src="/img/logo-desktop2.png"
           width={0}
           height={0}
           sizes="100vw"
@@ -14,7 +14,7 @@ const Logo = () => {
           className="w-[250px] h-auto hidden sm:block"
         />
         <Image
-          src="/img/logo-mobile.png"
+          src="/img/logo-mobile3.png"
           width={250}
           height={109}
           sizes="100vw"
