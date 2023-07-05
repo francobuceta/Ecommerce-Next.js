@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
     return (
-        <section className="w-full h-[600px] bg-[rgb(41,41,41)]" style={{background: "linear-gradient(128deg, rgba(50,49,49,1) 28%, rgba(66,64,64,1) 34%, rgba(192,255,107,1) 100%);"}}>
+        <section className="w-full h-[600px] bg-[rgb(41,41,41)]" style={{background: "linear-gradient(128deg, rgba(50,49,49,1) 28%, rgba(66,64,64,1) 34%, rgba(192,255,107,1) 100%)"}}>
             <div className="flex justify-center items-center gap-5">
                 
                 <div className="flex flex-col items-center w-[50%]">
@@ -18,7 +18,7 @@ const Hero = () => {
 
                 <div>
                     <Image
-                        src="/img/headphone.png"
+                        src="/img/headphones.png"
                         width={0}
                         height={0}
                         sizes="100vw"
