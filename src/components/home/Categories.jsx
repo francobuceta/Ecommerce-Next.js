@@ -50,9 +50,9 @@ const Categories = () => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {categories.map((elem) => {
-          return (
-            <SwiperSlide>
+        {categories.length > 0 ? (
+          categories.map((elem) => (
+            <SwiperSlide key={elem.title}>
               <Link href={elem.url}>
                 <div className="flex flex-col items-center gap-3">
                   <img
@@ -64,8 +64,10 @@ const Categories = () => {
                 </div>
               </Link>
             </SwiperSlide>
-          );
-        })}
+          ))
+        ) : (
+          <p>No hay categorías disponibles.</p>
+        )}
       </Swiper>
     </section>
   );
