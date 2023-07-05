@@ -49,9 +49,6 @@ const categories = [
 ];
 
 const Categories = () => {
-
-  /* SwiperCore.use([Autoplay]); */
-
   return (
     <section className="mt-5">
       <Swiper
@@ -63,8 +60,6 @@ const Categories = () => {
           speed: 100,
           disableOnInteraction: true,
         }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {categories.length > 0 ? (
           categories.map((elem) => (
