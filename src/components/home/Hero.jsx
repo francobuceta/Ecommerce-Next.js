@@ -3,11 +3,13 @@ import Image from "next/image";
 const Hero = () => {
     return (
         <section className="w-full h-[600px] bg-custome-secondary pt-10">
-            <div className="flex justify-center items-center gap-5 p-12 bg-[#BAFF29] rounded-l-3xl ml-20 h-[500px]">
+            <div className="relative flex justify-center items-center gap-5 p-12 bg-[#BAFF29] rounded-l-3xl ml-20 h-[500px]">
                 
-                <div className="flex flex-col w-[40%] gap-20">
-                    <p className="text-xl text-custome-secondary">THE <br /> NEXT GEN <br /> TECH</p>
-                    <button className="btn btn-active bg-custome-secondary text-xl text-white w-40 h-10">
+                <div className="flex flex-col w-[40%]">
+                    <p className="absolute text-[6.5rem] leading-[6rem] font-bold text-custome-secondary left-20 top-12">
+                        THE <br /> NEXT GENENERA <br /> TECH
+                    </p>
+                    <button className="btn btn-active bg-custome-secondary text-xl text-white w-40 h-10 mt-72 ml-10">
                         Ingresar aquí
                     </button>
                 </div>
