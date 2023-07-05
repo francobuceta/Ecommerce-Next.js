@@ -1,52 +1,68 @@
 "use client";
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import "swiper/css";
+import "swiper/css/autoplay";
 
 const categories = [
   {
     title: "Teclados",
-    img: "https://picsum.photos/200",
+    img: "/img/keyboard.jpg",
     url: "/",
   },
   {
     title: "Mouses",
-    img: "https://picsum.photos/200",
+    img: "img/mouse.jpg",
     url: "/",
   },
   {
-    title: "Auriculares",
-    img: "https://picsum.photos/200",
+    title: "Auriculares y micrófonos",
+    img: "./img/headphone.jpg",
+    url: "/",
+  },
+  {
+    title: "Sillas gamers",
+    img: "/img/chair.jpg",
     url: "/",
   },
   {
     title: "Pads",
-    img: "https://picsum.photos/200",
+    img: "/img/pad.jpeg",
     url: "/",
   },
   {
     title: "Cámaras Web",
-    img: "https://picsum.photos/200",
+    img: "/img/webcam.jpg",
     url: "/",
   },
   {
     title: "Volantes y Gamepads",
-    img: "https://picsum.photos/200",
+    img: "/img/joystick.jpg",
     url: "/",
   },
   {
     title: "Parlantes y Audio",
-    img: "https://picsum.photos/200",
+    img: "/img/phone-speaker.jpeg",
     url: "/",
   },
 ];
 
 const Categories = () => {
+
+  /* SwiperCore.use([Autoplay]); */
+
   return (
     <section className="mt-5">
       <Swiper
         spaceBetween={0}
         slidesPerView={4}
+        modules={[Autoplay]}
+        autoplay={{
+          autoplay: 2000,
+          speed: 100,
+          disableOnInteraction: true,
+        }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
@@ -58,9 +74,9 @@ const Categories = () => {
                   <img
                     src={elem.img}
                     alt={elem.title}
-                    className="rounded-full w-[200px]"
+                    className="rounded-full w-[200px] h-[200px] object-cover"
                   />
-                  <span>{elem.title}</span>
+                  <span className="text-white uppercase">{elem.title}</span>
                 </div>
               </Link>
             </SwiperSlide>
