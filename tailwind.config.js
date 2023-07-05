@@ -10,13 +10,17 @@ module.exports = {
       sans: "Montserrat, sans-serif",
     },
     extend: {
-      primary: "#C0FF6B",
-      secondary: "#656565",
-      gray: "#D5D5D5",
-      black: "#000000",
-      lightblack: "#292929",
-      white: "#ffffff",
-      transparent: "transparent",
+      colors: {
+        custome: {
+          primary: "#BAFF29",
+          secondary: "#1E1E1E",
+          gray: "#D5D5D5",
+          black: "#000000",
+          lightblack: "#2C2C2C",
+          white: "#ffffff",
+          transparent: "transparent",
+        }
+      }
     },
   },
   plugins: [require("daisyui")],
