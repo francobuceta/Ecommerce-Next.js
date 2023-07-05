@@ -2,28 +2,24 @@ import Image from "next/image";
 
 const Hero = () => {
     return (
-        <section className="w-full h-[600px] bg-[rgb(41,41,41)]" style={{background: "linear-gradient(128deg, rgba(50,49,49,1) 28%, rgba(66,64,64,1) 34%, rgba(192,255,107,1) 100%)"}}>
-            <div className="flex justify-center items-center gap-5 p-12">
+        <section className="w-full h-[600px] bg-custome-secondary pt-10">
+            <div className="flex justify-center items-center gap-5 p-12 bg-[#BAFF29] rounded-l-3xl ml-20 h-[500px]">
                 
-                <div className="flex flex-col w-[40%]">
-                    <p className="text-xl text-white">Somos Cyber Cube</p>
-                    <p className="text-xl text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus qui ullam ad velit?<br />
-                        Suscipit laboriosam beatae possimus perspiciatis! Maxime, nulla assumenda?<br />
-                        D fugit quod autem tempora. Nesciunt, nam consequuntur vero magnam, ratione rerum hic iusto quibusdam, err
-                    </p>
-                    <button className="btn btn-active bg-white text-xl text-black">
+                <div className="flex flex-col w-[40%] gap-20">
+                    <p className="text-xl text-custome-secondary">THE <br /> NEXT GEN <br /> TECH</p>
+                    <button className="btn btn-active bg-custome-secondary text-xl text-white w-40 h-10">
                         Ingresar aquí
                     </button>
                 </div>
 
                 <div>
                     <Image
-                        src="/img/headphones.png"
+                        src="/img/headphones3.png"
                         width={0}
                         height={0}
                         sizes="100vw"
-                        alt="Logo Cyber Cube Desktop"
-                        className="w-[500px] h-[auto]"
+                        alt="Headphone"
+                        className="w-full h-full"
                     />
                 </div>
             </div>

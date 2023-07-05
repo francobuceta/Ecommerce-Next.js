@@ -4,7 +4,7 @@ import { VscAccount } from "react-icons/vsc";
 
 const Navbar = () => {
   return (
-    <header className="navbar bg-[#656565] px-5 sm:px-10 py-2">
+    <header className="navbar bg-custome-secondary sm:px-32 p-8">
       <Logo />
       <div className="flex items-center gap-2">
         <div className="dropdown dropdown-end">
@@ -15,7 +15,7 @@ const Navbar = () => {
                 className="h-6 w-6 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="#C0FF6B"
+                stroke="#BAFF29"
               >
                 <path
                   strokeLinecap="round"
