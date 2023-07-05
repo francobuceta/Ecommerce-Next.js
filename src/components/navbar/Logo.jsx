@@ -15,8 +15,8 @@ const Logo = () => {
         />
         <Image
           src="/img/logo-mobile3.png"
-          width={250}
-          height={109}
+          width={0}
+          height={0}
           sizes="100vw"
           alt="Logo Cyber Cube Mobile"
           className="w-[90px] h-[90px] block sm:hidden"
