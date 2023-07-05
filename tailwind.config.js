@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -6,9 +8,6 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily: {
-      sans: "Montserrat, sans-serif",
-    },
     extend: {
       colors: {
         custome: {
@@ -20,7 +19,15 @@ module.exports = {
           white: "#ffffff",
           transparent: "transparent",
         }
-      }
+      },
+      fontFamily: {
+        main: [
+          "var(--font-oswald)", ...fontFamily.sans
+        ],
+        alternate: [
+          "var(--font-share_tech)", ...fontFamily.sans
+        ]
+      },
     },
   },
   plugins: [require("daisyui")],

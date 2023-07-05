@@ -1,8 +1,21 @@
 import "../globals.css";
-import { Inter } from "next/font/google";
+import { Oswald, Share_Tech } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const mainFont = Oswald(
+  { 
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    variable: "--font-oswald"
+  }
+);
+const alternateFont = Share_Tech(
+  { 
+    subsets: ["latin"],
+    weight: ["400"],
+    variable: "--font-share_tech" 
+  }
+);
 
 export const metadata = {
   title: "Cyber Cubic",
@@ -12,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#D5D5D5]`}>
+      <body className={`${mainFont.variable} ${alternateFont.variable} bg-custome-secondary font-alternate`}>
         <Navbar />
         {children}
       </body>
