@@ -21,6 +21,7 @@ const Hero = () => {
                         height={0}
                         sizes="100vw"
                         alt="Headphone"
+                        priority={true}
                         className="w-full h-full"
                     />
                 </div>
