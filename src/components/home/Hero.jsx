@@ -10,7 +10,7 @@ const Hero = () => {
                         YOUR <br className="hidden sm:block"/> GATEWAY TO <br /> PROGRESS
                     </p>
                     <button className="btn btn-active bg-custome-secondary text-xl text-white w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10">
-                        Ingresar aquí
+                        Ver Catálogo
                     </button>
                 </div>
 
@@ -22,7 +22,7 @@ const Hero = () => {
                         sizes="100vw"
                         alt="Headphone"
                         priority={true}
-                        className="w-full h-full"
+                        className="w-full h-full xl:w-[900px] xl:h-[auto]"
                     />
                 </div>
             </div>

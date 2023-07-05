@@ -50,11 +50,19 @@ const categories = [
 
 const Categories = () => {
   return (
-    <section className="mt-5">
+    <section className="mt-10 lg:mt-24 xl:mt-28 2xl:mt-32">
       <Swiper
         spaceBetween={0}
-        slidesPerView={4}
         modules={[Autoplay]}
+        breakpoints={{
+          // when window width is >= 640px
+          250: {
+            slidesPerView: 3,
+          },
+          850: {
+            slidesPerView: 4,
+          },
+        }}
         autoplay={{
           autoplay: 2000,
           speed: 100,
@@ -69,9 +77,11 @@ const Categories = () => {
                   <img
                     src={elem.img}
                     alt={elem.title}
-                    className="rounded-full w-[200px] h-[200px] object-cover"
+                    className="rounded-full w-[110px] h-[110px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] object-cover"
                   />
-                  <span className="text-white uppercase">{elem.title}</span>
+                  <span className="text-white text-center uppercase text-sm sm:text-xl lg:text-2xl">
+                    {elem.title}
+                  </span>
                 </div>
               </Link>
             </SwiperSlide>
