@@ -36,7 +36,7 @@ const Auth = () => {
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button className="rounded-[20px] bg-[#C0FF6B] text-xs text-[#292929] font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+            <button className="rounded-[20px] bg-custome-primary text-xs text-custome-secondary font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
               SIGN UP
             </button>
           </form>
@@ -58,7 +58,7 @@ const Auth = () => {
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
-            <button className="rounded-[20px] bg-[#C0FF6B] text-xs text-[#292929] font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+            <button className="rounded-[20px] bg-custome-primary text-xs text-custome-secondary font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
               SIGN IN
             </button>
           </form>
