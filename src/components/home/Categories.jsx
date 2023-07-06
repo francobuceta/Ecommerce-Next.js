@@ -73,11 +73,11 @@ const Categories = () => {
           categories.map((elem) => (
             <SwiperSlide key={elem.title}>
               <Link href={elem.url}>
-                <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-center gap-5 pt-5">
                   <img
                     src={elem.img}
                     alt={elem.title}
-                    className="rounded-full w-[110px] h-[110px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] object-cover"
+                    className="rounded-full w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] object-cover outline outline-custome-primary outline-offset-8"
                   />
                   <span className="text-white text-center uppercase text-sm sm:text-xl lg:text-2xl">
                     {elem.title}
