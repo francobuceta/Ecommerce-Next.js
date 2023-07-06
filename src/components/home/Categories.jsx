@@ -55,7 +55,6 @@ const Categories = () => {
         spaceBetween={0}
         modules={[Autoplay]}
         breakpoints={{
-          // when window width is >= 640px
           250: {
             slidesPerView: 3,
           },
