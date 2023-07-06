@@ -6,14 +6,48 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 
 const slides = [
-  "https://i.postimg.cc/Z0ktfskN/peter-broomfield-m3m-ln-R90u-M-unsplash.jpg",
-  "https://i.postimg.cc/MTTSXjbn/brandon-atchison-e-BJWhlq-WR54-unsplash.jpg",
-  "https://i.postimg.cc/8cfgmQYD/campbell-3-ZUs-NJhi-Ik-unsplash.jpg",
-  "https://i.postimg.cc/8Ck5BcmS/evgeny-tchebotarev-aiwu-Lj-LPFn-U-unsplash.jpg",
-  "https://i.postimg.cc/66F8J9tr/hakon-sataoen-qyfco1nf-Mtg-unsplash.jpg",
-  "https://i.postimg.cc/ydbzRYvv/joey-banks-YApi-Wyp0lqo-unsplash.jpg",
-  "https://i.postimg.cc/NGKKzyqG/joshua-koblin-eq-W1-MPin-EV4-unsplash.jpg",
-  "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg",
+  {
+    title: "Silla Corsair T1 RACE",
+    description: "Ergonomía | Comodidad | Ajustabilidad",
+    img: "/img/chair-corsair.jpeg",
+    url: "/",
+  },
+  {
+    title: "Auricular Redragon Lamia 2",
+    description: "Calidad | Portabilidad | Aislamiento",
+    img: "img/headphone-dragon.jpeg",
+    url: "/",
+  },
+  {
+    title: "Teclado Galax Stealth 03",
+    description: "Sensibilidad | Comodidad | Ergonomía",
+    img: "./img/keyboard-galax.jpeg",
+    url: "/",
+  },
+  {
+    title: "Mouse Logitech G502X",
+    description: "Precisión | Durabilidad | Conectividad",
+    img: "/img/mouse-logi.jpeg",
+    url: "/",
+  },
+  {
+    title: "Parlante Logitech Z607",
+    description: "Conectividad | Potencia | Durabilidad",
+    img: "/img/phone-speaker-logi.jpeg",
+    url: "/",
+  },
+  {
+    title: "Barra De Sonido Noblex 2.1",
+    description: "Potencia | Estética | Calidad",
+    img: "/img/phone-speaker-noblex.jpeg",
+    url: "/",
+  },
+  {
+    title: "Volante Logitech G29",
+    description: "Sensibilidad | Durabilidad | Precisión",
+    img: "/img/steering-wheel-logi.jpeg",
+    url: "/",
+  }
 ];
 
 const BestSelling = () => {
@@ -37,13 +71,13 @@ const BestSelling = () => {
       >
         <div className="swiper-wrapper">
           {slides.map((slide) => (
-              <SwiperSlide key={slide}
+              <SwiperSlide key={slide.title}
                 style={{
-                  backgroundImage: `url(${slide})`,
+                  backgroundImage: `url(${slide.img})`,
                 }}>
                   <div className="opacity-0 transition-opacity duration-700 delay-300 ease-in-out slide-content">
-                    <h3 className="hidden font-main text-xl font-bold">TECLADO LOGITECH MK-200</h3>
-                    <p className="hidden">Inalambrico | ANC | Confortable</p>
+                    <h3 className="hidden font-main text-xl font-bold">{slide.title}</h3>
+                    <p className="hidden">{slide.description}</p>
                     <button className="hidden btn btn-outline w-20 text-lg">Ver</button>
                   </div>
               </SwiperSlide>
