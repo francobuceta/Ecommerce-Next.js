@@ -1,9 +1,9 @@
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "./styles.css";
 
 const slides = [
   "https://i.postimg.cc/Z0ktfskN/peter-broomfield-m3m-ln-R90u-M-unsplash.jpg",
@@ -16,34 +16,43 @@ const slides = [
   "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg",
 ];
 
-export const Carousel = () => {
+const BestSelling = () => {
   return (
-    <Swiper
-      grabCursor
-      centeredSlides
-      slidesPerView="auto"
-      effect="coverflow"
-      loop
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      }}
-      modules={[EffectCoverflow]}
-    >
-      <div className="swiper-wrapper">
-        {slides.map((slide) => (
-          <SwiperSlide
-            key={slide}
-            style={{
-              backgroundImage: `url(${slide})`,
-            }}
-          />
-        ))}
-      </div>
-      <div className="swiper-pagination"></div>
-    </Swiper>
+    <section className="pb-32 mt-32">
+      <Swiper
+        grabCursor
+        centeredSlides
+        slidesPerView={3}
+        effect="coverflow"
+        loop
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        modules={[EffectCoverflow]}
+        onSwiper={(swiper) => console.log(swiper.activeIndex)}
+      >
+        <div className="swiper-wrapper">
+          {slides.map((slide) => (
+              <SwiperSlide key={slide}
+                style={{
+                  backgroundImage: `url(${slide})`,
+                }}>
+                  <div className="opacity-0 transition-opacity duration-700 delay-300 ease-in-out slide-content">
+                    <h3 className="hidden font-main text-xl font-bold">TECLADO LOGITECH MK-200</h3>
+                    <p className="hidden">Inalambrico | ANC | Confortable</p>
+                    <button className="hidden btn btn-outline w-20 text-lg">Ver</button>
+                  </div>
+              </SwiperSlide>
+          ))}
+        </div>
+        <div className="swiper-pagination pb-20"></div>
+      </Swiper>
+    </section>
   );
 };
+
+export default BestSelling;
