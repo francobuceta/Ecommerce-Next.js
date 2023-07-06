@@ -9,7 +9,7 @@
 }
 
 #best-selling .swiper .swiper-slide {
-  background-position: 100px 50%;
+  background-position: 0px 50px;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #fff;
@@ -27,8 +27,8 @@
   gap: 6px;
   background-color: #baff29;
   border-bottom-right-radius: 50%;
-  width: 70%;
-  padding: 30px;
+  width: 60%;
+  padding: 20px;
 }
 
 .swiper-slide-active .slide-content h3, 
@@ -207,4 +207,15 @@
 .container.right-panel-active .overlay-right,
 .container-mobile.right-panel-active .overlay-right {
   transform: translateY(20%);
+}
+
+
+@media (min-width: 640px) {
+  #best-selling .swiper .swiper-slide {
+    background-position: 100px 50%;
+  }
+  .swiper-slide-active .slide-content {
+    width: 70%;
+    padding: 30px;
+  }
 }

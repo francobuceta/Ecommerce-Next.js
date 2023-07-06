@@ -52,7 +52,12 @@ const slides = [
 
 const BestSelling = () => {
   return (
-    <section className="pb-32 mt-32" id="best-selling">
+    <section className="pb-32 mt-16 sm:mt-32" id="best-selling">
+
+      <h2 className="font-main font-bold text-3xl sm:text-5xl mb-10 text-center text-white">
+        MÁS <span className="text-custome-primary">VENDIDOS</span> 
+      </h2>
+
       <Swiper
         grabCursor
         centeredSlides
@@ -83,9 +88,11 @@ const BestSelling = () => {
                   backgroundImage: `url(${slide.img})`,
                 }}>
                   <div className="opacity-0 transition-opacity duration-700 delay-300 ease-in-out slide-content">
-                    <h3 className="hidden font-main text-xl font-bold">{slide.title}</h3>
-                    <p className="hidden">{slide.description}</p>
-                    <button className="hidden btn btn-outline w-20 text-lg">Ver</button>
+                    <h3 className="hidden font-main text-md sm:text-xl font-bold">{slide.title}</h3>
+                    <p className="hidden text-sm sm:text-base">{slide.description}</p>
+                    <button className="hidden border border-custome-secondary rounded-md bg-transparent w-16 sm:w-20 h-8 sm:h-10 text-sm sm:text-lg">
+                      Ver
+                    </button>
                   </div>
               </SwiperSlide>
           ))}
