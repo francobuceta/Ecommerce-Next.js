@@ -1,5 +1,5 @@
 "use client";
-import { Autoplay } from 'swiper';
+import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import "swiper/css";

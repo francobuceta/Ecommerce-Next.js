@@ -18,15 +18,11 @@ module.exports = {
           lightblack: "#2C2C2C",
           white: "#ffffff",
           transparent: "transparent",
-        }
+        },
       },
       fontFamily: {
-        main: [
-          "var(--font-oswald)", ...fontFamily.sans
-        ],
-        alternate: [
-          "var(--font-share_tech)", ...fontFamily.sans
-        ]
+        main: ["var(--font-oswald)", ...fontFamily.sans],
+        alternate: ["var(--font-share_tech)", ...fontFamily.sans],
       },
     },
   },
