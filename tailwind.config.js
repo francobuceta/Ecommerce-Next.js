@@ -29,7 +29,7 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     base: false,
-    styled: false,
+    styled: true,
     utils: true,
   },
 };
