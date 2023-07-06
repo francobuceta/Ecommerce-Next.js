@@ -52,11 +52,10 @@ const slides = [
 
 const BestSelling = () => {
   return (
-    <section className="pb-32 mt-32">
+    <section className="pb-32 mt-32" id="best-selling">
       <Swiper
         grabCursor
         centeredSlides
-        slidesPerView={3}
         effect="coverflow"
         loop
         coverflowEffect={{
@@ -65,6 +64,14 @@ const BestSelling = () => {
           depth: 100,
           modifier: 1,
           slideShadows: true,
+        }}
+        breakpoints={{
+          250: {
+            slidesPerView: 2,
+          },
+          900: {
+            slidesPerView: 3,
+          },
         }}
         modules={[EffectCoverflow]}
         onSwiper={(swiper) => console.log(swiper.activeIndex)}
