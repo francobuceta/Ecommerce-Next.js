@@ -52,7 +52,7 @@ const slides = [
 
 const BestSelling = () => {
   return (
-    <section className="pb-32 mt-16 sm:mt-32" id="best-selling">
+    <section className="mt-16 sm:mt-32" id="best-selling">
 
       <h2 className="font-main font-bold text-3xl sm:text-5xl mb-10 text-center text-white">
         MÁS <span className="text-custome-primary">VENDIDOS</span> 
