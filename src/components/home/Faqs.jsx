@@ -1,17 +1,21 @@
 const questions = [
   {
+    id: 1,
     title: "¿Cómo puedo contactar al servicio de atención al cliente?",
     text: "Estamos disponibles las 24hs del día por cualquier consulta, a través de nuestras redes sociales.",
   },
   {
+    id: 2,
     title: "¿Cuáles son los métodos de pago aceptados?",
     text: "Todas las tarjetas.",
   },
   {
+    id: 3,
     title: "¿Se realizan envíos a domicilio?",
     text: "Una vez realizada la compra te llegará un mail a tu correo con los pasos a seguir para retirar la compra o enviarla a tu domicilio.",
   },
   {
+    id: 4,
     title:
       "¿Cuánto tiempo tarda en llegar mi pedido y cuál es el costo de envío?",
     text: "Dentro de CABA, 3 días y el envío es gratis.",
@@ -29,7 +33,7 @@ const Faqs = () => {
 
       <div className="px-10 sm:px-20 join join-vertical w-full text-white">
         {questions.map((elem) => (
-          <div className="collapse collapse-arrow join-item border border-custome-primary">
+          <div className="collapse collapse-arrow join-item border border-custome-primary" key={elem.id}>
             <input type="radio" name="my-accordion-4" />
             <div className="collapse-title text-xl font-medium">
               {elem.title}
