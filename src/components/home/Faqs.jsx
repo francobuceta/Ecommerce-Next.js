@@ -33,7 +33,10 @@ const Faqs = () => {
 
       <div className="px-10 sm:px-20 join join-vertical w-full text-white">
         {questions.map((elem) => (
-          <div className="collapse collapse-arrow join-item border border-custome-primary" key={elem.id}>
+          <div
+            className="collapse collapse-arrow join-item border border-custome-primary"
+            key={elem.id}
+          >
             <input type="radio" name="my-accordion-4" />
             <div className="collapse-title text-xl font-medium">
               {elem.title}
