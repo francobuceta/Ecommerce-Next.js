@@ -32,17 +32,17 @@ const categories = [
     url: "/",
   },
   {
-    title: "Cámaras Web",
+    title: "Cámaras web",
     img: "/img/webcam.jpg",
     url: "/",
   },
   {
-    title: "Volantes y Gamepads",
+    title: "Volantes y gamepads",
     img: "/img/joystick.jpg",
     url: "/",
   },
   {
-    title: "Parlantes y Audio",
+    title: "Parlantes y audio",
     img: "/img/phone-speaker.jpeg",
     url: "/",
   },
