@@ -19,7 +19,6 @@
     linear-gradient(transparent, transparent, #0006);
 }
 
-
 .swiper-slide-active .slide-content {
   opacity: 1;
   display: flex;
@@ -31,8 +30,8 @@
   padding: 20px;
 }
 
-.swiper-slide-active .slide-content h3, 
-.swiper-slide-active .slide-content p, 
+.swiper-slide-active .slide-content h3,
+.swiper-slide-active .slide-content p,
 .swiper-slide-active .slide-content button {
   display: block;
 }
@@ -208,7 +207,6 @@
 .container-mobile.right-panel-active .overlay-right {
   transform: translateY(20%);
 }
-
 
 @media (min-width: 640px) {
   #best-selling .swiper .swiper-slide {
