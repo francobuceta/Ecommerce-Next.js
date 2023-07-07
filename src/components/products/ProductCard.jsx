@@ -1,19 +1,42 @@
-const ProductCard = () => {
+"use client"
+import { useState } from "react";
+import Image from "next/image";
+import { AiOutlineHeart } from "react-icons/ai";
+
+const ProductCard = ({image, title, description, price}) => {
+
+  const [favourite, setFavourite] = useState(false);
+
+  const handleFavourite = () => {
+
+  }
+
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
+    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl">
+
+      <figure className="relative">
+        <Image
+          src={image}
+          width={0}
+          height={0}
+          sizes="100vw"
+          alt="Headphone"
+          className="w-full h-auto"
         />
+        <AiOutlineHeart fontSize={24} className="absolute top-2 left-2" id={title} onClick={() => handleFavourite}/>
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+
+      <div className="card-body bg-custome-primary rounded-b-2xl gap-0">
+        <h3 className="card-title">{title}</h3>
+        <p>{description}</p>
+        <span className="text-xl font-bold">{price}</span>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn bg-transparent border border-custome-secondary w-20">
+            Ver
+          </button>
         </div>
       </div>
+
     </div>
   );
 };
