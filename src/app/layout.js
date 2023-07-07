@@ -1,6 +1,7 @@
 import "../globals.css";
 import { Oswald, Share_Tech } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const mainFont = Oswald({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
