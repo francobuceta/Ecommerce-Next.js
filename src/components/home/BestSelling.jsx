@@ -78,7 +78,6 @@ const BestSelling = () => {
           },
         }}
         modules={[EffectCoverflow]}
-        onSwiper={(swiper) => console.log(swiper.activeIndex)}
       >
         <div className="swiper-wrapper">
           {slides.map((slide) => (
