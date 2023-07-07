@@ -7,7 +7,7 @@ const AboutUs = () => {
 
       <div className="px-10 sm:px-32 flex flex-col justify-center gap-6">
         <p className="text-white text-xl">
-          En Cyber Cubic, somos apasionados por brindarte la{" "}
+          En Cyber Cube, somos apasionados por brindarte la{" "}
           <span className="text-custome-primary">
             mejor experiencia en tecnología
           </span>{" "}
@@ -39,7 +39,7 @@ const AboutUs = () => {
           </span>{" "}
           que cumplen con nuestros estándares de calidad. <br />
           Únete a la comunidad de entusiastas de la tecnología y experimenta un
-          rendimiento sin igual con los productos de Cyber Cubic. Estamos aquí
+          rendimiento sin igual con los productos de Cyber Cube. Estamos aquí
           para ayudarte a llevar tu experiencia informática al siguiente nivel.
         </p>
       </div>
