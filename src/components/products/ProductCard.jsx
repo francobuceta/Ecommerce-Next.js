@@ -1,22 +1,12 @@
 import Image from "next/image";
-import { AiFillHeart } from "react-icons/ai";
+import FavouriteButton from "./FavouriteButton";
 
-const ProductCard = ({image, title, description, price, favourite, setFavourite}) => {
-
-  const handleFavourite = (id) => {
-    const isClicked = favourite.find(elem => elem.product === id);
-    
-    if (isClicked) {
-      const deleteFavourite = favourite.filter(elem => elem.product !== id);
-      setFavourite([...deleteFavourite]);
-    } else {
-      setFavourite([...favourite, {product: id}]);
-    }
-  }
-
+const ProductCard = ({ image, title, description, price }) => {
   return (
-    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl" key={title}>
-
+    <div
+      className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl"
+      key={title}
+    >
       <figure className="relative">
         <Image
           src={image}
@@ -26,29 +16,7 @@ const ProductCard = ({image, title, description, price, favourite, setFavourite}
           alt="Headphone"
           className="w-full h-auto"
         />
-        {
-          favourite.length > 0 && favourite.find(elem => elem.product === title)
-          ?
-          <AiFillHeart 
-          fontSize={24} 
-          id={title} 
-          onClick={() => handleFavourite(title)}
-          fill="red"
-          stroke="black"
-          strokeWidth="0"
-          className="absolute top-2 left-2 cursor-pointer"
-          />
-          :
-          <AiFillHeart 
-          fontSize={24} 
-          id={title} 
-          onClick={() => handleFavourite(title)}
-          fill="transparent"
-          stroke="black"
-          strokeWidth="50px"
-          className="absolute top-2 left-2 cursor-pointer"
-          />
-        }
+        <FavouriteButton title={title} />
       </figure>
 
       <div className="card-body bg-custome-primary rounded-b-2xl gap-0">
@@ -61,7 +29,6 @@ const ProductCard = ({image, title, description, price, favourite, setFavourite}
           </button>
         </div>
       </div>
-
     </div>
   );
 };

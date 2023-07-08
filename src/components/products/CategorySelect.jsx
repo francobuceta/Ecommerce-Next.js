@@ -6,9 +6,7 @@ const CategorySelect = () => {
           <span className="text-lg text-white">Elige una categoría:</span>
         </label>
         <select defaultValue="Categoría" className="select select-bordered">
-          <option disabled>
-            Categoría
-          </option>
+          <option disabled>Categoría</option>
           <option>Teclados</option>
           <option>Mouses</option>
           <option>Auriculares y Micrófonos</option>
