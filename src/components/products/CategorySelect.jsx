@@ -5,8 +5,8 @@ const CategorySelect = () => {
         <label className="label">
           <span className="text-lg text-white">Elige una categoría:</span>
         </label>
-        <select className="select select-bordered">
-          <option disabled selected>
+        <select defaultValue="Categoría" className="select select-bordered">
+          <option disabled>
             Categoría
           </option>
           <option>Teclados</option>
