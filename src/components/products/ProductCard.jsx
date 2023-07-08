@@ -12,7 +12,7 @@ const ProductCard = ({image, title, description, price}) => {
   }
 
   return (
-    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl">
+    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl" key={title}>
 
       <figure className="relative">
         <Image
