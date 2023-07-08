@@ -1,5 +1,7 @@
+"use client"
 import CategorySelect from "@/components/products/CategorySelect";
 import ProductCard from "@/components/products/ProductCard";
+import { useState } from "react";
 
 const products = [
   {
@@ -54,6 +56,9 @@ const products = [
 ];
 
 const Products = () => {
+
+  const [favourite, setFavourite] = useState([]);
+
   return (
     <>
       <CategorySelect />
@@ -65,9 +70,12 @@ const Products = () => {
               title={product.title} 
               description={product.description} 
               price={product.price}
+              favourite={favourite}
+              setFavourite={setFavourite}
             />
           )
         }
+        {console.log(favourite)}
       </section>
     </>
   );
