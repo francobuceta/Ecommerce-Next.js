@@ -13,7 +13,7 @@ const ProductCard = ({ image, title, description, price }) => {
           width={0}
           height={0}
           sizes="100vw"
-          alt="Headphone"
+          alt={title}
           className="w-full h-auto object-contain"
         />
         <FavouriteButton title={title} />
