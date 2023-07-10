@@ -1,4 +1,3 @@
-import CategorySelect from "@/components/products/CategorySelect";
 import ProductCard from "@/components/products/ProductCard";
 
 const products = [
@@ -55,20 +54,16 @@ const products = [
 
 const Products = () => {
   return (
-    <>
-      <CategorySelect />
-
-      <section className="flex justify-center flex-wrap gap-8 mt-12">
-        {products.map((product) => (
-          <ProductCard
-            image={product.img}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-          />
-        ))}
-      </section>
-    </>
+    <section className="flex justify-center flex-wrap gap-8 mt-12">
+      {products.map((product) => (
+        <ProductCard
+          image={product.img}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+        />
+      ))}
+    </section>
   );
 };
 
