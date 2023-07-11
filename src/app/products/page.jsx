@@ -1,15 +1,8 @@
 import ProductCard from "@/components/products/ProductCard";
-
-const fetchProducts = async () => {
-  const response = await fetch(`${process.env.BACKEND_API_URL}/api/products`, {
-    next: { revalidate: 60 }
-  });
-  const data = await response.json();
-  return data;
-};
+import { getRequest } from "@/services/serverFetching";
 
 const Products = async () => {
-  const productsBack = await fetchProducts();
+  const productsBack = await getRequest("/api/products");
 
   return (
     <section className="flex justify-center flex-wrap gap-8 mt-12">
