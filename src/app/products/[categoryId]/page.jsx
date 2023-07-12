@@ -28,7 +28,6 @@ const ProductsCategories = ({ params }) => {
       } else {
         const categoryProducts = await getRequest(`/api/products?category=${categoryId}&page=${page}`);
         setProducts(categoryProducts);
-        console.log(products);
       }
     } catch (error) {
       console.log(error);
