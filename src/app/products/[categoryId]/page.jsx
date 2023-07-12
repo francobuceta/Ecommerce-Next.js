@@ -26,7 +26,9 @@ const ProductsCategories = ({ params }) => {
         const allProducts = await getRequest(`/api/products?page=${page}`);
         setProducts(allProducts);
       } else {
-        const categoryProducts = await getRequest(`/api/products?category=${categoryId}&page=${page}`);
+        const categoryProducts = await getRequest(
+          `/api/products?category=${categoryId}&page=${page}`
+        );
         setProducts(categoryProducts);
       }
     } catch (error) {

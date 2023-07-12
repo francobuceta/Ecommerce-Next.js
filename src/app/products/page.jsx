@@ -1,7 +1,5 @@
-const Products = ({children}) => {
-  return (
-    <div>{children}</div>
-  )
-}
+const Products = ({ children }) => {
+  return <div>{children}</div>;
+};
 
 export default Products;
