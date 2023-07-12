@@ -9,7 +9,7 @@ const Hero = () => {
           <h1 className="absolute text-center sm:text-left text-5xl md:text-6xl lg:text-[6.5rem] leading-[4rem] lg:leading-[6rem] font-bold text-custome-secondary sm:left-20 2xl:left-36 sm:top-12">
             YOUR <br className="hidden sm:block" /> GATEWAY TO <br /> PROGRESS
           </h1>
-          <Link href="/products">
+          <Link href="/products/all">
             <button className="btn btn-active bg-custome-secondary text-xl text-white w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10">
               Ver Catálogo
             </button>
