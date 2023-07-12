@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import ProductCard from "@/components/products/ProductCard";
-import PaginationButton from "@/components/products/PaginationButton";
 import { getRequest } from "@/services/clientFetching";
+import ProductCard from "@/components/products/ProductCard";
 
 const Products = () => {
   const [products, setProducts] = useState(null);

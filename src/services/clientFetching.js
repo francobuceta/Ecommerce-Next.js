@@ -2,7 +2,7 @@ const URL = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
 export const getRequest = async (endpoint) => {
   try {
-    const response = await fetch(URL + endpoint);
+    const response = await fetch(URL + endpoint, {next:{revalidate: 60}});
 
     return response.json();
   } catch (error) {
