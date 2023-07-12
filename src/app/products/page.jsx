@@ -30,38 +30,42 @@ const Products = () => {
 
   useEffect(() => {
     fetchData(currentPage);
-    window.scrollTo({top:0, behavior:"smooth"});
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
   return (
-    <section className="flex justify-center flex-wrap gap-8 mt-12">
-      {products ? (
-        products.payload.map((product) => (
-          <ProductCard
-            key={product._id}
-            image={product.image}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-          />
-        ))
-      ) : (
-        <div className="text-white">Cargando..</div>
-      )}
+    <section className="mt-12">
+      <div className="flex justify-center flex-wrap gap-8">
+        {products ? (
+          products.payload.map((product) => (
+            <ProductCard
+              key={product._id}
+              image={product.image}
+              title={product.title}
+              description={product.description}
+              price={product.price}
+            />
+          ))
+        ) : (
+          <div className="text-white">Cargando..</div>
+        )}
+      </div>
 
-      <div className="join grid grid-cols-2 mt-10">
-        <button
-          className="join-item btn btn-outline bg-white"
-          onClick={handlePrevPage}
-        >
-          Anterior
-        </button>
-        <button
-          className="join-item btn btn-outline bg-white"
-          onClick={handleNextPage}
-        >
-          Siguiente
-        </button>
+      <div className="flex justify-center">
+        <div className="join grid grid-cols-2 mt-10">
+          <button
+            className="join-item btn btn-outline bg-white"
+            onClick={handlePrevPage}
+          >
+            Anterior
+          </button>
+          <button
+            className="join-item btn btn-outline bg-white"
+            onClick={handleNextPage}
+          >
+            Siguiente
+          </button>
+        </div>
       </div>
     </section>
   );
