@@ -1,15 +1,23 @@
 "use client";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { postRequest } from "@/services/clientFetching";
 import SocialIcons from "@/components/auth/SocialIcons";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Auth = () => {
   const [isClicked, setIsClicked] = useState(false);
   const isMobile = useMediaQuery("(min-width: 640px)");
+  const { register, handleSubmit } = useForm();
 
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
+
+  const onSubmit = async (data) => {
+    const response = await postRequest("/user/login", data);
+    console.log(response);
+  }
 
   return (
     <section className="flex justify-center mt-16 mb-16 height-[100vh]">
@@ -37,7 +45,8 @@ const Auth = () => {
             <input type="text" placeholder="Apellido" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Contraseña" />
-            <button className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+            <button type="submit" 
+              className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
               REGISTRARSE
             </button>
           </form>
@@ -50,15 +59,16 @@ const Auth = () => {
           }`}
         >
           <form
-            action="#"
+            onSubmit={handleSubmit(onSubmit)}
             className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
           >
             <h1 className="font-bold font-main text-4xl">Ingresar</h1>
             <SocialIcons />
             <span className="text-sm">o ingresá con tu email</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Contraseña" />
-            <button className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-7 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+            <input {...register("email")} type="email" placeholder="Email" />
+            <input {...register("password")} type="password" placeholder="Contraseña" />
+            <button type="submit"
+              className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-7 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
               INGRESAR
             </button>
           </form>
