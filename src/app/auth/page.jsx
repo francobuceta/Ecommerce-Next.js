@@ -30,14 +30,15 @@ const Auth = () => {
             action="#"
             className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
           >
-            <h1 className="font-bold font-main">Create Account</h1>
+            <h1 className="font-bold font-main text-4xl">Crear Cuenta</h1>
             <SocialIcons />
-            <span className="text-xs">or use your email for registration</span>
-            <input type="text" placeholder="Name" />
+            <span className="text-sm">o usá tu email para registrarte</span>
+            <input type="text" placeholder="Nombre" />
+            <input type="text" placeholder="Apellido" />
             <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button className="rounded-[20px] bg-custome-primary text-xs text-custome-secondary font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
-              SIGN UP
+            <input type="password" placeholder="Contraseña" />
+            <button className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+              REGISTRARSE
             </button>
           </form>
         </div>
@@ -52,14 +53,13 @@ const Auth = () => {
             action="#"
             className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
           >
-            <h1 className="font-bold font-main">Sign in</h1>
+            <h1 className="font-bold font-main text-4xl">Ingresar</h1>
             <SocialIcons />
-            <span className="text-xs">or use your account</span>
+            <span className="text-sm">o ingresá con tu email</span>
             <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <a href="#">Forgot your password?</a>
-            <button className="rounded-[20px] bg-custome-primary text-xs text-custome-secondary font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
-              SIGN IN
+            <input type="password" placeholder="Contraseña" />
+            <button className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-7 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
+              INGRESAR
             </button>
           </form>
         </div>
@@ -70,29 +70,29 @@ const Auth = () => {
         >
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1 className="font-bold font-main">Welcome Back!</h1>
-              <p className="text-sm my-5">
-                To keep connected with us please login with your personal info
+              <h1 className="font-bold font-main text-4xl">¡Bienvenido De Nuevo!</h1>
+              <p className="text-base my-5">
+                Para seguir conectado con nosotros ingresá tu información personal
               </p>
               <button
-                className="rounded-[20px] border border-solid border-white bg-transparent text-xs text-lightblack font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
+                className="rounded-[20px] border border-solid border-white bg-transparent text-base text-lightblack font-bold py-2 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
                 id="signIn"
                 onClick={handleClick}
               >
-                SIGN IN
+                INGRESAR
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1 className="font-bold font-main">Hello, Friend!</h1>
-              <p className="text-sm my-5">
-                Enter your personal details and start journey with us
+              <h1 className="font-bold font-main text-4xl">¡Hola, Amigo!</h1>
+              <p className="text-base my-5">
+                Ingresá tus datos personales y comenzá tu viaje con nosotros
               </p>
               <button
-                className="rounded-[20px] border border-solid border-white bg-transparent text-xs text-lightblack font-bold py-3 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
+                className="rounded-[20px] border border-solid border-white bg-transparent text-base text-lightblack font-bold py-2 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
                 id="signUp"
                 onClick={handleClick}
               >
-                SIGN UP
+                REGISTRARSE
               </button>
             </div>
           </div>
