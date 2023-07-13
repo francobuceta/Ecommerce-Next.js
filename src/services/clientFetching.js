@@ -4,11 +4,12 @@ export const getRequest = async (endpoint) => {
   try {
     const response = await fetch(URL + endpoint, { next: { revalidate: 60 } });
 
-    return response.json();
-  } catch (error) {
     if (!response.ok) {
       throw new Error(error);
     }
+    return response.json();
+  } catch (error) {
+    return "Ha ocurrido un error inesperado";
   }
 };
 
@@ -23,11 +24,11 @@ export const postRequest = async (endpoint, data) => {
       body: JSON.stringify(data)
     });
 
+    if (!response.ok) {
+      throw new Error(error);
+    }
     return response.json();
   } catch (error) {
-    /* if (!response.ok) {
-      throw new Error(error);
-    } */
-    console.log(error);
+    return "Ha ocurrido un error inesperado";
   }
 };

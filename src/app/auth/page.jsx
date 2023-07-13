@@ -1,23 +1,16 @@
 "use client";
+import LoginForm from "@/components/auth/LoginForm";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { postRequest } from "@/services/clientFetching";
-import SocialIcons from "@/components/auth/SocialIcons";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import RegisterForm from "@/components/auth/RegisterForm";
 
 const Auth = () => {
   const [isClicked, setIsClicked] = useState(false);
   const isMobile = useMediaQuery("(min-width: 640px)");
-  const { register, handleSubmit } = useForm();
-
+  
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
-
-  const onSubmit = async (data) => {
-    const response = await postRequest("/user/login", data);
-    console.log(response);
-  }
 
   return (
     <section className="flex justify-center mt-16 mb-16 height-[100vh]">
@@ -34,22 +27,7 @@ const Auth = () => {
               : "form-container-mobile sign-up-container-mobile"
           }`}
         >
-          <form
-            action="#"
-            className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
-          >
-            <h1 className="font-bold font-main text-4xl">Crear Cuenta</h1>
-            <SocialIcons />
-            <span className="text-sm">o usá tu email para registrarte</span>
-            <input type="text" placeholder="Nombre" />
-            <input type="text" placeholder="Apellido" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Contraseña" />
-            <button type="submit" 
-              className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
-              REGISTRARSE
-            </button>
-          </form>
+          <RegisterForm />
         </div>
         <div
           className={`${
@@ -58,20 +36,7 @@ const Auth = () => {
               : "form-container-mobile sign-in-container-mobile"
           }`}
         >
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
-          >
-            <h1 className="font-bold font-main text-4xl">Ingresar</h1>
-            <SocialIcons />
-            <span className="text-sm">o ingresá con tu email</span>
-            <input {...register("email")} type="email" placeholder="Email" />
-            <input {...register("password")} type="password" placeholder="Contraseña" />
-            <button type="submit"
-              className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-7 transition-transform duration-[80ms] ease-in active:scale-[0.95]">
-              INGRESAR
-            </button>
-          </form>
+          <LoginForm />
         </div>
         <div
           className={`${
