@@ -6,7 +6,7 @@ import RegisterForm from "@/components/auth/RegisterForm";
 
 const Auth = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const isMobile = useMediaQuery("(min-width: 640px)");
+  const isDesktop = useMediaQuery("(min-width: 640px)");
   
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -15,14 +15,14 @@ const Auth = () => {
   return (
     <section className="flex justify-center mt-16 mb-16 height-[100vh]">
       <div
-        className={`${isMobile ? "container" : "container-mobile"} ${
+        className={`${isDesktop ? "container" : "container-mobile"} ${
           isClicked ? "right-panel-active" : ""
         }`}
         id="container"
       >
         <div
           className={`${
-            isMobile
+            isDesktop
               ? "form-container sign-up-container"
               : "form-container-mobile sign-up-container-mobile"
           }`}
@@ -31,7 +31,7 @@ const Auth = () => {
         </div>
         <div
           className={`${
-            isMobile
+            isDesktop
               ? "form-container sign-in-container"
               : "form-container-mobile sign-in-container-mobile"
           }`}
@@ -40,7 +40,7 @@ const Auth = () => {
         </div>
         <div
           className={`${
-            isMobile ? "overlay-container" : "overlay-container-mobile"
+            isDesktop ? "overlay-container" : "overlay-container-mobile"
           }`}
         >
           <div className="overlay">
