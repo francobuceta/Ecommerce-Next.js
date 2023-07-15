@@ -11,6 +11,7 @@ const Logo = () => {
           height={0}
           sizes="100vw"
           alt="Logo Cyber Cube Desktop"
+          priority={true}
           className="w-[250px] h-auto hidden sm:block"
         />
         <Image
@@ -19,6 +20,7 @@ const Logo = () => {
           height={0}
           sizes="100vw"
           alt="Logo Cyber Cube Mobile"
+          priority={true}
           className="w-[90px] h-[90px] block sm:hidden"
         />
       </Link>
