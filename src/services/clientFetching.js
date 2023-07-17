@@ -4,8 +4,8 @@ export const getRequest = async (endpoint) => {
   try {
     const response = await fetch(URL + endpoint, {
       headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
     });
 
@@ -20,14 +20,14 @@ export const getRequest = async (endpoint) => {
 
 export const postRequest = async (endpoint, data) => {
   try {
-    const response = await fetch(URL + endpoint, { 
+    const response = await fetch(URL + endpoint, {
       method: "POST",
-      credentials: 'include',
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
 
     if (!response.ok) {

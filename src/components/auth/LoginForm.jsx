@@ -4,13 +4,12 @@ import { useForm } from "react-hook-form";
 import { postRequest } from "@/services/clientFetching";
 
 function LoginForm() {
-
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
     const response = await postRequest("/user/login", data);
     console.log(response);
-  }
+  };
 
   return (
     <form
