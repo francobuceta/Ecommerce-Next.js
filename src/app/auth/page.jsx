@@ -1,48 +1,31 @@
 "use client";
 import LoginForm from "@/components/auth/LoginForm";
 import { useState } from "react";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import RegisterForm from "@/components/auth/RegisterForm";
 
 const Auth = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 640px)");
   
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
 
   return (
-    <section className="flex justify-center mt-16 mb-16 height-[100vh]">
+    <section className="flex justify-center mt-12 mb-16 height-[100vh]">
       <div
-        className={`${isDesktop ? "container" : "container-mobile"} ${
+        className={`container-auth ${
           isClicked ? "right-panel-active" : ""
         }`}
         id="container"
       >
-        <div
-          className={`${
-            isDesktop
-              ? "form-container sign-up-container"
-              : "form-container-mobile sign-up-container-mobile"
-          }`}
-        >
+        <div className="form-container sign-up-container">
           <RegisterForm />
         </div>
-        <div
-          className={`${
-            isDesktop
-              ? "form-container sign-in-container"
-              : "form-container-mobile sign-in-container-mobile"
-          }`}
-        >
+        <div className="form-container sign-in-container">
           <LoginForm />
         </div>
         <div
-          className={`${
-            isDesktop ? "overlay-container" : "overlay-container-mobile"
-          }`}
-        >
+          className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
               <h1 className="font-bold font-main text-4xl">¡Bienvenido De Nuevo!</h1>
