@@ -5,13 +5,13 @@ import RegisterForm from "./RegisterForm";
 import Overlay from "./Overlay";
 
 const AuthContainer = () => {
-
   const [overlayClass, setOverlayClass] = useState(false);
 
   return (
-    <div className={`container-auth ${overlayClass ? "right-panel-active" : ""}`}
+    <div
+      className={`container-auth ${overlayClass ? "right-panel-active" : ""}`}
       id="container-auth"
-      >
+    >
       <div className="form-container sign-up-container">
         <RegisterForm />
       </div>
@@ -19,7 +19,10 @@ const AuthContainer = () => {
         <LoginForm />
       </div>
       <div className="overlay-container">
-        <Overlay overlayClass={overlayClass} setOverlayClass={setOverlayClass} />
+        <Overlay
+          overlayClass={overlayClass}
+          setOverlayClass={setOverlayClass}
+        />
       </div>
     </div>
   );

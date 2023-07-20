@@ -1,10 +1,9 @@
 "use client";
 
 const Overlay = ({ overlayClass, setOverlayClass }) => {
-
   const handleOverlayStyle = () => {
     setOverlayClass(!overlayClass);
-  }
+  };
 
   return (
     <div className="overlay">
