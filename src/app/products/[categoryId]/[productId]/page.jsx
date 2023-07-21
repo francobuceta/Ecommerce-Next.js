@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getRequest } from "@/services/serverFetching";
+import CountButton from "@/components/products/CountButton";
 
 const getProductDetail = async (id) => {
   try {
@@ -19,7 +20,7 @@ const ProductDetail = async ({ params }) => {
       <div className="flex justify-center gap-20">
         {productDetail ? (
           <>
-            <div className="grow">
+            <div>
               <Image
                 src={productDetail.image}
                 width={0}
@@ -29,11 +30,12 @@ const ProductDetail = async ({ params }) => {
                 className="w-full h-auto object-cover rounded-md"
               />
             </div>
-            <div className="w-[60%]">
-              <h2 className="text-white">{productDetail.title}</h2>
-              <p className="text-white">{productDetail.description}</p>
-              <p className="text-white">$ {productDetail.price}</p>
-              <p className="text-white">Unidades: {productDetail.stock}</p>
+            <div className="w-[60%] text-white">
+              <h2 className="text-4xl font-main">{productDetail.title}</h2>
+              <p className="text-xl mt-10">{productDetail.description}</p>
+              <p className="text-3xl mt-10">$ {productDetail.price}</p>
+              <p className="text-2xl mt-5">Unidades disponibles: {productDetail.stock}</p>
+              <CountButton stock={productDetail.stock} />
             </div>
           </>
         ) : (
