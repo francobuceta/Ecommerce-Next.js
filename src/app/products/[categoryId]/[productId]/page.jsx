@@ -1,7 +1,47 @@
-const ProductDetail = ({ params }) => {
-  const { productId } = params;
+import Image from "next/image";
+import { getRequest } from "@/services/serverFetching";
 
-  return <h1 className="text-white">Detalle del producto {productId}</h1>;
+const getProductDetail = async (id) => {
+  try {
+    const response = await getRequest(`/api/products/${id}`);
+    return response.productId;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const ProductDetail = async ({ params }) => {
+  const { productId } = params;
+  const productDetail = await getProductDetail(productId);
+
+  return (
+    <section className="mt-20 mx-20">
+      <div className="flex justify-center gap-20">
+        {productDetail ? (
+          <>
+            <div className="grow">
+              <Image
+                src={productDetail.image}
+                width={0}
+                height={0}
+                sizes="100vw"
+                alt={productDetail.title}
+                className="w-full h-auto object-cover rounded-md"
+              />
+            </div>
+            <div className="w-[60%]">
+              <h2 className="text-white">{productDetail.title}</h2>
+              <p className="text-white">{productDetail.description}</p>
+              <p className="text-white">$ {productDetail.price}</p>
+              <p className="text-white">Unidades: {productDetail.stock}</p>
+            </div>
+          </>
+        ) : (
+          <p className="text-white">Cargando..</p>
+        )}
+      </div>
+    </section>
+  );
 };
 
 export default ProductDetail;
