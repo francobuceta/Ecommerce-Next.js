@@ -36,6 +36,8 @@ const ProductsList = ({ categoryId }) => {
           products.payload.map((product) => (
             <ProductCard
               key={product._id}
+              id={product._id}
+              category={product.category}
               image={product.image}
               title={product.title}
               description={product.description}
