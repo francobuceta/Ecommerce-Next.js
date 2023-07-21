@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { getRequest } from "@/services/serverFetching";
 import CountButton from "@/components/products/CountButton";
+import AddToCartButton from "@/components/products/AddToCartButton";
+import BuyButton from "@/components/products/BuyButton";
 
 const getProductDetail = async (id) => {
   try {
@@ -30,6 +32,7 @@ const ProductDetail = async ({ params }) => {
                 className="w-full h-auto object-cover rounded-md"
               />
             </div>
+
             <div className="w-[60%] text-white">
               <h2 className="text-4xl font-main">{productDetail.title}</h2>
               <p className="text-xl mt-10">{productDetail.description}</p>
@@ -37,7 +40,13 @@ const ProductDetail = async ({ params }) => {
               <p className="text-2xl mt-5">
                 Unidades disponibles: {productDetail.stock}
               </p>
+
               <CountButton stock={productDetail.stock} />
+
+              <div className="flex items-center gap-5 mt-10">
+                <AddToCartButton />
+                <BuyButton />
+              </div>
             </div>
           </>
         ) : (
