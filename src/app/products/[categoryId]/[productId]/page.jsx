@@ -34,7 +34,9 @@ const ProductDetail = async ({ params }) => {
               <h2 className="text-4xl font-main">{productDetail.title}</h2>
               <p className="text-xl mt-10">{productDetail.description}</p>
               <p className="text-3xl mt-10">$ {productDetail.price}</p>
-              <p className="text-2xl mt-5">Unidades disponibles: {productDetail.stock}</p>
+              <p className="text-2xl mt-5">
+                Unidades disponibles: {productDetail.stock}
+              </p>
               <CountButton stock={productDetail.stock} />
             </div>
           </>
