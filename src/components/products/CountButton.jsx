@@ -1,19 +1,21 @@
 "use client";
 import { useState } from "react";
 
-const CountButton = ({ stock }) => {
+const CountButton = ({ stock, setProduct }) => {
   const [count, setCount] = useState(1);
 
   const increaseCount = () => {
     if (count < stock) {
       setCount(count + 1);
     }
+    setProduct(prev => ({...prev, quantity: count}));
   };
 
   const decreaseCount = () => {
     if (count > 1) {
       setCount(count - 1);
     }
+    setProduct(prev => ({...prev, quantity: count}));
   };
 
   return (

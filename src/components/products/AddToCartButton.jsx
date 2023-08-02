@@ -1,8 +1,21 @@
 "use client";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart } from "@/store/slices/cartSlice";
 
-const addToCartButton = () => {
+const addToCartButton = ({ product }) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
+  const handleAddProduct = () => {
+    dispatch(addProductToCart(product));
+  }
+  console.log(cart);
+
   return (
-    <button className="border border-none rounded-md w-52 text-xl text-white p-2 bg-custome-black hover:bg-white hover:text-black">
+    <button
+      className="border border-none rounded-md w-52 text-xl text-white p-2 bg-custome-black hover:bg-white hover:text-black"
+      onClick={handleAddProduct}
+    >
       Agregar al carrito
     </button>
   );
