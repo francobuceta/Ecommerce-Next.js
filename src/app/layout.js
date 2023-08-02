@@ -2,6 +2,7 @@ import "../globals.css";
 import { Oswald, Share_Tech } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import Providers from "@/components/redux/Providers";
 
 const mainFont = Oswald({
   subsets: ["latin"],
@@ -25,9 +26,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${mainFont.variable} ${alternateFont.variable} bg-custome-secondary font-alternate`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
