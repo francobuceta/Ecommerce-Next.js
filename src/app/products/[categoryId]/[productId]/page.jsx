@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { getRequest } from "@/services/serverFetching";
-import CountButton from "@/components/products/CountButton";
-import AddToCartButton from "@/components/products/AddToCartButton";
-import BuyButton from "@/components/products/BuyButton";
+import ProductControlsContainer from "@/components/products/ProductControlsContainer";
 
 const getProductDetail = async (id) => {
   try {
@@ -41,12 +39,7 @@ const ProductDetail = async ({ params }) => {
                 Unidades disponibles: {productDetail.stock}
               </p>
 
-              <CountButton stock={productDetail.stock} />
-
-              <div className="flex items-center gap-5 mt-10">
-                <AddToCartButton />
-                <BuyButton />
-              </div>
+              <ProductControlsContainer productDetail={productDetail} />
             </div>
           </>
         ) : (
