@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Toaster } from 'react-hot-toast';
 import CountButton from "./CountButton";
 import AddToCartButton from "./AddToCartButton";
 import BuyButton from "./BuyButton";
@@ -8,6 +9,7 @@ const ProductControlsContainer = ({ productDetail }) => {
   const [product, setProduct] = useState({
     productId: productDetail._id,
     quantity: 1,
+    stock: productDetail.stock
   });
 
   return (
@@ -19,6 +21,7 @@ const ProductControlsContainer = ({ productDetail }) => {
           product={product}
         />
         <BuyButton />
+        <Toaster />
       </div>
     </>
   );
