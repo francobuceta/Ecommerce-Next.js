@@ -1,14 +1,13 @@
 "use client";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addProductToCart } from "@/store/slices/cartSlice";
 
 const addToCartButton = ({ product }) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
 
   const handleAddProduct = () => {
     dispatch(addProductToCart(product));
-  }
+  };
 
   return (
     <button
