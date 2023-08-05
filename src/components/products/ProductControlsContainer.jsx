@@ -8,6 +8,7 @@ import BuyButton from "./BuyButton";
 const ProductControlsContainer = ({ productDetail }) => {
   const [product, setProduct] = useState({
     productId: productDetail._id,
+    price: productDetail.price,
     quantity: 1,
     stock: productDetail.stock,
   });
