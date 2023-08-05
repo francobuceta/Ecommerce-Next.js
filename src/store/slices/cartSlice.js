@@ -10,7 +10,6 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-
     addProductToCart: (state, action) => {
       let repeatedProduct;
 
@@ -22,7 +21,9 @@ const cartSlice = createSlice({
 
       if (!repeatedProduct) {
         productToCartSucceeded();
-        const newState = Array.isArray(state) ? [...state, action.payload] : [action.payload];
+        const newState = Array.isArray(state)
+          ? [...state, action.payload]
+          : [action.payload];
         return newState;
       } else if (
         repeatedProduct &&
@@ -30,7 +31,7 @@ const cartSlice = createSlice({
           action.payload.stock
       ) {
         productToCartSucceeded();
-        return state.map(product =>
+        return state.map((product) =>
           product.productId === action.payload.productId
             ? {
                 ...product,
@@ -41,7 +42,7 @@ const cartSlice = createSlice({
       } else {
         productToCartFailed();
       }
-    }
+    },
   },
 });
 

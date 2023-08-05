@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const CartIcon = () => {
-
   const [items, setItems] = useState(0);
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector((state) => state.cart);
 
   useEffect(() => {
     const calculatedItems = () => {
       if (cart.length > 0) {
-        let count = cart.reduce((total, product) => total + product.quantity, 0);
+        let count = cart.reduce(
+          (total, product) => total + product.quantity,
+          0
+        );
         setItems(count);
       }
       return;
