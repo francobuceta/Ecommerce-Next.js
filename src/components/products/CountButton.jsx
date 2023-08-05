@@ -7,14 +7,14 @@ const CountButton = ({ stock, setProduct }) => {
   const increaseCount = () => {
     if (count < stock) {
       setCount(count + 1);
-      setProduct(prev => ({...prev, quantity: count + 1}));
+      setProduct((prev) => ({ ...prev, quantity: count + 1 }));
     }
   };
 
   const decreaseCount = () => {
     if (count > 1) {
       setCount(count - 1);
-      setProduct(prev => ({...prev, quantity: count - 1}));
+      setProduct((prev) => ({ ...prev, quantity: count - 1 }));
     }
   };
 
