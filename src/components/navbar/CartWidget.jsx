@@ -1,25 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { calculatedItemsQty, calculatedTotalPrice } from "@/utils/CartCounts";
 
 const CartIcon = () => {
   const [items, setItems] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const cart = useSelector((state) => state.cart);
 
   useEffect(() => {
-    const calculatedItems = () => {
-      if (cart.length > 0) {
-        let count = cart.reduce(
-          (total, product) => total + product.quantity,
-          0
-        );
-        setItems(count);
-      }
-      return;
-    };
-
-    calculatedItems();
+    calculatedItemsQty(cart, setItems);
+    calculatedTotalPrice(cart, setTotalPrice);
   }, [cart]);
+  console.log(cart);
 
   return (
     <div className="dropdown dropdown-end">
@@ -50,7 +43,7 @@ const CartIcon = () => {
       >
         <div className="card-body">
           <span className="font-bold text-lg">{items} Items</span>
-          <span className="text-info">Subtotal: $999</span>
+          <span className="text-info">Subtotal: $ {totalPrice}</span>
           <div className="card-actions">
             <button className="btn btn-primary btn-block">View cart</button>
           </div>
