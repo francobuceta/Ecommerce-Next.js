@@ -16,11 +16,11 @@ const ProductDetail = async ({ params }) => {
   const productDetail = await getProductDetail(productId);
 
   return (
-    <section className="mt-20 mx-20">
-      <div className="flex justify-center gap-20">
+    <section className="mt-20 mx-10 lg:mx-20">
+      <div className="flex flex-col md:flex-row justify-center gap-20">
         {productDetail ? (
           <>
-            <div>
+            <div className="w-full">
               <Image
                 src={productDetail.image}
                 width={0}
@@ -31,7 +31,7 @@ const ProductDetail = async ({ params }) => {
               />
             </div>
 
-            <div className="w-[60%] text-white">
+            <div className="w-full text-white">
               <h2 className="text-4xl font-main">{productDetail.title}</h2>
               <p className="text-xl mt-10">{productDetail.description}</p>
               <p className="text-3xl mt-10">$ {productDetail.price}</p>

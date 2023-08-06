@@ -18,7 +18,7 @@ const CategorySelect = () => {
   };
 
   return (
-    <section>
+    <section className="mx-5">
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="flex justify-center gap-10"

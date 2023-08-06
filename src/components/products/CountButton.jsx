@@ -20,7 +20,7 @@ const CountButton = ({ stock, setProduct }) => {
 
   return (
     <div>
-      <div className="flex items-center gap-10 mt-10">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-5 md:gap-10 mt-10">
         <div className="bg-white w-10 h-10 p-2 rounded-md flex justify-center">
           <span className="text-xl text-black">{count}</span>
         </div>
