@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import { calculatedItemsQty, calculatedTotalPrice } from "@/utils/CartCounts";
 
@@ -12,7 +13,6 @@ const CartIcon = () => {
     calculatedItemsQty(cart, setItems);
     calculatedTotalPrice(cart, setTotalPrice);
   }, [cart]);
-  console.log(cart);
 
   return (
     <div className="dropdown dropdown-end">
@@ -43,10 +43,12 @@ const CartIcon = () => {
       >
         <div className="card-body">
           <span className="font-bold text-lg">{items} Items</span>
-          <span className="text-info">Subtotal: $ {totalPrice}</span>
-          <div className="card-actions">
-            <button className="btn btn-primary btn-block">View cart</button>
-          </div>
+          <span className="text-custome-secondary">Total: $ {totalPrice}</span>
+          <Link href="/cart">
+            <div className="card-actions">
+              <button className="btn btn-custome-secondary btn-block">Ver carrito</button>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
