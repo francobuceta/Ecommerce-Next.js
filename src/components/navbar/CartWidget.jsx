@@ -46,7 +46,9 @@ const CartIcon = () => {
           <span className="text-custome-secondary">Total: $ {totalPrice}</span>
           <Link href="/cart">
             <div className="card-actions">
-              <button className="btn btn-custome-secondary btn-block">Ver carrito</button>
+              <button className="btn btn-custome-secondary btn-block">
+                Ver carrito
+              </button>
             </div>
           </Link>
         </div>
