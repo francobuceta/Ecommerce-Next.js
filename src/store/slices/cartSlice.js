@@ -15,7 +15,7 @@ const cartSlice = createSlice({
 
       if (state.length > 0) {
         repeatedProduct = state.find(
-          (elem) => elem.productId === action.payload.productId
+          (elem) => elem._id === action.payload._id
         );
       }
 
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
       ) {
         productToCartSucceeded();
         return state.map((product) =>
-          product.productId === action.payload.productId
+          product._id === action.payload._id
             ? {
                 ...product,
                 quantity: product.quantity + action.payload.quantity,
@@ -43,8 +43,14 @@ const cartSlice = createSlice({
         productToCartFailed();
       }
     },
+
+    deleteProductFromCart: (state, action) => {
+      return state.filter(product => {
+        product._id !== action.payload
+      });
+    }
   },
 });
 
-export const { addProductToCart } = cartSlice.actions;
+export const { addProductToCart, deleteProductFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
