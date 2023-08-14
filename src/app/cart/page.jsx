@@ -1,9 +1,9 @@
-import ProductCartCard from "@/components/cart/ProductCartCard";
+import CartContainer from "@/components/cart/CartContainer";
 
 const Cart = () => {
   return (
-    <section className="flex flex-col justify-center items-center gap-6">
-      <ProductCartCard />
+    <section className="flex flex-col justify-center items-center gap-6 px-10">
+      <CartContainer />
     </section>
   );
 };
