@@ -2,9 +2,9 @@ export const calculatedItemsQty = (cart, fn) => {
   if (cart.length > 0) {
     let count = cart.reduce((total, product) => total + product.quantity, 0);
 
-    fn(count);
+    return fn(count);
   }
-  return;
+  return fn(0);
 };
 
 export const calculatedTotalPrice = (cart, fn) => {
@@ -17,9 +17,7 @@ export const calculatedTotalPrice = (cart, fn) => {
   fn(sum.toFixed(3)); //Solucionar esto en bd o buscar solución desde el front.
 };
 
-//Ejemplo solución desde front
-
-/* const number = 2255.768;
-const formattedNumber = number.toLocaleString(undefined, { maximumFractionDigits: 3 });
-
-console.log(formattedNumber); // Resultado: "2.255.768" */
+export const FormatNumber = (number) => { 
+  const priceToString = number.toString().replace(/\./g, ''); //Remover puntos que vienen desde la base de datos en el precio
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(priceToString); //Dar nuevo formato al precio
+};
