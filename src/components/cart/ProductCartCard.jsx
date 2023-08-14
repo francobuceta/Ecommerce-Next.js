@@ -1,18 +1,18 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useSelector } from "react-redux";
 import DeleteProductButton from "./DeleteProductButton";
+import { FormatNumber } from "@/utils/CartCounts";
 
-const ProductCartCard = () => {
-  const products = useSelector((state) => state.cart);
-  console.log(products);
-
+const ProductCartCard = ({ products }) => {
   return (
     <>
       {products.map((product) => {
         return (
-          <div className="card card-side bg-base-100 shadow-xl w-full max-w-[900px] h-56 p-5" key={product._id}>
+          <div
+            className="card flex-col sm:card-side bg-base-100 shadow-xl w-full max-w-[900px] h-auto sm:h-64 md:h-56 sm:p-5"
+            key={product._id}
+          >
             <figure>
               <Image
                 src={product.image}
@@ -20,20 +20,22 @@ const ProductCartCard = () => {
                 height={0}
                 sizes="100vw"
                 alt={product.title}
-                className="w-[250px] h-auto object-contain"
+                className="w-[250px] h-[200px] sm:h-auto object-cover sm:object-contain"
               />
             </figure>
             <div className="card-body">
               <div>
                 <h2 className="card-title">{product.title}</h2>
                 <p>Cantidad: {product.quantity} unidades</p>
-                <p>Precio unitario: $ {product.price}</p>
-                <p>Precio total: $ {product.quantity * product.price}</p>
+                <p>Precio unitario: {FormatNumber(product.price)}</p>
+                <p>Precio total: {FormatNumber(product.quantity * product.price)}</p>
               </div>
 
-              <div className="card-actions justify-end">
+              <div className="card-actions justify-end mt-7 sm:mt-0">
                 <Link href={`/products/${product.category}/${product._id}`}>
-                  <button className="btn bg-custome-primary">Ver</button>
+                  <button className="btn bg-custome-primary border-none">
+                    Ver
+                  </button>
                 </Link>
                 <DeleteProductButton productId={product._id} />
               </div>
