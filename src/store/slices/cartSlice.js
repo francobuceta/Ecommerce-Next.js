@@ -14,9 +14,7 @@ const cartSlice = createSlice({
       let repeatedProduct;
 
       if (state.length > 0) {
-        repeatedProduct = state.find(
-          (elem) => elem._id === action.payload._id
-        );
+        repeatedProduct = state.find((elem) => elem._id === action.payload._id);
       }
 
       if (!repeatedProduct) {
@@ -45,10 +43,10 @@ const cartSlice = createSlice({
     },
 
     deleteProductFromCart: (state, action) => {
-      return state.filter(product => {
-        return product._id !== action.payload
+      return state.filter((product) => {
+        return product._id !== action.payload;
       });
-    }
+    },
   },
 });
 

@@ -6,7 +6,7 @@ import AddToCartButton from "./AddToCartButton";
 import BuyButton from "./BuyButton";
 
 const ProductControlsContainer = ({ productDetail }) => {
-  const [product, setProduct] = useState({...productDetail, quantity: 1});
+  const [product, setProduct] = useState({ ...productDetail, quantity: 1 });
 
   return (
     <>
