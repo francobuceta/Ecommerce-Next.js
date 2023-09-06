@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FavouriteButton from "./FavouriteButton";
 import Link from "next/link";
+import { FormatNumber } from "@/utils/CartCounts";
 
 const ProductCard = ({ id, category, image, title, description, price }) => {
   return (
@@ -20,7 +21,7 @@ const ProductCard = ({ id, category, image, title, description, price }) => {
       <div className="card-body bg-custome-primary rounded-b-2xl gap-0">
         <h3 className="card-title select-none">{title}</h3>
         <p className="truncate">{description}</p>
-        <span className="text-xl font-bold">$ {price}</span>
+        <span className="text-xl font-bold">{FormatNumber(price)}</span>
         <div className="card-actions justify-end">
           <Link href={`/products/${category}/${id}`}>
             <button className="btn bg-transparent border border-custome-secondary w-20">

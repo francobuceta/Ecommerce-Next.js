@@ -14,10 +14,9 @@ export const calculatedTotalPrice = (cart, fn) => {
     sum += elem.price * elem.quantity;
   });
 
-  fn(sum.toFixed(3)); //Solucionar esto en bd o buscar solución desde el front.
+  fn(FormatNumber(sum));
 };
 
 export const FormatNumber = (number) => { 
-  const priceToString = number.toString().replace(/\./g, ''); //Remover puntos que vienen desde la base de datos en el precio
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(priceToString); //Dar nuevo formato al precio
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number);
 };
