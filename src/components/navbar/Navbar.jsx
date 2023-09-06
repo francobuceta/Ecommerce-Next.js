@@ -12,7 +12,7 @@ const Navbar = () => {
         <CartWidget />
 
         <div className="dropdown dropdown-end">
-          <label tabIndex={0}>
+          <label tabIndex={0} className="cursor-pointer">
             <VscAccount fontSize={30} color="white" />
           </label>
           <ul
@@ -21,15 +21,11 @@ const Navbar = () => {
           >
             <li>
               <Link href="/auth">
-                Profile
-                <span className="badge">New</span>
+                Ingresar / Registrarse
               </Link>
             </li>
             <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
+              <a>Cerrar Sesión</a>
             </li>
           </ul>
         </div>
