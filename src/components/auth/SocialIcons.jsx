@@ -1,6 +1,15 @@
+"use client"
 import { AiOutlineGooglePlus, AiOutlineGithub } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { setUserInStore } from "@/store/slices/userSlice";
+import { useRouter } from "next/navigation";
+import { errorNotification } from "@/utils/Notifications";
 
 const SocialIcons = () => {
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const handleThirdPartyAuth = (path) => {
     const popUp = window.open(
       `https://backend-nodejs-self.vercel.app/user/${path}`,
@@ -18,9 +27,11 @@ const SocialIcons = () => {
     window.addEventListener("message", (event) => {
       if (event.origin === "https://backend-nodejs-self.vercel.app") {
         if (event.data) {
-          console.log(event.data);
-
+          dispatch(setUserInStore(event.data));
           popUp?.close();
+          router.push("/");          
+        } else {
+          errorNotification("Error al procesar el ingreso. Intente de nuevo en unos minutos.")
         }
       }
     });
