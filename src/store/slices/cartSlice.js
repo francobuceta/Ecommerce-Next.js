@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  productToCartSucceeded,
-  productToCartFailed,
+  successNotification,
+  errorNotification,
 } from "@/utils/Notifications";
 
 const initialState = [];
@@ -18,7 +18,7 @@ const cartSlice = createSlice({
       }
 
       if (!repeatedProduct) {
-        productToCartSucceeded();
+        successNotification("Producto agregado con éxito");
         const newState = Array.isArray(state)
           ? [...state, action.payload]
           : [action.payload];
@@ -28,7 +28,7 @@ const cartSlice = createSlice({
         repeatedProduct.quantity + action.payload.quantity <=
           action.payload.stock
       ) {
-        productToCartSucceeded();
+        successNotification("Producto agregado con éxito");
         return state.map((product) =>
           product._id === action.payload._id
             ? {
@@ -38,7 +38,7 @@ const cartSlice = createSlice({
             : product
         );
       } else {
-        productToCartFailed();
+        errorNotification("Error: Stock insuficiente");
       }
     },
 
