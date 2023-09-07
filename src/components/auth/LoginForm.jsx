@@ -2,13 +2,17 @@
 import SocialIcons from "./SocialIcons";
 import { useForm } from "react-hook-form";
 import { postRequest } from "@/services/clientFetching";
+import { setUserInStore } from "@/store/slices/userSlice";
+import { useDispatch } from "react-redux";
 
 function LoginForm() {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = async (data) => {
     const response = await postRequest("/user/login", data);
     console.log(response);
+    dispatch(setUserInStore(response.token));
   };
 
   return (
