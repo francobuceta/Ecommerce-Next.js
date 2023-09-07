@@ -1,9 +1,9 @@
 import toast from "react-hot-toast";
 
-export const productToCartSucceeded = () => {
-  toast.success("Producto agregado con éxito");
+export const successNotification = (content) => {
+  toast.success(content);
 };
 
-export const productToCartFailed = () => {
-  toast.error("Error: Stock insuficiente");
+export const errorNotification = (content) => {
+  toast.error(content, {style: {background: '#cc0000', color: '#ffffff'}});
 };
