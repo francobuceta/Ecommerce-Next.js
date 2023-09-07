@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import Overlay from "./Overlay";
@@ -13,7 +14,7 @@ const AuthContainer = () => {
       id="container-auth"
     >
       <div className="form-container sign-up-container">
-        <RegisterForm />
+        <RegisterForm setOverlayClass={setOverlayClass} />
       </div>
       <div className="form-container sign-in-container">
         <LoginForm />
@@ -24,6 +25,7 @@ const AuthContainer = () => {
           setOverlayClass={setOverlayClass}
         />
       </div>
+      <Toaster />
     </div>
   );
 };
