@@ -23,7 +23,9 @@ const CartContainer = () => {
           />
 
           <div className="text-center mt-5">
-            <p className="text-white text-2xl px-10">Todavía no agregaste ningún producto al carrito</p>
+            <p className="text-white text-2xl px-10">
+              Todavía no agregaste ningún producto al carrito
+            </p>
 
             <Link href="/products/all">
               <button className="btn btn-active bg-custome-primary text-xl text-custome-secondary border-none w-40 h-10 mt-3">

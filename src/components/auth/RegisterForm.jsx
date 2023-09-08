@@ -7,7 +7,6 @@ import FormErrorMessage from "../error/FormErrorMessage";
 import SocialIcons from "./SocialIcons";
 import Loader from "../loader/Loader";
 
-
 function RegisterForm({ setOverlayClass }) {
   const [registerError, setRegisterError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -23,7 +22,7 @@ function RegisterForm({ setOverlayClass }) {
     setLoading(true);
     setRegisterError(false);
     const response = await postRequest("/user/register", data);
-    
+
     if (response?.message === "Usuario creado con éxito") {
       successNotification("Se ha registrado con éxito.");
       reset();
@@ -52,7 +51,10 @@ function RegisterForm({ setOverlayClass }) {
         {...register("firstName", { required: true })}
       />
       {errors.firstName && errors.firstName.type === "required" && (
-        <FormErrorMessage content="Debes completar este campo" register={true} />
+        <FormErrorMessage
+          content="Debes completar este campo"
+          register={true}
+        />
       )}
       <input
         type="text"
@@ -60,7 +62,10 @@ function RegisterForm({ setOverlayClass }) {
         {...register("lastName", { required: true })}
       />
       {errors.lastName && errors.lastName.type === "required" && (
-        <FormErrorMessage content="Debes completar este campo" register={true} />
+        <FormErrorMessage
+          content="Debes completar este campo"
+          register={true}
+        />
       )}
       <input
         type="email"
@@ -68,7 +73,10 @@ function RegisterForm({ setOverlayClass }) {
         {...register("email", { required: true })}
       />
       {errors.email && errors.email.type === "required" && (
-        <FormErrorMessage content="Debes completar este campo" register={true} />
+        <FormErrorMessage
+          content="Debes completar este campo"
+          register={true}
+        />
       )}
       <input
         type="password"
@@ -76,26 +84,34 @@ function RegisterForm({ setOverlayClass }) {
         {...register("password", { required: true, minLength: 5 })}
       />
       {errors.password && errors.password.type === "required" && (
-        <FormErrorMessage content="Debes completar este campo" register={true} />
+        <FormErrorMessage
+          content="Debes completar este campo"
+          register={true}
+        />
       )}
       {errors.password && errors.password.type === "minLength" && (
-        <FormErrorMessage content="La contraseña debe contar con al menos 5 caracteres." register={true} />
+        <FormErrorMessage
+          content="La contraseña debe contar con al menos 5 caracteres."
+          register={true}
+        />
       )}
       {registerError && (
-        <FormErrorMessage content="El email ingresado ya existe." register={true} />
+        <FormErrorMessage
+          content="El email ingresado ya existe."
+          register={true}
+        />
       )}
 
-      {
-        !loading ?
+      {!loading ? (
         <button
-        type="submit"
-        className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
-      >
-        REGISTRARSE
-      </button>
-      :
-      <Loader />
-      }
+          type="submit"
+          className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
+        >
+          REGISTRARSE
+        </button>
+      ) : (
+        <Loader />
+      )}
     </form>
   );
 }

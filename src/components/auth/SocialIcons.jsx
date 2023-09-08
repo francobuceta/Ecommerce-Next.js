@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { AiOutlineGooglePlus, AiOutlineGithub } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { setUserInStore } from "@/store/slices/userSlice";
@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { errorNotification } from "@/utils/Notifications";
 
 const SocialIcons = () => {
-
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -29,9 +28,11 @@ const SocialIcons = () => {
         if (event.data) {
           dispatch(setUserInStore(event.data));
           popUp?.close();
-          router.push("/");          
+          router.push("/");
         } else {
-          errorNotification("Error al procesar el ingreso. Intente de nuevo en unos minutos.")
+          errorNotification(
+            "Error al procesar el ingreso. Intente de nuevo en unos minutos."
+          );
         }
       }
     });

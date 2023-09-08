@@ -14,7 +14,7 @@ const Account = () => {
     HandleDropdown();
     await getRequest("/user/logout");
     dispatch(logOutUser());
-  }
+  };
 
   return (
     <div className="flex items-center gap-3">
@@ -29,13 +29,19 @@ const Account = () => {
           {user.token !== "" ? (
             <>
               <li>
-                <Link href="/" onClick={HandleDropdown}>Favoritos</Link>
+                <Link href="/" onClick={HandleDropdown}>
+                  Favoritos
+                </Link>
               </li>
-              <li><span onClick={handleLogOut}>Cerrar Sesión</span></li>
+              <li>
+                <span onClick={handleLogOut}>Cerrar Sesión</span>
+              </li>
             </>
           ) : (
             <li>
-              <Link href="/auth" onClick={HandleDropdown}>Ingresar / Registrarse</Link>
+              <Link href="/auth" onClick={HandleDropdown}>
+                Ingresar / Registrarse
+              </Link>
             </li>
           )}
         </ul>

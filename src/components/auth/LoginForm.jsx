@@ -14,7 +14,11 @@ function LoginForm() {
   const [loginError, setLoginError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { register, formState: { errors }, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -29,7 +33,9 @@ function LoginForm() {
     } else if (response?.message === "Ingreso fallido") {
       setLoginError(true);
     } else {
-      errorNotification("Error al procesar el ingreso. Intente de nuevo en unos minutos.");
+      errorNotification(
+        "Error al procesar el ingreso. Intente de nuevo en unos minutos."
+      );
     }
     setLoading(false);
   };
@@ -43,9 +49,10 @@ function LoginForm() {
       <SocialIcons />
       <span className="text-sm">o ingresá con tu email</span>
 
-      <input {...register("email", { required: true })} 
-        type="email" 
-        placeholder="Email" 
+      <input
+        {...register("email", { required: true })}
+        type="email"
+        placeholder="Email"
       />
       {errors.email && errors.email.type === "required" && (
         <FormErrorMessage content="Debes completar este campo" />
@@ -55,7 +62,7 @@ function LoginForm() {
       )}
 
       <input
-        {...register("password", { required: true})}
+        {...register("password", { required: true })}
         type="password"
         placeholder="Contraseña"
       />
@@ -66,18 +73,16 @@ function LoginForm() {
         <FormErrorMessage content="Usuario y/o contraseña inválidos." />
       )}
 
-      {
-        !loading ?
+      {!loading ? (
         <button
-        type="submit"
-        className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-7 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
-      >
-        INGRESAR
-      </button>
-      :
-      <Loader />
-      }
-      
+          type="submit"
+          className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-7 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
+        >
+          INGRESAR
+        </button>
+      ) : (
+        <Loader />
+      )}
     </form>
   );
 }

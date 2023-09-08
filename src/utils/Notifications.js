@@ -5,5 +5,5 @@ export const successNotification = (content) => {
 };
 
 export const errorNotification = (content) => {
-  toast.error(content, {style: {background: '#cc0000', color: '#ffffff'}});
+  toast.error(content, { style: { background: "#cc0000", color: "#ffffff" } });
 };

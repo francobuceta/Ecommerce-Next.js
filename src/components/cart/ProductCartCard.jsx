@@ -28,7 +28,9 @@ const ProductCartCard = ({ products }) => {
                 <h2 className="card-title">{product.title}</h2>
                 <p>Cantidad: {product.quantity} unidades</p>
                 <p>Precio unitario: {FormatNumber(product.price)}</p>
-                <p>Precio total: {FormatNumber(product.quantity * product.price)}</p>
+                <p>
+                  Precio total: {FormatNumber(product.quantity * product.price)}
+                </p>
               </div>
 
               <div className="card-actions justify-end mt-7 sm:mt-0">

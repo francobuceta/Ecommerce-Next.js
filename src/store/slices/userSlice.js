@@ -6,7 +6,7 @@ const initialState = {
   lastName: "",
   email: "",
   role: "",
-  token: ""
+  token: "",
 };
 
 const userSlice = createSlice({
@@ -17,25 +17,25 @@ const userSlice = createSlice({
       let newState;
       const userData = jwt_decode(action.payload);
 
-      return newState = {
+      return (newState = {
         firstName: userData.user.firstName,
         lastName: userData.user.lastName,
         email: userData.user.email,
         role: userData.user.role,
-        token: action.payload
-      }
+        token: action.payload,
+      });
     },
     logOutUser: (state, action) => {
       let newState;
 
-      return newState = {
+      return (newState = {
         firstName: "",
         lastName: "",
         email: "",
         role: "",
-        token: ""
-      }
-    }
+        token: "",
+      });
+    },
   },
 });
 
