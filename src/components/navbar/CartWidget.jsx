@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { calculatedItemsQty, calculatedTotalPrice } from "@/utils/CartCounts";
+import { HandleDropdown } from "@/utils/HandleDropdown";
 
 const CartIcon = () => {
   const [items, setItems] = useState(0);
@@ -44,7 +45,7 @@ const CartIcon = () => {
         <div className="card-body">
           <span className="font-bold text-lg">{items} Items</span>
           <span className="text-custome-secondary">Total: $ {totalPrice}</span>
-          <Link href="/cart">
+          <Link href="/cart" onClick={HandleDropdown}>
             <div className="card-actions">
               <button className="btn btn-custome-secondary btn-block">
                 Ver carrito
