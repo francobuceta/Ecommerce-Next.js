@@ -25,8 +25,19 @@ const userSlice = createSlice({
         token: action.payload
       }
     },
+    logOutUser: (state, action) => {
+      let newState;
+
+      return newState = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        role: "",
+        token: ""
+      }
+    }
   },
 });
 
-export const { setUserInStore } = userSlice.actions;
+export const { setUserInStore, logOutUser } = userSlice.actions;
 export default userSlice.reducer;
