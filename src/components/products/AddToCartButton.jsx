@@ -2,7 +2,7 @@
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "@/store/slices/cartSlice";
 
-const addToCartButton = ({ product }) => {
+const AddToCartButton = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleAddProduct = () => {
@@ -19,4 +19,4 @@ const addToCartButton = ({ product }) => {
   );
 };
 
-export default addToCartButton;
+export default AddToCartButton;
