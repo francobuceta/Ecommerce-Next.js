@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getRequest } from "@/services/serverFetching";
 import ProductControlsContainer from "@/components/products/ProductControlsContainer";
+import { ProductDetailSkeleton } from "@/components/loader/Skeleton";
 
 const getProductDetail = async (id) => {
   try {
@@ -43,7 +44,7 @@ const ProductDetail = async ({ params }) => {
             </div>
           </>
         ) : (
-          <p className="text-white">Cargando..</p>
+          <ProductDetailSkeleton />
         )}
       </div>
     </section>
