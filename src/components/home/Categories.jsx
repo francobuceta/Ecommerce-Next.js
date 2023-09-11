@@ -2,6 +2,7 @@
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/autoplay";
 
@@ -13,12 +14,12 @@ const categories = [
   },
   {
     title: "Mouses",
-    img: "img/mouse.jpg",
+    img: "/img/mouse.jpg",
     url: "/",
   },
   {
     title: "Auriculares y micrófonos",
-    img: "./img/headphone.jpg",
+    img: "/img/headphone.jpg",
     url: "/",
   },
   {
@@ -73,9 +74,12 @@ const Categories = () => {
             <SwiperSlide key={elem.title}>
               <Link href={elem.url}>
                 <div className="flex flex-col items-center gap-5 pt-5">
-                  <img
+                  <Image
                     src={elem.img}
                     alt={elem.title}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                     className="rounded-full w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] object-cover outline outline-custome-primary outline-offset-8"
                   />
                   <span className="text-white text-center uppercase text-sm sm:text-xl lg:text-2xl">
