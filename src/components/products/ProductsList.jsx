@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getRequest } from "@/services/clientFetching";
 import ProductCard from "@/components/products/ProductCard";
 import PaginationButton from "./PaginationButton";
+import { ProductsSkeleton } from "../loader/Skeleton";
 
 const ProductsList = ({ categoryId }) => {
   const [products, setProducts] = useState(null);
@@ -45,7 +46,7 @@ const ProductsList = ({ categoryId }) => {
             />
           ))
         ) : (
-          <div className="text-white">Cargando..</div>
+          <ProductsSkeleton />
         )}
       </div>
 
