@@ -15,19 +15,25 @@ const PaginationButton = ({ products, currentPage, setCurrentPage }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="join grid grid-cols-2 mt-10">
-        <button
-          className="join-item btn btn-outline bg-white"
+      <div className={`join grid mt-10 ${currentPage > 1 && products?.info?.hasNextPage && "grid-cols-2"}`}>
+        {
+          currentPage > 1 &&
+          <button
+          className={`btn btn-outline bg-white ${products?.info?.hasNextPage && "join-item"}`}
           onClick={handlePrevPage}
         >
           Anterior
         </button>
-        <button
-          className="join-item btn btn-outline bg-white"
+        }
+        {
+          products?.info?.hasNextPage &&
+          <button
+          className={`btn btn-outline bg-white ${currentPage > 1 && "join-item"}`}
           onClick={handleNextPage}
         >
           Siguiente
         </button>
+        }
       </div>
     </div>
   );
