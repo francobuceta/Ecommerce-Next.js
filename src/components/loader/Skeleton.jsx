@@ -26,3 +26,40 @@ export const ProductsSkeleton = () => {
     </>
   );
 };
+
+export const ProductDetailSkeleton = () => {
+  return (
+    <>
+      <div className="w-full animate-pulse">
+        <div className="w-full max-w-[550px] h-[300px] md:h-[550px] rounded-md bg-gray-600"></div>
+      </div>
+
+      <div className="w-full animate-pulse">
+        <h2 className="w-full max-w-[550px] h-[40px] bg-gray-600 rounded-xl"></h2>
+        <p className="w-full max-w-[550px] h-[90px] mt-10 bg-gray-600 rounded-xl"></p>
+        <p className="w-full max-w-[90px] h-[35px] mt-10 bg-gray-600 rounded-xl"></p>
+        <p className="w-full max-w-[230px] h-[35px] mt-5 bg-gray-600 rounded-xl"></p>
+
+        <div>
+          <div className="flex flex-col lg:flex-row lg:items-center gap-5 md:gap-10 mt-10">
+            <div className="bg-gray-600 w-10 h-10 p-2 rounded-md flex justify-center">
+            </div>
+            <div className="flex gap-2">
+              <div
+                className="border rounded-md w-20 h-[34px] bg-gray-600 border-none">
+              </div>
+              <div
+                className="border rounded-md w-20 h-[34px] bg-gray-600 border-none">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row lg:items-center gap-5 mt-10">
+          <div className="border border-none rounded-md w-52 h-[34px] p-2 bg-gray-600"></div>
+          <div className="border border-none rounded-md w-52 h-[34px] p-2 bg-gray-600"></div>
+        </div>
+      </div>
+    </>
+  );
+};
