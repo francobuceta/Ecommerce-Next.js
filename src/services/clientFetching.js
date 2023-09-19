@@ -1,4 +1,11 @@
 const URL = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+import { getLocalStorage } from "@/utils/LocalStorageFunctions";
+
+const getToken = () => {
+  const token = getLocalStorage("auth") || "";
+  const Authorization = token && `Bearer ${token}`;
+  return Authorization;
+};
 
 export const getRequest = async (endpoint) => {
   try {
@@ -26,6 +33,7 @@ export const postRequest = async (endpoint, data) => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Authorization: getToken(),
       },
       body: JSON.stringify(data),
     });
@@ -33,6 +41,28 @@ export const postRequest = async (endpoint, data) => {
     if (!response.ok) {
       throw new Error(error);
     }
+    return response.json();
+  } catch (error) {
+    return "Ha ocurrido un error inesperado";
+  }
+};
+
+export const postPurchase = async (endpoint) => {
+  try {
+    const response = await fetch(URL + endpoint, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: getToken(),
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(error);
+    }
+
     return response.json();
   } catch (error) {
     return "Ha ocurrido un error inesperado";
