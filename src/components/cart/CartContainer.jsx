@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import ProductCartCard from "./ProductCartCard";
+import CartControlsContainer from "./CartControlsContainer";
 
 const CartContainer = () => {
   const products = useSelector((state) => state.cart);
@@ -11,7 +12,11 @@ const CartContainer = () => {
   return (
     <>
       {products?.length > 0 ? (
-        <ProductCartCard products={products} user={user} />
+        <>
+          <ProductCartCard products={products} user={user} />
+
+          <CartControlsContainer userCart={user.userCart.cartId} />
+        </>
       ) : (
         <div className="flex flex-col justify-center items-center">
           <Image
