@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
-import { addCartFromDB } from "@/store/slices/cartSlice";
+import { getCartFromDB } from "@/store/slices/cartSlice";
 import { getRequest } from "@/services/clientFetching";
 import { calculatedItemsQty, calculatedTotalPrice } from "@/utils/CartCounts";
 import { HandleDropdown } from "@/utils/HandleDropdown";
@@ -23,7 +23,7 @@ const CartIcon = () => {
           ...elem.productId,
           quantity: elem.quantity
         })); 
-        dispatch(addCartFromDB(newCartModel));
+        dispatch(getCartFromDB(newCartModel));
       }
     }
     getUserCart();
