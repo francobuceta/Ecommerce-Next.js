@@ -1,12 +1,23 @@
 "use client";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { addProductToCart } from "@/store/slices/cartSlice";
+import { postPurchase } from "@/services/clientFetching";
 
 const AddToCartButton = ({ product }) => {
+  const [userCart, setUserCart] = useState(null);
   const dispatch = useDispatch();
+  const user = useSelector(state => state.user);
 
-  const handleAddProduct = () => {
+  useEffect(() => {
+    if(user.userCart.hasOwnProperty("cartId")) {
+      setUserCart(user.userCart.cartId);
+    }
+  },[user.userCart]);
+
+  const handleAddProduct = async () => {
     dispatch(addProductToCart(product));
+    await postPurchase(`/api/cart/${userCart}/product/${product._id}?qty=${product.quantity}`);
   };
 
   return (
