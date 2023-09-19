@@ -68,3 +68,25 @@ export const postPurchase = async (endpoint) => {
     return "Ha ocurrido un error inesperado";
   }
 };
+
+export const deleteRequest = async (endpoint) => {
+  try {
+    const response = await fetch(URL + endpoint, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: getToken(),
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(error);
+    }
+
+    return response.json();
+  } catch (error) {
+    return "Ha ocurrido un error inesperado";
+  }
+};
