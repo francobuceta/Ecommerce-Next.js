@@ -6,11 +6,12 @@ import ProductCartCard from "./ProductCartCard";
 
 const CartContainer = () => {
   const products = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
 
   return (
     <>
       {products?.length > 0 ? (
-        <ProductCartCard products={products} />
+        <ProductCartCard products={products} user={user} />
       ) : (
         <div className="flex flex-col justify-center items-center">
           <Image

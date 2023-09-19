@@ -4,7 +4,7 @@ import Link from "next/link";
 import DeleteProductButton from "./DeleteProductButton";
 import { FormatNumber } from "@/utils/CartCounts";
 
-const ProductCartCard = ({ products }) => {
+const ProductCartCard = ({ products, user }) => {
   return (
     <>
       {products.map((product) => {
@@ -39,7 +39,7 @@ const ProductCartCard = ({ products }) => {
                     Ver
                   </button>
                 </Link>
-                <DeleteProductButton productId={product._id} />
+                <DeleteProductButton productId={product._id} userCartId={user.userCart.cartId} />
               </div>
             </div>
           </div>
