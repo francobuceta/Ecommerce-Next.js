@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 const CategorySelect = () => {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Categoria");
   const { push } = useRouter();
+  const urlPath = usePathname();
 
   const handleCategory = (e) => {
     setCategory(e.target.value);
@@ -17,6 +18,13 @@ const CategorySelect = () => {
     }
   };
 
+  useEffect(() => {
+    const pathName = urlPath.slice('/products/'.length);
+    if(pathName) {
+      setCategory(pathName);
+    }
+  },[]);
+
   return (
     <section className="mx-5">
       <form
@@ -28,11 +36,11 @@ const CategorySelect = () => {
             <span className="text-lg text-white">Elige una categoría:</span>
           </label>
           <select
-            defaultValue="Categoría"
+            value={category}
             onChange={(value) => handleCategory(value)}
             className="select select-bordered"
           >
-            <option disabled>Categoría</option>
+            <option value="">Categoría</option>
             <option value="teclados">Teclados</option>
             <option value="mouses">Mouses</option>
             <option value="auriculares-y-microfonos">
