@@ -10,11 +10,21 @@ import Loader from '../loader/Loader';
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
 
 const CheckoutComponent = () => {
-
-    const [currentProduct, setCurrentProduct] = useState("64ac15033572bd5ec6b11df1");
     const [clientSecret, setClientSecret] = useState(null);
     const products = useSelector(state => state.cart);
-    console.log(products);
+    const user = useSelector(state => state.user);
+
+    const productsTitle = products?.map(elem =>`${elem.title} x${elem.quantity}`).join(', ');
+
+    const totalPrice = products?.reduce((total, product) => {
+        return total + (product.price * product.quantity);
+    }, 0);
+
+    const purchaseData = {
+        user: user?.firstName + " " + user?.lastName,
+        products: productsTitle,
+        amount: totalPrice
+    }
 
     const appearance = {
         rules: {
@@ -34,22 +44,21 @@ const CheckoutComponent = () => {
 
     useEffect(() => {
         const getClientSecret = async () => {
-            console.log(currentProduct);
-            const service = await postPurchase(`/payment/payment-intents?id=${currentProduct}`);
+            const service = await postPurchase(`/payment/${user.userCart.cartId}/payment-intents`, purchaseData);
+
             if (service) {
                 setClientSecret(service.payload.client_secret);
-                console.log(service);
             } else {
                 console.log("Hubo un error al traer el client secret");
             }
         }
-        currentProduct && getClientSecret();
-    },[currentProduct]);
+        totalPrice && getClientSecret();
+    },[totalPrice]);
 
     return(
         <>
             {
-                currentProduct && clientSecret ?
+                totalPrice && clientSecret ?
                 <Elements stripe={stripePromise} options={{clientSecret:clientSecret, appearance:appearance}}>
                     <div className='flex flex-col justify-center items-center px-5 gap-12'>
                         <h2 className='text-3xl text-white font-semibold'>Confirmación de compra</h2>

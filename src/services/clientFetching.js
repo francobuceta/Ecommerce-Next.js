@@ -47,7 +47,7 @@ export const postRequest = async (endpoint, data) => {
   }
 };
 
-export const postPurchase = async (endpoint) => {
+export const postPurchase = async (endpoint, purchaseData) => {
   try {
     const response = await fetch(URL + endpoint, {
       method: "POST",
@@ -55,8 +55,9 @@ export const postPurchase = async (endpoint) => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: getToken(),
-      }
+        Authorization: getToken()
+      },
+      body: JSON.stringify({ purchaseInfo: purchaseData })
     });
 
     if (!response.ok) {
