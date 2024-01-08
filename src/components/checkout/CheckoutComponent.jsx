@@ -5,6 +5,7 @@ import { postPurchase } from '@/services/clientFetching';
 import { Elements } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
 import PaymentForm from './PaymentForm';
+import Loader from '../loader/Loader';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
 
@@ -46,13 +47,21 @@ const CheckoutComponent = () => {
     },[currentProduct]);
 
     return(
-        currentProduct && clientSecret &&
-        <Elements stripe={stripePromise} options={{clientSecret:clientSecret, appearance:appearance}}>
-            <div className='flex flex-col justify-center items-center px-5 gap-12'>
-                <h2 className='text-3xl text-white font-semibold'>Confirmación de compra</h2>
-                <PaymentForm />
-            </div>
-        </Elements>
+        <>
+            {
+                currentProduct && clientSecret ?
+                <Elements stripe={stripePromise} options={{clientSecret:clientSecret, appearance:appearance}}>
+                    <div className='flex flex-col justify-center items-center px-5 gap-12'>
+                        <h2 className='text-3xl text-white font-semibold'>Confirmación de compra</h2>
+                        <PaymentForm />
+                    </div>
+                </Elements>
+                :
+                <div className='w-full h-[50vh] flex justify-center items-center'>
+                    <Loader checkout={true} />
+                </div>
+            }
+        </>
     );
 }
 
