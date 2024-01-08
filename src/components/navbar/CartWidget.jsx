@@ -26,11 +26,14 @@ const CartIcon = () => {
         dispatch(getCartFromDB(newCartModel));
       }
     }
-    getUserCart();
 
+    getUserCart();
+  },[user.userCart, cart.length]);
+
+  useEffect(() => {
     calculatedItemsQty(cart, setItems);
     calculatedTotalPrice(cart, setTotalPrice);
-  }, [cart, user.userCart]);
+  }, [cart]);
 
   return (
     <div className="dropdown dropdown-end">
