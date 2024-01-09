@@ -1,5 +1,8 @@
-import { useDispatch } from "react-redux";
+"use client"
+import { useDispatch, useSelector } from "react-redux";
 import { emptyCart } from "@/store/slices/cartSlice";
+import { setPurchaseData } from "@/store/slices/purchaseSlice";
+import { useRouter } from "next/navigation";
 import {
   PaymentElement,
   useElements,
@@ -10,7 +13,10 @@ const PaymentForm = () => {
   const stripe = useStripe();
   const elements = useElements();
 
+  const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
+
+  const { push } = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +26,9 @@ const PaymentForm = () => {
     });
     if (!error) {
       console.log("Pago completado");
+      dispatch(setPurchaseData(cart));
       dispatch(emptyCart());
+      push("/purchaseDetail");
     } else {
       console.log(error);
     }
