@@ -60,8 +60,10 @@ const DetailsTable = () => {
         </tbody>
       </table>
 
-      <div className="flex justify-center mt-20">
-        <p className="text-2xl">TOTAL: {FormatNumber(totalPrice)}</p>
+      <div className="flex justify-center mt-16">
+      <div className="w-fit bg-custome-primary p-2">
+        <p className="text-2xl text-black">TOTAL: {FormatNumber(totalPrice)}</p>
+      </div>
       </div>
     </div>
   );
