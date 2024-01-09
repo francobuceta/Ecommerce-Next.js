@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import jwt_decode from "jwt-decode";
-import { setLocalStorage, clearLocalStorage } from "@/utils/LocalStorageFunctions";
+import {
+  setLocalStorage,
+  clearLocalStorage,
+} from "@/utils/LocalStorageFunctions";
 
 const initialState = {
   firstName: "",
@@ -25,7 +28,7 @@ const userSlice = createSlice({
         lastName: userData.user.lastName,
         email: userData.user.email,
         role: userData.user.role,
-        userCart: userData.user.cart, 
+        userCart: userData.user.cart,
         token: action.payload,
       });
     },
@@ -38,7 +41,7 @@ const userSlice = createSlice({
         lastName: "",
         email: "",
         role: "",
-        userCart: {}, 
+        userCart: {},
         token: "",
       });
     },

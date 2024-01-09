@@ -55,9 +55,9 @@ export const postPurchase = async (endpoint, purchaseData) => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: getToken()
+        Authorization: getToken(),
       },
-      body: JSON.stringify({ purchaseInfo: purchaseData })
+      body: JSON.stringify({ purchaseInfo: purchaseData }),
     });
 
     if (!response.ok) {
@@ -79,7 +79,7 @@ export const deleteRequest = async (endpoint) => {
         "Content-Type": "application/json",
         Accept: "application/json",
         Authorization: getToken(),
-      }
+      },
     });
 
     if (!response.ok) {

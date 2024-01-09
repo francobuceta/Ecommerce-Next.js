@@ -52,9 +52,14 @@ const cartSlice = createSlice({
 
     emptyCart: (state, action) => {
       return [];
-    }
+    },
   },
 });
 
-export const { addProductToCart, getCartFromDB, deleteProductFromCart, emptyCart } = cartSlice.actions;
+export const {
+  addProductToCart,
+  getCartFromDB,
+  deleteProductFromCart,
+  emptyCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;

@@ -39,7 +39,10 @@ const ProductCartCard = ({ products, user }) => {
                     Ver
                   </button>
                 </Link>
-                <DeleteProductButton productId={product._id} userCartId={user.userCart.cartId} />
+                <DeleteProductButton
+                  productId={product._id}
+                  userCartId={user.userCart.cartId}
+                />
               </div>
             </div>
           </div>

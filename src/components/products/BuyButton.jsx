@@ -12,7 +12,8 @@ const BuyButton = ({ product }) => {
 
   return (
     <Link href="/checkout">
-      <button className="border border-none rounded-md w-52 text-xl text-black p-2 bg-custome-primary hover:bg-white"
+      <button
+        className="border border-none rounded-md w-52 text-xl text-black p-2 bg-custome-primary hover:bg-white"
         onClick={handleAddProduct}
       >
         Comprar ahora

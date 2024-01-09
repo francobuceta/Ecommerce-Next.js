@@ -36,7 +36,9 @@ const ProductDetail = async ({ params }) => {
             <div className="w-full text-white">
               <h2 className="text-4xl font-main">{productDetail.title}</h2>
               <p className="text-xl mt-10">{productDetail.description}</p>
-              <p className="text-3xl mt-10">{FormatNumber(productDetail.price)}</p>
+              <p className="text-3xl mt-10">
+                {FormatNumber(productDetail.price)}
+              </p>
               <p className="text-2xl mt-5">
                 Unidades disponibles: {productDetail.stock}
               </p>

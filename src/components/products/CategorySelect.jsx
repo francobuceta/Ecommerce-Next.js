@@ -19,11 +19,11 @@ const CategorySelect = () => {
   };
 
   useEffect(() => {
-    const pathName = urlPath.slice('/products/'.length);
-    if(pathName) {
+    const pathName = urlPath.slice("/products/".length);
+    if (pathName) {
       setCategory(pathName);
     }
-  },[]);
+  }, []);
 
   return (
     <section className="mx-5">
