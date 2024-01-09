@@ -1,11 +1,16 @@
-"use client"
+"use client";
 import DetailsTable from "./DetailsTable";
 import Confetti from "react-confetti";
+import Link from "next/link";
 
 const PurchaseDetailComponent = () => {
   return (
     <>
-      <Confetti width={window.innerWidth - 20} height={window.innerHeight - 20} recycle={false} />
+      <Confetti
+        width={window.innerWidth - 20}
+        height={window.innerHeight - 20}
+        recycle={false}
+      />
       <div className="flex flex-col justify-center items-center px-5 gap-5">
         <h2 className="text-3xl text-white font-semibold">¡Felicitaciones!</h2>
         <p className="text-xl text-white">
@@ -17,6 +22,14 @@ const PurchaseDetailComponent = () => {
         </h3>
 
         <DetailsTable />
+
+        <Link href={"/"}>
+          <button
+            className="border border-none rounded-md w-48 text-xl text-white p-2 bg-custome-black hover:bg-white hover:text-black mt-10"
+          >
+            Ir al Inicio
+          </button>
+        </Link>
       </div>
     </>
   );
