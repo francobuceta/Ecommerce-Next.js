@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { emptyCart } from "@/store/slices/cartSlice";
 import {
   PaymentElement,
   useElements,
@@ -8,6 +10,8 @@ const PaymentForm = () => {
   const stripe = useStripe();
   const elements = useElements();
 
+  const dispatch = useDispatch();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { error } = await stripe.confirmPayment({
@@ -16,6 +20,7 @@ const PaymentForm = () => {
     });
     if (!error) {
       console.log("Pago completado");
+      dispatch(emptyCart());
     } else {
       console.log(error);
     }
