@@ -1,14 +1,25 @@
 "use client";
+import { useEffect, useState } from "react";
 import DetailsTable from "./DetailsTable";
 import Confetti from "react-confetti";
 import Link from "next/link";
 
 const PurchaseDetailComponent = () => {
+  const [windowWidth, setWindowWidth] = useState(null);
+  const [windowHeight, setWindowHeight] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth - 20)
+      setWindowHeight(window.innerHeight - 20)
+    }
+  },[]);
+
   return (
     <>
       <Confetti
-        width={window.innerWidth - 20}
-        height={window.innerHeight - 20}
+        width={windowWidth}
+        height={windowHeight}
         recycle={false}
       />
       <div className="flex flex-col justify-center items-center px-5 gap-5">
