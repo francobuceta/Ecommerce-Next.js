@@ -4,6 +4,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { postPurchase } from "@/services/clientFetching";
 import { Elements } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
+import { Toaster } from "react-hot-toast";
+import { errorNotification } from "@/utils/Notifications";
 import PaymentForm from "./PaymentForm";
 import Loader from "../loader/Loader";
 
@@ -54,7 +56,7 @@ const CheckoutComponent = () => {
       if (service) {
         setClientSecret(service.payload.client_secret);
       } else {
-        console.log("Hubo un error al traer el client secret");
+        errorNotification("Se ha producido un error inesperado. Vuelva a intentar más tarde.")
       }
     };
     totalPrice && getClientSecret();
@@ -79,6 +81,8 @@ const CheckoutComponent = () => {
           <Loader checkout={true} />
         </div>
       )}
+
+      <Toaster />
     </>
   );
 };
