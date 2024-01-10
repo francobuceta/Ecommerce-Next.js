@@ -76,6 +76,8 @@ const BestSelling = () => {
         centeredSlides
         effect="coverflow"
         loop
+        slideToClickedSlide={true}
+        centeredSlidesBounds={true}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
