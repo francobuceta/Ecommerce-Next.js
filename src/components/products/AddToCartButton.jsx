@@ -1,13 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addProductToCart } from "@/store/slices/cartSlice";
 import { postPurchase } from "@/services/clientFetching";
+import { useRouter } from "next/navigation";
 
-const AddToCartButton = ({ product }) => {
+const AddToCartButton = ({ product, user }) => {
   const [userCart, setUserCart] = useState(null);
+
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+
+  const router = useRouter();
 
   useEffect(() => {
     if (user.userCart.hasOwnProperty("cartId")) {
@@ -16,10 +19,14 @@ const AddToCartButton = ({ product }) => {
   }, [user.userCart]);
 
   const handleAddProduct = async () => {
-    dispatch(addProductToCart(product));
-    await postPurchase(
-      `/api/cart/${userCart}/product/${product._id}?qty=${product.quantity}`
-    );
+    if (user?.token) {
+      dispatch(addProductToCart(product));
+      await postPurchase(
+        `/api/cart/${userCart}/product/${product._id}?qty=${product.quantity}`
+      );
+    } else {
+      router.push("/auth");
+    }
   };
 
   return (
