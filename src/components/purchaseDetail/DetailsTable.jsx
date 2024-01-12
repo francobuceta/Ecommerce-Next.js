@@ -1,11 +1,8 @@
 "use client";
-import { useSelector } from "react-redux";
 import { FormatNumber } from "@/utils/CartCounts";
 import Image from "next/image";
 
-const DetailsTable = () => {
-  const purchaseData = useSelector((state) => state.purchase);
-
+const DetailsTable = ({ purchaseData }) => {
   const totalPrice = purchaseData?.reduce((total, product) => {
     return total + product.price * product.quantity;
   }, 0);

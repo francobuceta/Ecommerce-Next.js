@@ -6,6 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { errorNotification } from "@/utils/Notifications";
+import { redirect } from "next/navigation";
 import PaymentForm from "./PaymentForm";
 import Loader from "../loader/Loader";
 
@@ -59,6 +60,11 @@ const CheckoutComponent = () => {
         errorNotification("Se ha producido un error inesperado. Vuelva a intentar más tarde.")
       }
     };
+
+    //Redirigir a home si el usuario no está logueado.
+    if (user?.token === "") {
+      redirect("/");
+    }
     totalPrice && getClientSecret();
   }, [totalPrice]);
 

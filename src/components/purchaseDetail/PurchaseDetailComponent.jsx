@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { redirect } from "next/navigation";
 import DetailsTable from "./DetailsTable";
 import Confetti from "react-confetti";
 import Link from "next/link";
@@ -8,10 +10,18 @@ const PurchaseDetailComponent = () => {
   const [windowWidth, setWindowWidth] = useState(null);
   const [windowHeight, setWindowHeight] = useState(null);
 
+  const purchaseData = useSelector((state) => state.purchase);
+  const user = useSelector((state) => state.user);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth - 20)
       setWindowHeight(window.innerHeight - 20)
+    }
+
+    //Redirigir a home si el usuario no está logueado o no hay compra realizada.
+    if (user?.token === "" || purchaseData?.length === 0) {
+      redirect("/");
     }
   },[]);
 
@@ -32,7 +42,7 @@ const PurchaseDetailComponent = () => {
           Detalles de la compra
         </h3>
 
-        <DetailsTable />
+        <DetailsTable purchaseData={purchaseData} />
 
         <Link href={"/"}>
           <button
