@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { emptyCart } from "@/store/slices/cartSlice";
 import { setPurchaseData } from "@/store/slices/purchaseSlice";
+import { postPurchase } from "@/services/clientFetching";
 import { useRouter } from "next/navigation";
 import { Toaster } from "react-hot-toast";
 import { errorNotification } from "@/utils/Notifications";
@@ -11,7 +12,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 
-const PaymentForm = () => {
+const PaymentForm = ({ userCartId, purchaseData }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -19,6 +20,20 @@ const PaymentForm = () => {
   const dispatch = useDispatch();
 
   const { push } = useRouter();
+
+  const confirmPaymentInBackend = async () => {
+    try {
+      const response = await postPurchase(
+        `/payment/${userCartId}/payment-confirmation`,
+        purchaseData
+      );
+      return response;
+    } catch (error) {
+      errorNotification(
+        "Se ha producido un error al procesar el pago. Intente de nuevo más tarde."
+      );
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +45,7 @@ const PaymentForm = () => {
     if (!error) {
       dispatch(setPurchaseData(cart));
       dispatch(emptyCart());
+      confirmPaymentInBackend();
       push("/purchaseDetail");
     } else {
       errorNotification(

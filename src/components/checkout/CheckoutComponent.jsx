@@ -79,7 +79,7 @@ const CheckoutComponent = () => {
             <h2 className="text-3xl text-white font-semibold">
               Confirmación de compra
             </h2>
-            <PaymentForm />
+            <PaymentForm userCartId={user.userCart.cartId} purchaseData={purchaseData} />
           </div>
         </Elements>
       ) : (
