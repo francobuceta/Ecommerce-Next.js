@@ -48,9 +48,6 @@ const DetailsTable = ({ purchaseData }) => {
                   {FormatNumber(elem.price)}
                 </td>
                 <td>x {elem.quantity}</td>
-                <th>
-                  <button className="btn btn-ghost btn-xs">detalle</button>
-                </th>
               </tr>
             );
           })}
