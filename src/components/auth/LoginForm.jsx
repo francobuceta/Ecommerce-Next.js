@@ -6,6 +6,7 @@ import { setUserInStore } from "@/store/slices/userSlice";
 import { useDispatch } from "react-redux";
 import { errorNotification } from "@/utils/Notifications";
 import { useRouter } from "next/navigation";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 import FormErrorMessage from "../error/FormErrorMessage";
 import SocialIcons from "./SocialIcons";
 import Loader from "../loader/Loader";
@@ -13,6 +14,7 @@ import Loader from "../loader/Loader";
 function LoginForm() {
   const [loginError, setLoginError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
 
   const {
     register,
@@ -61,17 +63,33 @@ function LoginForm() {
         <FormErrorMessage content="Usuario y/o contraseña inválidos." />
       )}
 
-      <input
-        {...register("password", { required: true })}
-        type="password"
-        placeholder="Contraseña"
-      />
-      {errors.password && errors.password.type === "required" && (
-        <FormErrorMessage content="Debes completar este campo" />
-      )}
-      {loginError && (
-        <FormErrorMessage content="Usuario y/o contraseña inválidos." />
-      )}
+      <div className="w-full relative">
+        <input
+          {...register("password", { required: true })}
+          type={showLoginPassword ? "text" : "password"}
+          placeholder="Contraseña"
+        />
+        {errors.password && errors.password.type === "required" && (
+          <FormErrorMessage content="Debes completar este campo" />
+        )}
+        {loginError && (
+          <FormErrorMessage content="Usuario y/o contraseña inválidos." />
+        )}
+
+        <div className="absolute top-[18px] right-3">
+          {showLoginPassword ? (
+            <IoEye
+              onClick={() => setShowLoginPassword(false)}
+              className="cursor-pointer"
+            />
+          ) : (
+            <IoEyeOff
+              onClick={() => setShowLoginPassword(true)}
+              className="cursor-pointer"
+            />
+          )}
+        </div>
+      </div>
 
       {!loading ? (
         <button

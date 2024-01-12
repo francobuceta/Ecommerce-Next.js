@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { postRequest } from "@/services/clientFetching";
 import { successNotification, errorNotification } from "@/utils/Notifications";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 import FormErrorMessage from "../error/FormErrorMessage";
 import SocialIcons from "./SocialIcons";
 import Loader from "../loader/Loader";
@@ -10,6 +11,7 @@ import Loader from "../loader/Loader";
 function RegisterForm({ setOverlayClass }) {
   const [registerError, setRegisterError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showRegisterPassword, setShowRegisterPassword] = useState(false);
 
   const {
     register,
@@ -78,29 +80,46 @@ function RegisterForm({ setOverlayClass }) {
           register={true}
         />
       )}
-      <input
-        type="password"
-        placeholder="Contraseña"
-        {...register("password", { required: true, minLength: 5 })}
-      />
-      {errors.password && errors.password.type === "required" && (
-        <FormErrorMessage
-          content="Debes completar este campo"
-          register={true}
+
+      <div className="w-full relative">
+        <input
+          type={showRegisterPassword ? "text" : "password"}
+          placeholder="Contraseña"
+          {...register("password", { required: true, minLength: 5 })}
         />
-      )}
-      {errors.password && errors.password.type === "minLength" && (
-        <FormErrorMessage
-          content="La contraseña debe contar con al menos 5 caracteres."
-          register={true}
-        />
-      )}
-      {registerError && (
-        <FormErrorMessage
-          content="El email ingresado ya existe."
-          register={true}
-        />
-      )}
+        {errors.password && errors.password.type === "required" && (
+          <FormErrorMessage
+            content="Debes completar este campo"
+            register={true}
+          />
+        )}
+        {errors.password && errors.password.type === "minLength" && (
+          <FormErrorMessage
+            content="La contraseña debe contar con al menos 5 caracteres."
+            register={true}
+          />
+        )}
+        {registerError && (
+          <FormErrorMessage
+            content="El email ingresado ya existe."
+            register={true}
+          />
+        )}
+
+        <div className="absolute top-[18px] right-3">
+          {showRegisterPassword ? (
+            <IoEye
+              onClick={() => setShowRegisterPassword(false)}
+              className="cursor-pointer"
+            />
+          ) : (
+            <IoEyeOff
+              onClick={() => setShowRegisterPassword(true)}
+              className="cursor-pointer"
+            />
+          )}
+        </div>
+      </div>
 
       {!loading ? (
         <button
