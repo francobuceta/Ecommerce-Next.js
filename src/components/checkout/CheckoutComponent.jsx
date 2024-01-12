@@ -63,7 +63,7 @@ const CheckoutComponent = () => {
 
     //Redirigir a home si el usuario no está logueado.
     if (user?.token === "") {
-      redirect("/");
+      redirect("/auth");
     }
     totalPrice && getClientSecret();
   }, [totalPrice]);
