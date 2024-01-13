@@ -15,8 +15,6 @@
   background-color: #fff;
   width: 300px;
   height: 300px;
-  /* -webkit-box-reflect: below 1px
-    linear-gradient(transparent, transparent, #0006); */
 }
 
 .swiper-slide-active .slide-content {
@@ -154,6 +152,7 @@
   /* Swiper Styles */
   #best-selling .swiper .swiper-slide {
     background-position: 100px 50%;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
   }
   .swiper-slide-active .slide-content {
     width: 70%;
