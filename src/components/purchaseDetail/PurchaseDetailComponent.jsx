@@ -14,24 +14,20 @@ const PurchaseDetailComponent = () => {
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth - 20)
-      setWindowHeight(window.innerHeight - 20)
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth - 20);
+      setWindowHeight(window.innerHeight - 20);
     }
 
     //Redirigir a home si el usuario no está logueado o no hay compra realizada.
     if (user?.token === "" || purchaseData?.length === 0) {
       redirect("/");
     }
-  },[]);
+  }, []);
 
   return (
     <>
-      <Confetti
-        width={windowWidth}
-        height={windowHeight}
-        recycle={false}
-      />
+      <Confetti width={windowWidth} height={windowHeight} recycle={false} />
       <div className="flex flex-col justify-center items-center px-5 gap-5">
         <h2 className="text-3xl text-white font-semibold">¡Felicitaciones!</h2>
         <p className="text-xl text-white">
@@ -45,9 +41,7 @@ const PurchaseDetailComponent = () => {
         <DetailsTable purchaseData={purchaseData} />
 
         <Link href={"/"}>
-          <button
-            className="border border-none rounded-md w-48 text-xl text-white p-2 bg-custome-black hover:bg-white hover:text-black mt-10"
-          >
+          <button className="border border-none rounded-md w-48 text-xl text-white p-2 bg-custome-black hover:bg-white hover:text-black mt-10">
             Ir al Inicio
           </button>
         </Link>

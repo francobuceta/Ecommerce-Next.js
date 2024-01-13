@@ -66,8 +66,10 @@ const BestSelling = () => {
                 <p className="hidden text-sm sm:text-base">
                   {slide.description}
                 </p>
-                <button className="hidden border border-custome-secondary rounded-md bg-transparent w-16 sm:w-20 h-8 sm:h-10 text-sm sm:text-lg"
-                  onClick={() => handleTransition(slide.url)}>
+                <button
+                  className="hidden border border-custome-secondary rounded-md bg-transparent w-16 sm:w-20 h-8 sm:h-10 text-sm sm:text-lg"
+                  onClick={() => handleTransition(slide.url)}
+                >
                   Ver
                 </button>
               </div>

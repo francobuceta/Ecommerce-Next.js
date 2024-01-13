@@ -33,7 +33,7 @@ const PaymentForm = ({ userCartId, purchaseData }) => {
         "Se ha producido un error al procesar el pago. Intente de nuevo más tarde."
       );
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

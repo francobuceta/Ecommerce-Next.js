@@ -40,13 +40,13 @@ const DetailsTable = ({ purchaseData }) => {
                     </div>
                     <div>
                       <div className="font-bold">{elem.title}</div>
-                      <div className="text-sm opacity-50">Código: {elem.code}</div>
+                      <div className="text-sm opacity-50">
+                        Código: {elem.code}
+                      </div>
                     </div>
                   </div>
                 </td>
-                <td>
-                  {FormatNumber(elem.price)}
-                </td>
+                <td>{FormatNumber(elem.price)}</td>
                 <td>x {elem.quantity}</td>
               </tr>
             );
@@ -55,9 +55,11 @@ const DetailsTable = ({ purchaseData }) => {
       </table>
 
       <div className="flex justify-center mt-16">
-      <div className="w-fit bg-custome-primary p-2">
-        <p className="text-2xl text-black">TOTAL: {FormatNumber(totalPrice)}</p>
-      </div>
+        <div className="w-fit bg-custome-primary p-2">
+          <p className="text-2xl text-black">
+            TOTAL: {FormatNumber(totalPrice)}
+          </p>
+        </div>
       </div>
     </div>
   );

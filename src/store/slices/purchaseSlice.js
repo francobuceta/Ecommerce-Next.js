@@ -13,5 +13,5 @@ const purchaseSlice = createSlice({
   },
 });
 
-export const { setPurchaseData} = purchaseSlice.actions;
+export const { setPurchaseData } = purchaseSlice.actions;
 export default purchaseSlice.reducer;

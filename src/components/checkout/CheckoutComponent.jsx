@@ -57,7 +57,9 @@ const CheckoutComponent = () => {
       if (service) {
         setClientSecret(service.payload.client_secret);
       } else {
-        errorNotification("Se ha producido un error inesperado. Vuelva a intentar más tarde.")
+        errorNotification(
+          "Se ha producido un error inesperado. Vuelva a intentar más tarde."
+        );
       }
     };
 
@@ -79,7 +81,10 @@ const CheckoutComponent = () => {
             <h2 className="text-3xl text-white font-semibold">
               Confirmación de compra
             </h2>
-            <PaymentForm userCartId={user.userCart.cartId} purchaseData={purchaseData} />
+            <PaymentForm
+              userCartId={user.userCart.cartId}
+              purchaseData={purchaseData}
+            />
           </div>
         </Elements>
       ) : (

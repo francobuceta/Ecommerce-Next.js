@@ -1,9 +1,7 @@
 import PurchaseDetailComponent from "@/components/purchaseDetail/PurchaseDetailComponent";
 
 const PurchaseDetail = () => {
-    return(
-        <PurchaseDetailComponent />
-    )
-}
+  return <PurchaseDetailComponent />;
+};
 
 export default PurchaseDetail;
