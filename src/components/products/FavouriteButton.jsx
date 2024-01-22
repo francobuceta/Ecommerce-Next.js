@@ -2,33 +2,40 @@
 import { AiFillHeart } from "react-icons/ai";
 import { setLocalStorage } from "@/utils/LocalStorageFunctions";
 
-const FavouriteButton = ({ favourite, setFavourite, title, id, category, image, description, price }) => {
-
+const FavouriteButton = ({
+  favourite,
+  setFavourite,
+  title,
+  id,
+  category,
+  image,
+  description,
+  price,
+}) => {
   const handleFavourite = (productId) => {
     const isClicked = favourite.find((elem) => elem.id === productId);
 
     if (isClicked) {
       const deleteFavourite = favourite.filter((elem) => elem.id !== productId);
       setFavourite(deleteFavourite);
-      setLocalStorage('favouriteProducts', deleteFavourite);
+      setLocalStorage("favouriteProducts", deleteFavourite);
     } else {
-      const productObject = { 
+      const productObject = {
         id: productId,
         title: title,
         category: category,
         image: image,
         description: description,
-        price: price
-      }
-      setFavourite(prev => [...prev, productObject]);
-      setLocalStorage('favouriteProducts', [...favourite, productObject]);
+        price: price,
+      };
+      setFavourite((prev) => [...prev, productObject]);
+      setLocalStorage("favouriteProducts", [...favourite, productObject]);
     }
   };
 
   return (
     <>
-      {favourite.length > 0 &&
-      favourite.find((elem) => elem.id === id) ? (
+      {favourite.length > 0 && favourite.find((elem) => elem.id === id) ? (
         <AiFillHeart
           fontSize={24}
           id={title}

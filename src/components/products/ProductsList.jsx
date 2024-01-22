@@ -28,12 +28,12 @@ const ProductsList = ({ categoryId }) => {
   };
 
   useEffect(() => {
-    const productsFromLocalStorage = getLocalStorage('favouriteProducts');
+    const productsFromLocalStorage = getLocalStorage("favouriteProducts");
 
     if (productsFromLocalStorage) {
       setFavourite(productsFromLocalStorage);
     }
-  },[]);
+  }, []);
 
   useEffect(() => {
     fetchData(currentPage);
@@ -53,7 +53,7 @@ const ProductsList = ({ categoryId }) => {
               title={product.title}
               description={product.description}
               price={product.price}
-              favourite={favourite} 
+              favourite={favourite}
               setFavourite={setFavourite}
             />
           ))

@@ -1,11 +1,20 @@
-"use client"
+"use client";
 import Image from "next/image";
 import FavouriteButton from "./FavouriteButton";
 import { useRouter } from "next/navigation";
 import { flushSync } from "react-dom";
 import { FormatNumber } from "@/utils/CartCounts";
 
-const ProductCard = ({ id, category, image, title, description, price, favourite, setFavourite }) => {
+const ProductCard = ({
+  id,
+  category,
+  image,
+  title,
+  description,
+  price,
+  favourite,
+  setFavourite,
+}) => {
   const router = useRouter();
 
   //Redirection with transition to product detail.
@@ -29,14 +38,14 @@ const ProductCard = ({ id, category, image, title, description, price, favourite
           alt={title}
           className="w-full h-auto object-contain"
         />
-        <FavouriteButton 
-          favourite={favourite} 
-          setFavourite={setFavourite} 
-          title={title} 
-          id={id} 
-          category={category} 
-          image={image} 
-          description={description} 
+        <FavouriteButton
+          favourite={favourite}
+          setFavourite={setFavourite}
+          title={title}
+          id={id}
+          category={category}
+          image={image}
+          description={description}
           price={price}
         />
       </figure>
