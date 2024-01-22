@@ -4,10 +4,12 @@ import { getRequest } from "@/services/clientFetching";
 import ProductCard from "@/components/products/ProductCard";
 import PaginationButton from "./PaginationButton";
 import { ProductsSkeleton } from "../loader/Skeleton";
+import { getLocalStorage } from "@/utils/LocalStorageFunctions";
 
 const ProductsList = ({ categoryId }) => {
   const [products, setProducts] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [favourite, setFavourite] = useState([]);
 
   const fetchData = async (page) => {
     try {
@@ -24,6 +26,14 @@ const ProductsList = ({ categoryId }) => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const productsFromLocalStorage = getLocalStorage('favouriteProducts');
+
+    if (productsFromLocalStorage) {
+      setFavourite(productsFromLocalStorage);
+    }
+  },[]);
 
   useEffect(() => {
     fetchData(currentPage);
@@ -43,6 +53,8 @@ const ProductsList = ({ categoryId }) => {
               title={product.title}
               description={product.description}
               price={product.price}
+              favourite={favourite} 
+              setFavourite={setFavourite}
             />
           ))
         ) : (

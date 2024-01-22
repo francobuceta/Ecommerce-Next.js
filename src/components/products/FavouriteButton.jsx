@@ -1,18 +1,19 @@
 "use client";
-import { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
+import { setLocalStorage } from "@/utils/LocalStorageFunctions";
 
-const FavouriteButton = ({ title }) => {
-  const [favourite, setFavourite] = useState([]);
+const FavouriteButton = ({ favourite, setFavourite, title }) => {
 
   const handleFavourite = (id) => {
     const isClicked = favourite.find((elem) => elem.product === id);
 
     if (isClicked) {
       const deleteFavourite = favourite.filter((elem) => elem.product !== id);
-      setFavourite([...deleteFavourite]);
+      setFavourite(deleteFavourite);
+      setLocalStorage('favouriteProducts', deleteFavourite);
     } else {
-      setFavourite([...favourite, { product: id }]);
+      setFavourite(prev => [...prev, { product: id }]);
+      setLocalStorage('favouriteProducts', [...favourite, { product: id }]);
     }
   };
 
