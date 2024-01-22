@@ -2,29 +2,37 @@
 import { AiFillHeart } from "react-icons/ai";
 import { setLocalStorage } from "@/utils/LocalStorageFunctions";
 
-const FavouriteButton = ({ favourite, setFavourite, title }) => {
+const FavouriteButton = ({ favourite, setFavourite, title, id, category, image, description, price }) => {
 
-  const handleFavourite = (id) => {
-    const isClicked = favourite.find((elem) => elem.product === id);
+  const handleFavourite = (productId) => {
+    const isClicked = favourite.find((elem) => elem.id === productId);
 
     if (isClicked) {
-      const deleteFavourite = favourite.filter((elem) => elem.product !== id);
+      const deleteFavourite = favourite.filter((elem) => elem.id !== productId);
       setFavourite(deleteFavourite);
       setLocalStorage('favouriteProducts', deleteFavourite);
     } else {
-      setFavourite(prev => [...prev, { product: id }]);
-      setLocalStorage('favouriteProducts', [...favourite, { product: id }]);
+      const productObject = { 
+        id: productId,
+        title: title,
+        category: category,
+        image: image,
+        description: description,
+        price: price
+      }
+      setFavourite(prev => [...prev, productObject]);
+      setLocalStorage('favouriteProducts', [...favourite, productObject]);
     }
   };
 
   return (
     <>
       {favourite.length > 0 &&
-      favourite.find((elem) => elem.product === title) ? (
+      favourite.find((elem) => elem.id === id) ? (
         <AiFillHeart
           fontSize={24}
           id={title}
-          onClick={() => handleFavourite(title)}
+          onClick={() => handleFavourite(id)}
           fill="red"
           stroke="black"
           strokeWidth="0"
@@ -34,7 +42,7 @@ const FavouriteButton = ({ favourite, setFavourite, title }) => {
         <AiFillHeart
           fontSize={24}
           id={title}
-          onClick={() => handleFavourite(title)}
+          onClick={() => handleFavourite(id)}
           fill="transparent"
           stroke="black"
           strokeWidth="50px"

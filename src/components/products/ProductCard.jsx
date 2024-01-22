@@ -29,7 +29,16 @@ const ProductCard = ({ id, category, image, title, description, price, favourite
           alt={title}
           className="w-full h-auto object-contain"
         />
-        <FavouriteButton favourite={favourite} setFavourite={setFavourite} title={title} />
+        <FavouriteButton 
+          favourite={favourite} 
+          setFavourite={setFavourite} 
+          title={title} 
+          id={id} 
+          category={category} 
+          image={image} 
+          description={description} 
+          price={price}
+        />
       </figure>
 
       <div className="card-body bg-custome-primary rounded-b-2xl gap-0">
