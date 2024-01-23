@@ -27,7 +27,7 @@ const CartIcon = () => {
       }
     };
 
-    getUserCart();
+    user && getUserCart();
   }, [user.userCart, cart.length]);
 
   useEffect(() => {
