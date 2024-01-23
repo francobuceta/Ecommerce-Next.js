@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { getLocalStorage } from "@/utils/LocalStorageFunctions";
 import ProductCard from "../products/ProductCard";
+import Link from "next/link";
+import { BsFillSearchHeartFill } from "react-icons/bs";
 
 const FavouritesComponent = () => {
   const [favourite, setFavourite] = useState([]);
@@ -31,7 +33,21 @@ const FavouritesComponent = () => {
           />
         ))
       ) : (
-        <div>Todavía no tienes productos como favoritos</div>
+        <div className="flex flex-col justify-center items-center">
+          <BsFillSearchHeartFill className="w-[200px] sm:w-[300px] h-auto text-custome-primary" />
+
+          <div className="text-center mt-5">
+            <p className="text-white text-2xl px-10">
+              Todavía no agregaste ningún producto a favoritos.
+            </p>
+
+            <Link href="/products/all">
+              <button className="btn btn-active bg-custome-primary text-xl text-custome-secondary border-none w-40 h-10 mt-3">
+                Ver Catálogo
+              </button>
+            </Link>
+          </div>
+        </div>
       )}
     </>
   );
