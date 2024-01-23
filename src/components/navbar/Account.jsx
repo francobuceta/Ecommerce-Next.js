@@ -3,6 +3,7 @@ import Link from "next/link";
 import { VscAccount } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
 import { logOutUser } from "@/store/slices/userSlice";
+import { emptyCart } from "@/store/slices/cartSlice";
 import { HandleDropdown } from "@/utils/HandleDropdown";
 import { getRequest } from "@/services/clientFetching";
 
@@ -14,6 +15,7 @@ const Account = () => {
     HandleDropdown();
     await getRequest("/user/logout");
     dispatch(logOutUser());
+    dispatch(emptyCart());
   };
 
   return (
