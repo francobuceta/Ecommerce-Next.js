@@ -38,11 +38,18 @@ const Account = () => {
               </li>
             </>
           ) : (
-            <li>
-              <Link href="/auth" onClick={HandleDropdown}>
-                Ingresar / Registrarse
-              </Link>
-            </li>
+            <>
+              <li>
+                <Link href="/auth" onClick={HandleDropdown}>
+                  Ingresar / Registrarse
+                </Link>
+              </li>
+              <li>
+                <Link href="/favourites" onClick={HandleDropdown}>
+                  Favoritos
+                </Link>
+              </li>
+            </>
           )}
         </ul>
       </div>
