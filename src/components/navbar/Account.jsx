@@ -29,7 +29,7 @@ const Account = () => {
           {user.token !== "" ? (
             <>
               <li>
-                <Link href="/" onClick={HandleDropdown}>
+                <Link href="/favourites" onClick={HandleDropdown}>
                   Favoritos
                 </Link>
               </li>
