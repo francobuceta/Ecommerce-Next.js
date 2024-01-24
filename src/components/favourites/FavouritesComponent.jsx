@@ -4,6 +4,7 @@ import { getLocalStorage } from "@/utils/LocalStorageFunctions";
 import ProductCard from "../products/ProductCard";
 import Link from "next/link";
 import { BsFillSearchHeartFill } from "react-icons/bs";
+import { PrimaryButton } from "../buttons/PrimaryButtons";
 
 const FavouritesComponent = () => {
   const [favourite, setFavourite] = useState([]);
@@ -43,9 +44,11 @@ const FavouritesComponent = () => {
               </p>
 
               <Link href="/products/all">
-                <button className="btn btn-active bg-custome-primary text-xl text-custome-secondary border-none w-40 h-10 mt-3">
-                  Ver Catálogo
-                </button>
+                <PrimaryButton 
+                  content={"Ver Catálogo"}
+                  styles={"text-xl w-40 h-10 mt-3"}
+                  fn={undefined}
+                />
               </Link>
             </div>
           </div>

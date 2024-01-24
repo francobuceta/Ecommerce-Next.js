@@ -4,6 +4,7 @@ import FavouriteButton from "./FavouriteButton";
 import { useRouter } from "next/navigation";
 import { flushSync } from "react-dom";
 import { FormatNumber } from "@/utils/CartCounts";
+import { CardButton } from "../buttons/PrimaryButtons";
 
 const ProductCard = ({
   id,
@@ -55,12 +56,11 @@ const ProductCard = ({
         <p className="truncate">{description}</p>
         <span className="text-xl font-bold">{FormatNumber(price)}</span>
         <div className="card-actions justify-end">
-          <button
-            className="btn bg-transparent border border-custome-secondary w-20"
-            onClick={() => handleTransition(category, id)}
-          >
-            Ver
-          </button>
+          <CardButton
+            content={"Ver"}
+            styles={"w-20 h-10 text-lg"}
+            fn={() => handleTransition(category, id)}
+          />
         </div>
       </div>
     </div>

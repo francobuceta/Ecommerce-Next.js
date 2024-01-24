@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addProductToCart } from "@/store/slices/cartSlice";
 import { postPurchase } from "@/services/clientFetching";
 import { useRouter } from "next/navigation";
+import { PrimaryButtonOutline } from "../buttons/PrimaryButtons";
 
 const AddToCartButton = ({ product, user }) => {
   const [userCart, setUserCart] = useState(null);
@@ -30,12 +31,11 @@ const AddToCartButton = ({ product, user }) => {
   };
 
   return (
-    <button
-      className="border border-none rounded-md w-52 text-xl text-white p-2 bg-custome-black hover:bg-white hover:text-black"
-      onClick={handleAddProduct}
-    >
-      Agregar al carrito
-    </button>
+    <PrimaryButtonOutline
+      content={"Agregar al carrito"}
+      styles={"w-52 text-xl p-2"}
+      fn={handleAddProduct}
+    />
   );
 };
 

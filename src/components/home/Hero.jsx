@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PrimaryButton } from "../buttons/PrimaryButtons";
 
 const Hero = () => {
   return (
@@ -10,9 +11,11 @@ const Hero = () => {
             YOUR <br className="hidden sm:block" /> GATEWAY TO <br /> PROGRESS
           </h1>
           <Link href="/products/all">
-            <button className="btn btn-active bg-custome-secondary text-xl text-white w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10">
-              Ver Catálogo
-            </button>
+            <PrimaryButton 
+              content={"VER CATÁLOGO"}
+              styles={"text-xl text-white bg-custome-secondary w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10"}
+              fn={undefined}
+            />
           </Link>
         </div>
 

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper";
 import { useRouter } from "next/navigation";
 import { flushSync } from "react-dom";
+import { CardButton } from "../buttons/PrimaryButtons";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -66,12 +67,11 @@ const BestSelling = () => {
                 <p className="hidden text-sm sm:text-base">
                   {slide.description}
                 </p>
-                <button
-                  className="hidden border border-custome-secondary rounded-md bg-transparent w-16 sm:w-20 h-8 sm:h-10 text-sm sm:text-lg"
-                  onClick={() => handleTransition(slide.url)}
-                >
-                  Ver
-                </button>
+                <CardButton
+                  content={"Ver"}
+                  styles={"hidden w-16 sm:w-20 h-8 sm:h-10 text-sm sm:text-lg"}
+                  fn={() => handleTransition(slide.url)}
+                />
               </div>
             </SwiperSlide>
           ))}
