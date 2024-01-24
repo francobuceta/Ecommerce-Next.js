@@ -19,12 +19,7 @@ const Faqs = () => {
             </div>
             <div className="collapse-content">
               <p>{elem.text}</p>
-              {elem.text2 && (
-                <>
-                  <p>{elem.text2}</p>
-                  <p>{elem.text2}</p>
-                </>
-              )}
+              <p>{elem.text2}</p>
             </div>
           </div>
         ))}
