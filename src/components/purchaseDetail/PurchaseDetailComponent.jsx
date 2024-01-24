@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { redirect } from "next/navigation";
+import { PrimaryButtonOutline } from "../buttons/PrimaryButtons";
 import DetailsTable from "./DetailsTable";
 import Confetti from "react-confetti";
 import Link from "next/link";
@@ -41,9 +42,11 @@ const PurchaseDetailComponent = () => {
         <DetailsTable purchaseData={purchaseData} />
 
         <Link href={"/"}>
-          <button className="border border-none rounded-md w-48 text-xl text-white p-2 bg-custome-black hover:bg-white hover:text-black mt-10">
-            Ir al Inicio
-          </button>
+          <PrimaryButtonOutline
+            content={"Ir al Inicio"}
+            styles={"w-48 text-xl p-2"}
+            fn={undefined}
+          />
         </Link>
       </div>
     </>
