@@ -26,13 +26,13 @@ const CountButton = ({ stock, setProduct }) => {
         </div>
         <div className="flex gap-2">
           <button
-            className="border rounded-md w-20 text-2xl hover:bg-custome-primary hover:text-black hover:border-none"
+            className="border rounded-md w-20 text-2xl hover:bg-custome-primary hover:text-black hover:border-none active:scale-[0.95]"
             onClick={decreaseCount}
           >
             -
           </button>
           <button
-            className="border rounded-md w-20 text-2xl hover:bg-custome-primary hover:text-black hover:border-none"
+            className="border rounded-md w-20 text-2xl hover:bg-custome-primary hover:text-black hover:border-none active:scale-[0.95]"
             onClick={increaseCount}
           >
             +
