@@ -6,6 +6,7 @@ import { postPurchase } from "@/services/clientFetching";
 import { useRouter } from "next/navigation";
 import { Toaster } from "react-hot-toast";
 import { errorNotification } from "@/utils/Notifications";
+import { PrimaryButton } from "../buttons/PrimaryButtons";
 import {
   PaymentElement,
   useElements,
@@ -59,12 +60,11 @@ const PaymentForm = ({ userCartId, purchaseData }) => {
       <form className="w-full max-w-[600px]">
         <PaymentElement />
         <div className="mt-5 flex justify-end">
-          <button
-            className="border-none rounded-md p-2 w-[200px] font-bold bg-custome-primary"
-            onClick={handleSubmit}
-          >
-            Realizar Pago
-          </button>
+          <PrimaryButton
+            content={"Realizar Pago"}
+            styles={"font-bold mt-3 p-2 w-[200px]"}
+            fn={handleSubmit}
+          />
         </div>
       </form>
       <Toaster />
