@@ -15,6 +15,8 @@ const AboutUs = () => {
           de componentes para PC, desde teclados y mouses de alta precisión
           hasta audio inmersivo, auriculares de calidad, sillas de escritorio
           ergonómicas y más. <br />
+        </p>
+        <p className="text-white text-xl">
           Nos enorgullece ofrecer productos de{" "}
           <span className="text-custome-primary">primera calidad</span> que
           combinan un diseño moderno y elegante con un rendimiento excepcional.
@@ -33,14 +35,13 @@ const AboutUs = () => {
           . Nuestro equipo está aquí para responder todas tus preguntas,
           asesorarte en tus decisiones de compra y garantizar que encuentres los
           productos adecuados para tus necesidades. <br />
-          Nos aseguramos de ofrecerte productos de{" "}
+          Ofrecemos productos de{" "}
           <span className="text-custome-primary">
             marcas reconocidas y confiables
           </span>{" "}
           que cumplen con nuestros estándares de calidad. <br />
           Únete a la comunidad de entusiastas de la tecnología y experimenta un
-          rendimiento sin igual con los productos de Cyber Cube. Estamos aquí
-          para ayudarte a llevar tu experiencia informática al siguiente nivel.
+          rendimiento sin igual con los productos de Cyber Cube.
         </p>
       </div>
     </section>
