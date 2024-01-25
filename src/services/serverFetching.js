@@ -2,7 +2,7 @@ const URL = process.env.BACKEND_API_URL;
 
 export const getRequest = async (endpoint) => {
   try {
-    const response = await fetch(URL + endpoint, { next: { revalidate: 60 } });
+    const response = await fetch(URL + endpoint, { next: { revalidate: 0 } });
 
     return response.json();
   } catch (error) {
