@@ -18,6 +18,9 @@ const Account = () => {
     dispatch(emptyCart());
   };
 
+  //Establecemos el tema en modo claro para que el navegador no cambie los colores del sitio si el usuario tiene tema oscuro.
+  localStorage.theme = "light";
+
   return (
     <div className="flex items-center gap-3">
       <div className="dropdown dropdown-end">
