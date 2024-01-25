@@ -44,9 +44,9 @@ const PaymentForm = ({ userCartId, purchaseData }) => {
     });
 
     if (!error) {
+      confirmPaymentInBackend();
       dispatch(setPurchaseData(cart));
       dispatch(emptyCart());
-      confirmPaymentInBackend();
       push("/purchaseDetail");
     } else {
       errorNotification(
