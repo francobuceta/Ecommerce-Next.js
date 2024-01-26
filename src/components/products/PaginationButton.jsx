@@ -22,7 +22,7 @@ const PaginationButton = ({ products, currentPage, setCurrentPage }) => {
       >
         {currentPage > 1 && (
           <button
-            className={`btn btn-outline bg-white button-darkMode ${
+            className={`btn btn-outline bg-white card_text-darkMode ${
               products?.info?.hasNextPage && "join-item"
             }`}
             onClick={handlePrevPage}
@@ -32,7 +32,7 @@ const PaginationButton = ({ products, currentPage, setCurrentPage }) => {
         )}
         {products?.info?.hasNextPage && (
           <button
-            className={`btn btn-outline bg-white button-darkMode ${
+            className={`btn btn-outline bg-white card_text-darkMode ${
               currentPage > 1 && "join-item"
             }`}
             onClick={handleNextPage}
