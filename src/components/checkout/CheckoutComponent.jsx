@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { errorNotification } from "@/utils/Notifications";
-import { redirect } from "next/navigation";
+import { useRouter } from 'next/navigation'
 import PaymentForm from "./PaymentForm";
 import Loader from "../loader/Loader";
 
@@ -16,6 +16,8 @@ const CheckoutComponent = () => {
   const [clientSecret, setClientSecret] = useState(null);
   const products = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
+
+  const router = useRouter();
 
   const productsTitle = products
     ?.map((elem) => `${elem.title} x${elem.quantity}`)
@@ -54,18 +56,19 @@ const CheckoutComponent = () => {
         purchaseData
       );
 
-      if (service) {
+      if (service !== "Ha ocurrido un error inesperado") {
         setClientSecret(service.payload.client_secret);
       } else {
         errorNotification(
           "Se ha producido un error inesperado. Vuelva a intentar más tarde."
-        );
+          );
+        setTimeout(() => router.push("/"), 3000);
       }
     };
 
     //Redirigir a home si el usuario no está logueado.
     if (user?.token === "") {
-      redirect("/auth");
+      router.push("/auth");
     }
     totalPrice && getClientSecret();
   }, [totalPrice]);
