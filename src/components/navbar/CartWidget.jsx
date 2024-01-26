@@ -54,7 +54,7 @@ const CartIcon = () => {
             />
           </svg>
           {items > 0 && (
-            <span className="badge badge-sm indicator-item text-black text-sm font-main">
+            <span className="badge badge-sm indicator-item text-black text-sm font-main button-darkMode">
               {items}
             </span>
           )}
