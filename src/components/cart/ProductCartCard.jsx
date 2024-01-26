@@ -35,7 +35,7 @@ const ProductCartCard = ({ products, user }) => {
 
               <div className="card-actions justify-end mt-7 sm:mt-0">
                 <Link href={`/products/${product.category}/${product._id}`}>
-                  <button className="btn bg-custome-primary border-none card_bg-darkMode">
+                  <button className="btn bg-custome-primary border-none cartCard_bg-darkMode">
                     Ver
                   </button>
                 </Link>

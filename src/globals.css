@@ -155,6 +155,9 @@
   .card_text-darkMode {
     color: #1e1e1e;
   }
+  .cartCard_bg-darkMode{
+    background-color: #BAFF29!important;
+  }
   .button-darkMode {
     color: #fff;
   }
