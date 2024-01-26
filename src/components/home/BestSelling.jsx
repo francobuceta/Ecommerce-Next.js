@@ -60,7 +60,7 @@ const BestSelling = () => {
                 backgroundImage: `url(${slide.img})`,
               }}
             >
-              <div className="opacity-0 transition-opacity duration-700 delay-300 ease-in-out slide-content">
+              <div className="opacity-0 transition-opacity duration-700 delay-300 ease-in-out slide-content card_text-darkMode">
                 <h3 className="hidden font-main text-md sm:text-xl font-bold">
                   {slide.title}
                 </h3>

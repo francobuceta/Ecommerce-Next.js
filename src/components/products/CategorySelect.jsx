@@ -55,7 +55,7 @@ const CategorySelect = () => {
         </div>
 
         <div className="flex items-end">
-          <input type="submit" value="Buscar" className="btn bg-custome" />
+          <input type="submit" value="Buscar" className="btn bg-custome button-darkMode" />
         </div>
       </form>
     </section>

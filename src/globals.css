@@ -149,8 +149,14 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .darkBg {
+  .card_bg-darkMode{
     background-color: #fff!important;
+  }
+  .card_text-darkMode {
+    color: #1e1e1e;
+  }
+  .button-darkMode {
+    color: #fff;
   }
 }
 

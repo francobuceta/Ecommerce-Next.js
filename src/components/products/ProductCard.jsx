@@ -29,7 +29,7 @@ const ProductCard = ({
   };
 
   return (
-    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl darkBg">
+    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl card_bg-darkMode">
       <figure className="relative p-20">
         <Image
           src={image}
@@ -51,7 +51,7 @@ const ProductCard = ({
         />
       </figure>
 
-      <div className="card-body bg-custome-primary rounded-b-2xl gap-0">
+      <div className="card-body bg-custome-primary rounded-b-2xl gap-0 card_text-darkMode">
         <h3 className="truncate card-title select-none">{title}</h3>
         <p className="truncate">{description}</p>
         <span className="text-xl font-bold">{FormatNumber(price)}</span>
