@@ -47,9 +47,9 @@ function LoginForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
     >
-      <h1 className="font-bold font-main text-4xl">Ingresar</h1>
+      <h1 className="font-bold font-main text-4xl auth_text-darkMode">Ingresar</h1>
       <SocialIcons />
-      <span className="text-sm">o ingresá con tu email</span>
+      <span className="text-sm auth_text-darkMode">o ingresá con tu email</span>
 
       <input
         {...register("email", { required: true })}
@@ -80,12 +80,12 @@ function LoginForm() {
           {showLoginPassword ? (
             <IoEye
               onClick={() => setShowLoginPassword(false)}
-              className="cursor-pointer"
+              className="cursor-pointer auth_text-darkMode"
             />
           ) : (
             <IoEyeOff
               onClick={() => setShowLoginPassword(true)}
-              className="cursor-pointer"
+              className="cursor-pointer auth_text-darkMode"
             />
           )}
         </div>

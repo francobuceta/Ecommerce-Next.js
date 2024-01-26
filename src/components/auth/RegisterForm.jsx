@@ -44,9 +44,9 @@ function RegisterForm({ setOverlayClass }) {
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white flex flex-col px-12 h-full justify-center items-center text-center"
     >
-      <h1 className="font-bold font-main text-4xl">Crear Cuenta</h1>
+      <h1 className="font-bold font-main text-4xl auth_text-darkMode">Crear Cuenta</h1>
       <SocialIcons />
-      <span className="text-sm">o usá tu email para registrarte</span>
+      <span className="text-sm auth_text-darkMode">o usá tu email para registrarte</span>
       <input
         type="text"
         placeholder="Nombre"
@@ -110,12 +110,12 @@ function RegisterForm({ setOverlayClass }) {
           {showRegisterPassword ? (
             <IoEye
               onClick={() => setShowRegisterPassword(false)}
-              className="cursor-pointer"
+              className="cursor-pointer auth_text-darkMode"
             />
           ) : (
             <IoEyeOff
               onClick={() => setShowRegisterPassword(true)}
-              className="cursor-pointer"
+              className="cursor-pointer auth_text-darkMode"
             />
           )}
         </div>

@@ -43,6 +43,7 @@ const SocialIcons = () => {
       <div className="my-4 border border-solid border-[#ddd] rounded-full inline-flex justify-center items-center mx-1 w-[40px] h-[40px] cursor-pointer hover:text-[#DB4437] hover:bg-[#F4B400] hover:border-custome-secondary">
         <AiOutlineGoogle
           size={20}
+          className="auth_text-darkMode"
           onClick={() => {
             handleThirdPartyAuth("registroGoogle");
           }}
@@ -51,6 +52,7 @@ const SocialIcons = () => {
       <div className="my-4 border border-solid border-[#ddd] rounded-full inline-flex justify-center items-center mx-1 w-[40px] h-[40px] cursor-pointer hover:text-[#FFFFFF] hover:bg-custome-secondary hover:border-custome-secondary">
         <AiOutlineGithub
           size={20}
+          className="auth_text-darkMode"
           onClick={() => {
             handleThirdPartyAuth("registroGithub");
           }}
