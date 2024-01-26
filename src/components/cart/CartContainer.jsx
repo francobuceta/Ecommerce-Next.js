@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
@@ -7,12 +8,18 @@ import CartControlsContainer from "./CartControlsContainer";
 import { PrimaryButton } from "../buttons/PrimaryButtons";
 
 const CartContainer = () => {
+  const [noProducts, setNoProducts] = useState(false);
+
   const products = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
 
+  useEffect(() => {
+    products?.length === 0 && setNoProducts(true);
+  },[products]);
+
   return (
     <>
-      {products?.length > 0 ? (
+      {!noProducts ? (
         <>
           <ProductCartCard products={products} user={user} />
 
