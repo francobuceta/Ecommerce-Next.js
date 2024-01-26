@@ -29,7 +29,7 @@ const ProductCard = ({
   };
 
   return (
-    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl dark:bg-[#ffffff]">
+    <div className="card card-compact w-72 h-[400px] bg-base-100 shadow-xl darkBg">
       <figure className="relative p-20">
         <Image
           src={image}

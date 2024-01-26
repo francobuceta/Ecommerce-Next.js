@@ -148,6 +148,12 @@
   transform: translateY(20%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .darkBg {
+    background-color: #fff!important;
+  }
+}
+
 @media (min-width: 640px) {
   /* Swiper Styles */
   #best-selling .swiper .swiper-slide {
