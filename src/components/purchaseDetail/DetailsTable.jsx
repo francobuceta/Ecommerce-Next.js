@@ -40,7 +40,7 @@ const DetailsTable = ({ purchaseData }) => {
                     </div>
                     <div>
                       <div className="font-bold">{elem.title}</div>
-                      <div className="text-sm opacity-50">
+                      <div className="text-sm opacity-50 hidden sm:block">
                         Código: {elem.code}
                       </div>
                     </div>
