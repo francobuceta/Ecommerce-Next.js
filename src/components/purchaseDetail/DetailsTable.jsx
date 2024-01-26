@@ -9,7 +9,7 @@ const DetailsTable = ({ purchaseData }) => {
 
   return (
     <div className="overflow-x-auto text-white">
-      <table className="table">
+      <table className="table purchaseDetail_border-darkMode">
         <thead>
           <tr className="text-white">
             <th></th>

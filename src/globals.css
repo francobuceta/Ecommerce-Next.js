@@ -161,6 +161,9 @@
   .auth_text-darkMode {
     color: black;
   }
+  .purchaseDetail_border-darkMode {
+    border-color: #eee;
+  }
 }
 
 @media (min-width: 640px) {
