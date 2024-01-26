@@ -50,6 +50,7 @@ function RegisterForm({ setOverlayClass }) {
       <input
         type="text"
         placeholder="Nombre"
+        className="auth_text-darkMode"
         {...register("firstName", { required: true })}
       />
       {errors.firstName && errors.firstName.type === "required" && (
@@ -61,6 +62,7 @@ function RegisterForm({ setOverlayClass }) {
       <input
         type="text"
         placeholder="Apellido"
+        className="auth_text-darkMode"
         {...register("lastName", { required: true })}
       />
       {errors.lastName && errors.lastName.type === "required" && (
@@ -72,6 +74,7 @@ function RegisterForm({ setOverlayClass }) {
       <input
         type="email"
         placeholder="Email"
+        className="auth_text-darkMode"
         {...register("email", { required: true })}
       />
       {errors.email && errors.email.type === "required" && (
@@ -85,6 +88,7 @@ function RegisterForm({ setOverlayClass }) {
         <input
           type={showRegisterPassword ? "text" : "password"}
           placeholder="Contraseña"
+          className="auth_text-darkMode"
           {...register("password", { required: true, minLength: 5 })}
         />
         {errors.password && errors.password.type === "required" && (

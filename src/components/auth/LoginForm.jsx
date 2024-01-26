@@ -55,6 +55,7 @@ function LoginForm() {
         {...register("email", { required: true })}
         type="email"
         placeholder="Email"
+        className="auth_text-darkMode"
       />
       {errors.email && errors.email.type === "required" && (
         <FormErrorMessage content="Debes completar este campo" />
@@ -68,6 +69,7 @@ function LoginForm() {
           {...register("password", { required: true })}
           type={showLoginPassword ? "text" : "password"}
           placeholder="Contraseña"
+          className="auth_text-darkMode"
         />
         {errors.password && errors.password.type === "required" && (
           <FormErrorMessage content="Debes completar este campo" />
