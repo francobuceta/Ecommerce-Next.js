@@ -66,10 +66,10 @@ const CartIcon = () => {
       >
         <div className="card-body">
           <span className="font-bold text-lg">{items} Items</span>
-          <span className="text-custome-secondary">Total: {totalPrice}</span>
+          <span className="text-custome-secondary button-darkMode">Total: {totalPrice}</span>
           <Link href="/cart" onClick={HandleDropdown}>
             <div className="card-actions">
-              <button className="btn btn-custome-secondary btn-block">
+              <button className="btn btn-custome-secondary btn-block button-darkMode">
                 Ver carrito
               </button>
             </div>
