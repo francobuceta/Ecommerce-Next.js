@@ -10,7 +10,7 @@ const ProductCartCard = ({ products, user }) => {
       {products.map((product) => {
         return (
           <div
-            className="card flex-col sm:card-side bg-base-100 shadow-xl w-full max-w-[900px] h-auto sm:h-64 md:h-56 sm:p-5"
+            className="card flex-col sm:card-side bg-base-100 shadow-xl w-full max-w-[900px] h-auto sm:h-64 md:h-56 sm:p-5 card_bg-darkMode"
             key={product._id}
           >
             <figure>
@@ -35,7 +35,7 @@ const ProductCartCard = ({ products, user }) => {
 
               <div className="card-actions justify-end mt-7 sm:mt-0">
                 <Link href={`/products/${product.category}/${product._id}`}>
-                  <button className="btn bg-custome-primary border-none">
+                  <button className="btn bg-custome-primary border-none card_bg-darkMode">
                     Ver
                   </button>
                 </Link>
