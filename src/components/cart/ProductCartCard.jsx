@@ -24,7 +24,7 @@ const ProductCartCard = ({ products, user }) => {
               />
             </figure>
             <div className="card-body">
-              <div>
+              <div className="card_text-darkMode">
                 <h2 className="card-title">{product.title}</h2>
                 <p>Cantidad: {product.quantity} unidades</p>
                 <p>Precio unitario: {FormatNumber(product.price)}</p>
