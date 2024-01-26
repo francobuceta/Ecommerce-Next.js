@@ -158,6 +158,9 @@
   .button-darkMode {
     color: #fff;
   }
+  .socialIcon_text-darkMode {
+    color: black;
+  }
 }
 
 @media (min-width: 640px) {
