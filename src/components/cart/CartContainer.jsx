@@ -6,24 +6,36 @@ import { useSelector } from "react-redux";
 import ProductCartCard from "./ProductCartCard";
 import CartControlsContainer from "./CartControlsContainer";
 import { PrimaryButton } from "../buttons/PrimaryButtons";
+import { calculatedTotalPrice } from "@/utils/CartCounts";
 
 const CartContainer = () => {
   const [noProducts, setNoProducts] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const products = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    if(products?.length === 0) {
+    if (products?.length === 0) {
       setNoProducts(true);
     }
-  },[products]);
+
+    calculatedTotalPrice(products, setTotalPrice);
+  }, [products]);
 
   return (
     <>
       {!noProducts ? (
         <>
           <ProductCartCard products={products} user={user} />
+
+          <div className="flex justify-center mt-5">
+            <div className="w-fit bg-custome-primary p-2">
+              <p className="text-2xl text-black">
+                TOTAL: {totalPrice}
+              </p>
+            </div>
+          </div>
 
           <CartControlsContainer userCart={user.userCart.cartId} />
         </>
@@ -44,7 +56,7 @@ const CartContainer = () => {
             </p>
 
             <Link href="/products/all">
-              <PrimaryButton 
+              <PrimaryButton
                 content={"Ver Catálogo"}
                 styles={"text-xl w-40 h-10 mt-3"}
                 fn={undefined}
