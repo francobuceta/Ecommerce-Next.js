@@ -14,7 +14,9 @@ const CartContainer = () => {
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    products?.length === 0 && setNoProducts(true);
+    if(products?.length === 0) {
+      setNoProducts(true);
+    }
   },[products]);
 
   return (

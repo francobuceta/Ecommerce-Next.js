@@ -10,6 +10,7 @@ import { HandleDropdown } from "@/utils/HandleDropdown";
 const CartIcon = () => {
   const [items, setItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const CartIcon = () => {
     };
 
     user && getUserCart();
-  }, [user.userCart, cart.length]);
+  }, [user]);
 
   useEffect(() => {
     calculatedItemsQty(cart, setItems);
