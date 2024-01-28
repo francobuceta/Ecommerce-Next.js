@@ -27,10 +27,12 @@ const CheckoutComponent = () => {
     return total + product.price * product.quantity;
   }, 0);
 
+  const totalPriceInCents = Math.round(totalPrice * 100); //Precio formateado para Stripe.
+
   const purchaseData = {
     user: user?.firstName + " " + user?.lastName,
     products: productsTitle,
-    amount: totalPrice,
+    amount: totalPriceInCents,
   };
 
   const appearance = {
