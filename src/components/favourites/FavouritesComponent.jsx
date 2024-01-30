@@ -44,7 +44,7 @@ const FavouritesComponent = () => {
               </p>
 
               <Link href="/products/all">
-                <PrimaryButton 
+                <PrimaryButton
                   content={"Ver Catálogo"}
                   styles={"text-xl w-40 h-10 mt-3"}
                   fn={undefined}

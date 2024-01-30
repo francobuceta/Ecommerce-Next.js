@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { errorNotification } from "@/utils/Notifications";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import PaymentForm from "./PaymentForm";
 import Loader from "../loader/Loader";
 
@@ -63,7 +63,7 @@ const CheckoutComponent = () => {
       } else {
         errorNotification(
           "Se ha producido un error inesperado. Vuelva a intentar más tarde."
-          );
+        );
         setTimeout(() => router.push("/"), 3000);
       }
     };

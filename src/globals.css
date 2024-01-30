@@ -149,14 +149,14 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .card_bg-darkMode{
-    background-color: #fff!important;
+  .card_bg-darkMode {
+    background-color: #fff !important;
   }
   .card_text-darkMode {
     color: #1e1e1e;
   }
-  .cartCard_bg-darkMode{
-    background-color: #BAFF29!important;
+  .cartCard_bg-darkMode {
+    background-color: #baff29 !important;
   }
   .button-darkMode {
     color: #fff;

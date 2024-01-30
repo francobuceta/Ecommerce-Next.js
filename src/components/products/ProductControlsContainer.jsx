@@ -40,7 +40,10 @@ const ProductControlsContainer = ({ productDetail }) => {
       <CountButton stock={productDetail.stock} setProduct={setProduct} />
 
       <div className="flex flex-col lg:flex-row lg:items-center gap-5 mt-10">
-        <AddToCartButton product={product} handleAddProduct={handleAddProduct} />
+        <AddToCartButton
+          product={product}
+          handleAddProduct={handleAddProduct}
+        />
         <BuyButton product={product} handleAddProduct={handleAddProduct} />
         <Toaster />
       </div>

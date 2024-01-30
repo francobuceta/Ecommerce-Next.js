@@ -5,7 +5,7 @@ import { PrimaryButton } from "../buttons/PrimaryButtons";
 const BuyButton = ({ handleAddProduct }) => {
   return (
     <Link href="/checkout">
-      <PrimaryButton 
+      <PrimaryButton
         content={"Comprar ahora"}
         styles={"w-52 text-xl p-2"}
         fn={handleAddProduct}

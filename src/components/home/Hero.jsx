@@ -11,9 +11,11 @@ const Hero = () => {
             YOUR <br className="hidden sm:block" /> GATEWAY TO <br /> PROGRESS
           </h1>
           <Link href="/products/all">
-            <PrimaryButton 
+            <PrimaryButton
               content={"VER CATÁLOGO"}
-              styles={"text-xl text-white bg-custome-secondary w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10"}
+              styles={
+                "text-xl text-white bg-custome-secondary w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10"
+              }
               fn={undefined}
             />
           </Link>

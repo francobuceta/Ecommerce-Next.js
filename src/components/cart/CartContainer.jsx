@@ -31,9 +31,7 @@ const CartContainer = () => {
 
           <div className="flex justify-center mt-5">
             <div className="w-fit bg-custome-primary p-2">
-              <p className="text-2xl text-black">
-                TOTAL: {totalPrice}
-              </p>
+              <p className="text-2xl text-black">TOTAL: {totalPrice}</p>
             </div>
           </div>
 

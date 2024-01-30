@@ -10,7 +10,7 @@ import { HandleDropdown } from "@/utils/HandleDropdown";
 const CartIcon = () => {
   const [items, setItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  
+
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -67,7 +67,9 @@ const CartIcon = () => {
       >
         <div className="card-body">
           <span className="font-bold text-lg">{items} Items</span>
-          <span className="text-custome-secondary button-darkMode">Total: {totalPrice}</span>
+          <span className="text-custome-secondary button-darkMode">
+            Total: {totalPrice}
+          </span>
           <Link href="/cart" onClick={HandleDropdown}>
             <div className="card-actions">
               <button className="btn btn-custome-secondary btn-block button-darkMode">
