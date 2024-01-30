@@ -73,9 +73,6 @@ const CartIcon = () => {
           </span>
           <Link href="/cart" onClick={HandleDropdown}>
             <div className="card-actions">
-              {/* <button className="btn btn-custome-secondary btn-block button-darkMode">
-                Ver carrito
-              </button> */}
               <PrimaryButton
                 content={"Ver carrito"}
                 styles={"text-xl w-full"}
