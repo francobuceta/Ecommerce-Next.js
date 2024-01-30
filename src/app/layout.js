@@ -18,7 +18,7 @@ const alternateFont = Share_Tech({
 export const metadata = {
   title: "Cyber Cube",
   description:
-    "Cyber Cube es una empresa especialida en la venta de componentes para PC, desde teclados y mouses de alta precisión hasta audio inmersivo, auriculares de calidad, sillas de escritorio ergonómicas y más.",
+    "Cyber Cube es una empresa especializada en la venta de componentes para PC, desde teclados y mouses de alta precisión hasta audio inmersivo, auriculares de calidad, sillas de escritorio ergonómicas y más.",
 };
 
 export default function RootLayout({ children }) {
