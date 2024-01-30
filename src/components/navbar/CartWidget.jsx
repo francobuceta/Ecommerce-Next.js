@@ -6,6 +6,7 @@ import { getCartFromDB } from "@/store/slices/cartSlice";
 import { getRequest } from "@/services/clientFetching";
 import { calculatedItemsQty, calculatedTotalPrice } from "@/utils/CartCounts";
 import { HandleDropdown } from "@/utils/HandleDropdown";
+import { PrimaryButton } from "../buttons/PrimaryButtons";
 
 const CartIcon = () => {
   const [items, setItems] = useState(0);
@@ -72,9 +73,14 @@ const CartIcon = () => {
           </span>
           <Link href="/cart" onClick={HandleDropdown}>
             <div className="card-actions">
-              <button className="btn btn-custome-secondary btn-block button-darkMode">
+              {/* <button className="btn btn-custome-secondary btn-block button-darkMode">
                 Ver carrito
-              </button>
+              </button> */}
+              <PrimaryButton
+                content={"Ver carrito"}
+                styles={"text-xl w-full"}
+                fn={undefined}
+              />
             </div>
           </Link>
         </div>
