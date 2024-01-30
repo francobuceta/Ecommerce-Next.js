@@ -137,7 +137,7 @@ function RegisterForm({ setOverlayClass }) {
           REGISTRARSE
         </button>
       ) : (
-        <Loader />
+        <Loader margin={"py-2 mt-3"} />
       )}
     </form>
   );

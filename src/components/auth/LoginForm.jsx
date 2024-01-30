@@ -103,7 +103,7 @@ function LoginForm() {
           INGRESAR
         </button>
       ) : (
-        <Loader />
+        <Loader margin={"py-2 mt-7"} />
       )}
     </form>
   );
