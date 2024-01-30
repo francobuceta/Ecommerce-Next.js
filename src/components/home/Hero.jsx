@@ -14,7 +14,7 @@ const Hero = () => {
             <PrimaryButton
               content={"VER CATÁLOGO"}
               styles={
-                "text-xl text-white bg-custome-secondary w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10"
+                "text-xl text-white bg-custome-secondary w-40 h-10 mt-40 sm:mt-60 md:mt-72 sm:ml-10 2xl:ml-[6.5rem]"
               }
               fn={undefined}
             />
