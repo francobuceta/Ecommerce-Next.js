@@ -13,7 +13,7 @@ const Overlay = ({ overlayClass, setOverlayClass }) => {
           Para seguir conectado con nosotros ingresá tu información personal
         </p>
         <button
-          className="rounded-[20px] border border-solid border-custome-secondary bg-transparent text-base text-lightblack font-bold py-2 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
+          className="rounded-[20px] border border-solid border-custome-secondary bg-transparent text-base text-lightblack font-bold py-2 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95] hover:translate-y-[-2px]"
           id="signIn"
           onClick={handleOverlayStyle}
         >
@@ -26,7 +26,7 @@ const Overlay = ({ overlayClass, setOverlayClass }) => {
           Ingresá tus datos personales y comenzá tu viaje con nosotros
         </p>
         <button
-          className="rounded-[20px] border border-solid border-custome-secondary bg-transparent text-base text-lightblack font-bold py-2 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
+          className="rounded-[20px] border border-solid border-custome-secondary bg-transparent text-base text-lightblack font-bold py-2 px-11 transition-transform duration-[80ms] ease-in active:scale-[0.95] hover:translate-y-[-2px]"
           id="signUp"
           onClick={handleOverlayStyle}
         >

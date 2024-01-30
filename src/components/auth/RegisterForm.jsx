@@ -132,7 +132,7 @@ function RegisterForm({ setOverlayClass }) {
       {!loading ? (
         <button
           type="submit"
-          className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95]"
+          className="rounded-[20px] bg-custome-primary text-base text-custome-secondary font-bold py-2 px-11 mt-3 transition-transform duration-[80ms] ease-in active:scale-[0.95] hover:translate-y-[-2px]"
         >
           REGISTRARSE
         </button>
