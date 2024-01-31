@@ -8,13 +8,13 @@ export const bestSellingProducts = [
   {
     title: "Auricular Redragon Lamia 2",
     description: "Calidad | Portabilidad | Aislamiento",
-    img: "img/headphone-dragon.jpeg",
+    img: "/img/headphone-dragon.jpeg",
     url: "/products/auriculares-y-microfonos/64f7c12bee0d88d7c7f97c5d",
   },
   {
     title: "Teclado Galax Stealth 03",
     description: "Sensibilidad | Comodidad | Ergonomía",
-    img: "./img/keyboard-galax.jpeg",
+    img: "/img/keyboard-galax.jpeg",
     url: "/products/teclados/64ac15033572bd5ec6b11df1",
   },
   {
