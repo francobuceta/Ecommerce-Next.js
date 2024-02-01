@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img align="center" src="https://res.cloudinary.com/dzm5lgpyv/image/upload/v1706745355/cyber%20cube%20backend%20ecommerce/proyecto-cyberCube_awweds.png">
 
-## Getting Started
+<h3>👉🏻 Proyecto full-stack "Cyber Cube", donde se pueden realizar compras online.</h3>
 
-First, run the development server:
+<h3>👉🏻 <b>Deploy: <a href="https://ecommerce-next-js-ebon.vercel.app/">Mercado Libre</a></b></h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<h3>
+  <a href="https://www.loom.com/share/9b59a0e70e814cfe8116e348888ab1c2?sid=05b36b80-17c5-4639-98b0-3ef22b2204a8"> 
+    <img src="https://img.shields.io/badge/Video Preview%20-%231A237E.svg?&style=for-the-badge&logo=Canva&logoColor=white"/>
+  </a>
+</h3>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr/>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### ⚡ Project links:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<h3>
+  <a href="https://www.figma.com/file/wBg7krNaEDLmCy6ua9jH7C/Redise%C3%B1o-ML?type=design&node-id=0%3A1&t=6QNDxrDICbCIgEsn-1"> 
+    <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"/>
+  </a> 
+  <a href="https://s8-08-t-java-react-mercadolibre-production.up.railway.app/swagger-ui/index.html#/"> 
+    <img src="https://img.shields.io/badge/-Swagger-85EA2D?logo=swagger&logoColor=black&style=for-the-badge"/>
+  </a>
+</h3>
 
-## Learn More
+<hr/>
 
-To learn more about Next.js, take a look at the following resources:
+#### 🛠️ Tech Stack:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black) 
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white) 
+![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=axios&logoColor=white)
+![Tailwind](https://img.shields.io/badge/-Tailwind-06B6D4?logo=tailwind-css&logoColor=white&style=for-the-badge)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white) 
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white) 
+![Netlify](https://img.shields.io/badge/-Netlify-00C7B7?logo=netlify&logoColor=black&style=for-the-badge)
