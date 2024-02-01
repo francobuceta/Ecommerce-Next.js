@@ -23,6 +23,26 @@
 
 <hr/>
 
+### ⚡ Main Features:
+
+* <b>Autenticación Versátil:</b> Registro e inicio de sesión utilizando tu cuenta de Google, GitHub o completando un formulario estándar.
+
+* <b>Carrito de Compras:</b> Agregar productos al carrito y realizar un seguimiento en cualquier dispositivo.
+
+* <b>Lista de Favoritos:</b> Guardar tus productos favoritos para futuras compras.
+
+* <b>Filtrado por Categoría:</b> Explorar una amplia gama de productos filtrados por categorías para encontrar exactamente lo que necesitas.
+
+* <b>Paginación Eficiente:</b> Navegar por la lista de productos de manera eficiente gracias a la paginación, facilitando la exploración.
+
+* <b>Detalles del Producto Dinámicos:</b> Visualizar el detalle de cada producto con un efecto de transición suave gracias a View Transitions API para una experiencia visual atractiva.
+
+* <b>Proceso de Compra Seguro:</b> Realizar compras seguras utilizando tarjetas de crédito, con un proceso de pago intuitivo y protegido.
+
+* <b>Notificaciones por Email:</b> Recibir notificaciones por correo electrónico cuando te registras en la plataforma y después de realizar una compra.
+
+<hr/>
+
 #### 🛠️ Tech Stack:
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black) 
