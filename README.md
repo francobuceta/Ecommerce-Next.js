@@ -37,7 +37,7 @@
 
 * <b>Detalles del Producto Dinámicos:</b> Visualizar el detalle de cada producto con un efecto de transición suave gracias a View Transitions API para una experiencia visual atractiva.
 
-* <b>Proceso de Compra Seguro:</b> Realizar compras seguras utilizando tarjetas de crédito, con un proceso de pago intuitivo y protegido.
+* <b>Proceso de Compra Seguro:</b> Realizar compras seguras utilizando tarjetas de crédito/débito, con un proceso de pago intuitivo y protegido.
 
 * <b>Notificaciones por Email:</b> Recibir notificaciones por correo electrónico cuando te registras en la plataforma y después de realizar una compra.
 
