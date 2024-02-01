@@ -1,6 +1,6 @@
 <img align="center" src="https://res.cloudinary.com/dzm5lgpyv/image/upload/v1706745355/cyber%20cube%20backend%20ecommerce/proyecto-cyberCube_awweds.png">
 
-<h3>👉🏻 Proyecto full-stack "Cyber Cube", donde se pueden realizar compras online.</h3>
+<h3>👉🏻 Proyecto full-stack "Cyber Cube", donde se pueden realizar compras online. Este proyecto es un ecommerce desarrollado con Next.js para el frontend y un backend en Node.js. Proporciona una plataforma para la compra de productos tecnológicos, ofreciendo una experiencia de usuario intuitiva y eficiente.</h3>
 
 <h3>👉🏻 <b>Deploy: <a href="https://ecommerce-next-js-ebon.vercel.app/">Mercado Libre</a></b></h3>
 
@@ -15,12 +15,9 @@
 ### ⚡ Project links:
 
 <h3>
-  <a href="https://www.figma.com/file/wBg7krNaEDLmCy6ua9jH7C/Redise%C3%B1o-ML?type=design&node-id=0%3A1&t=6QNDxrDICbCIgEsn-1"> 
-    <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"/>
+  <a href="https://github.com/francobuceta/Backend-Nodejs"> 
+    <img src="https://img.shields.io/badge/-Backend-606060?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
   </a> 
-  <a href="https://s8-08-t-java-react-mercadolibre-production.up.railway.app/swagger-ui/index.html#/"> 
-    <img src="https://img.shields.io/badge/-Swagger-85EA2D?logo=swagger&logoColor=black&style=for-the-badge"/>
-  </a>
 </h3>
 
 <hr/>
@@ -28,10 +25,8 @@
 #### 🛠️ Tech Stack:
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black) 
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white) 
-![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white)
-![Axios](https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=axios&logoColor=white)
+![Next](https://img.shields.io/badge/-Next-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) 
 ![Tailwind](https://img.shields.io/badge/-Tailwind-06B6D4?logo=tailwind-css&logoColor=white&style=for-the-badge)
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white) 
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white) 
-![Netlify](https://img.shields.io/badge/-Netlify-00C7B7?logo=netlify&logoColor=black&style=for-the-badge)
+![Daisy UI](https://img.shields.io/badge/-Daisy%20UI-5A0EF8?style=for-the-badge&logo=#5A0EF8&logoColor=white)
+![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-764ABC?style=for-the-badge&logo=Redux&logoColor=white)
+![Swiper](https://img.shields.io/badge/-Swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=white)
