@@ -2,12 +2,12 @@
 
 <h3>👉🏻 Este proyecto es un front en Next.js que consume una API en Node.js para la lógica del negocio. Proporciona una plataforma para la compra de productos tecnológicos, ofreciendo una experiencia de usuario intuitiva y eficiente.</h3>
 
-<h3>👉🏻 Datos para realizar compra:</br>
+<h3>👉🏻 Datos para realizar compra:</h3>
 * Nro. Tarjeta: 4000000320000021 </br>
 * Vencimiento: Cualquier fecha mayor a la actual. </br>
 * CVC: Cualquier número random de 3 dígitos. </br>
 * País: Argentina.
-</h3>
+
 
 <h3>👉🏻 <b>Deploy Frontend: <a href="https://ecommerce-next-js-ebon.vercel.app/">Cyber Cube Front</a></b></h3>
 <h3>👉🏻 <b>Deploy Backend: <a href="https://backend-nodejs-self.vercel.app/api/products?page=1">Cyber Cube Back</a></b></h3>
