@@ -30,3 +30,4 @@
 ![Daisy UI](https://img.shields.io/badge/-Daisy%20UI-5A0EF8?style=for-the-badge&logo=#5A0EF8&logoColor=white)
 ![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-764ABC?style=for-the-badge&logo=Redux&logoColor=white)
 ![Swiper](https://img.shields.io/badge/-Swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=white)
+![Stripe](https://img.shields.io/badge/-Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white)
