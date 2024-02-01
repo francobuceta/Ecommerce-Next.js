@@ -13,7 +13,7 @@
 
 <hr/>
 
-### ⚡ Project links:
+### 🔗 Project links:
 
 <h3>
   <a href="https://github.com/francobuceta/Backend-Nodejs"> 
